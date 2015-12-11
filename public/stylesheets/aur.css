@@ -1,0 +1,74 @@
+/* AUR-specific customizations to "archweb.css". */
+#archnavbar.anb-aur ul li#anb-aur a {
+    color: white !important;
+}
+
+#lang_sub {
+  float: right;
+}
+
+.pkglist-nav .page {
+    margin: 0 .25em;
+}
+
+#pkg-updates td.pkg-new {
+  padding: 0 .5em;
+}
+
+#pkg-stats td.stat-desc {
+  white-space: normal;
+}
+
+#actionlist form {
+	margin: 0;
+	padding: 0;
+}
+
+.arch-bio-entry ul {
+	list-style: none;
+	padding: 0;
+}
+
+#pkg-updates table {
+	table-layout: fixed;
+	width:100%;
+}
+
+#pkg-updates td.pkg-name {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#pkg-updates td.pkg-new {
+	width: 16px;
+}
+
+#pkg-updates td.pkg-date {
+	text-align:right;
+}
+
+.text-button {
+	background: transparent;
+	border: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	font: normal 100% sans-serif;
+	text-decoration: none;
+	color: #07b;
+	cursor: pointer;
+}
+
+.text-button:hover {
+	text-decoration: underline;
+	color: #666;
+}
+
+.text-button::-moz-focus-inner {
+	padding: 0;
+	border: none;
+}
+
+.comment-deleted {
+	color: #999;
+}

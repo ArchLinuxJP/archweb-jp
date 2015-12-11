@@ -1,0 +1,45 @@
+doctype html
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+		- var titlebar = (title == "Arch Linux JP Project") ? "Arch Linux JP Project" : "Arch Linux JP Project - " + title;
+		title= titlebar
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", href="/stylesheets/archweb.css", media="screen, projection")
+		link(rel="stylesheet", href="/stylesheets/mobile.css", media="only screen and (max-width:750px)")
+		link(rel="icon", type="image/x-icon", href="/images/favicon.ico")
+		link(rel="shortcut icon", type="image/x-icon", href="/images/favicon.ico")
+		link(rel="apple-touch-icon", href="/images/apple-touch-icon-57x57.png")
+		link(rel="apple-touch-icon", sizes="72x72", href="/images/apple-touch-icon-72x72.png")
+		link(rel="apple-touch-icon", sizes="114x114", href="/images/apple-touch-icon-114x114.png")
+		link(rel="apple-touch-icon", sizes="144x144", href="/images/apple-touch-icon-144x144.png")
+	body
+		div#archnavbar(class=selected)
+			div#archnavbarlogo
+				h1
+					a(href="https://www.archlinuxjp.org/", title="メインページに戻る")
+			div#archnavbarmenu
+				ul#archnavbarlist
+					li#anb-home
+						a(href="https://www.archlinuxjp.org/", title="Arch ニュース、パッケージ、プロジェクトなど") ホーム
+					li#anb-packages
+						a(href="https://www.archlinuxjp.org/packages/", title="Arch パッケージデータベース") パッケージ
+					li#anb-forums
+						a(href="https://bbs.archlinuxjp.org/", title="コミュニティフォーラム") フォーラム
+					li#anb-wiki
+						a(href="https://wiki.archlinuxjp.org/", title="ArchWiki") Wiki
+					li#anb-bugs
+						a(href="https://bugs.archlinux.org/", title="バグの報告と追跡") バグ
+					li#anb-aur
+						a(href="https://aur.archlinux.org/", title="Arch Linux User Repository") AUR
+					li#anb-download
+						a(href="https://www.archlinuxjp.org/download/", title="Arch Linux を入手") ダウンロード
+		div#content
+			div#archdev-navbar
+			block content
+			div#footer
+				- var dt = new Date(); dt.setTime(dt.getTime() + 32400000); var year = dt.getFullYear();
+				p Copyright &copy; 2014-!{year} <a href="mailto:team@archlinuxjp.org">Arch Linux JP Project</a>.
+				p The Arch Linux name and logo are recognized <a href="https://wiki.archlinux.org/index.php/DeveloperWiki:TrademarkPolicy" title="Arch Linux Trademark Policy">trademarks</a>. Some rights reserved.
+				p The registered trademark Linux® is used pursuant to a sublicense from LMI, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
+		script(type="text/javascript", src="/javascripts/archweb.js")
