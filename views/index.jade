@@ -1,5 +1,95 @@
 extends layout
 
 block content
-	h1= title
-	p Welcome to #{title}
+	div#content-left-wrapper
+		div#content-left
+			div#intro.box
+				h2 シンプル、軽量なディストリビューション
+				p <strong>Arch Linux</strong> のウェブサイトにようこそ。Keep It Simple を標榜する、軽量で柔軟性に優れた Linux® ディストリビューションです。
+				p 公式パッケージは i686 と x86-64 アーキテクチャに最適化されています。さらに公式パッケージを補足するものとして<a href="https://aur.archlinux.org/" title="Arch User Repository (AUR)">コミュニティによって運営されているパッケージリポジトリ</a>があり、日々、その質量ともに成長しています。
+				p Arch Linux の強固なコミュニティは多様かつ助けになり、広範なスキルセットと、それによって Arch を利用していることに誇りを持っています。<a href="https://bbs.archlinuxjp.org/" title="Arch フォーラム">フォーラム</a>や<a href="https://mailman.archlinux.org/mailman/listinfo/" title="Arch メーリングリスト">メーリングリスト</a>を見て参加してみて下さい。また、Arch について知識を深めたいと考えたのであれば、<a href="https://wiki.archlinuxjp.org/" title="ArchWiki">ArchWiki</a> も覗いてみましょう。
+				p.readmore <a href="https://www.archlinuxjp.org/about/" title="Arch Linux のことを詳しく学ぶ">もっと詳しく...</a>
+			div#news
+				h3
+					a(href="https://www.archlinuxjp.org/news/", title="ニュースアーカイブを閲覧") 最新ニュース
+					span.arrow
+				a(href="https://www.archlinuxjp.org/feeds/news/", title="Arch ニュース RSS フィード").rss-icon
+					img(src="./images/rss.png", alt="RSS フィード", width="16", height="16")
+				h3
+					a(href="https://www.archlinuxjp.org/news/", title="ニュースアーカイブを閲覧") 昔のニュース
+					span.arrow
+				dl.newslist
+	div#content-right
+		div#pkgsearch.widget
+			form(method="get", action="https://www.archlinuxjp.org/packages/")#pkgsearch-form
+				fieldset
+					label(for="pkgsearch-field") パッケージ検索 :
+					input(type="text", name="q", size="18", maxlength="200")#pkgsearch-field
+		div#pkg-updates.widget.box
+			h3 最近のアップデート
+				span.more  (<a href="https://www.archlinuxjp.org/packages/?sort=-last_update" title="最新パッケージを全て閲覧">もっと見る</a>)
+			a(href="https://www.archlinuxjp.org/feeds/packages/", title="Arch パッケージアップデート RSS フィード").rss-icon
+				img(width="16", height="16", src="https://www.archlinuxjp.org/img/rss.png", alt="RSS フィード")
+			table
+		div#nav-sidebar.widget
+			h4 ドキュメント
+			ul
+				li
+					a(href="https://wiki.archlinuxjp.org/", title="コミュニティドキュメント") ArchWiki
+				li
+					a(href="https://wiki.archlinuxjp.org/index.php/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89", title="インストールガイド") インストールガイド
+				li
+					a(href="https://wiki.archlinuxjp.org/index.php/%E3%83%93%E3%82%AE%E3%83%8A%E3%83%BC%E3%82%BA%E3%82%AC%E3%82%A4%E3%83%89", title="初心者への手引書") ビギナーズガイド
+			h4 コミュニティ
+			ul
+				li
+					a(href="https://mailman.archlinux.org/mailman/listinfo/", title="コミュニティと開発者のメーリングリスト") メーリングリスト
+					span  (英語)
+				li
+					a(href="https://wiki.archlinuxjp.org/index.php/IRC_%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB", title="公式または地域別の IRC コミュニティ") IRC チャンネル
+				li
+					a(href="https://planet.archlinuxjp.org/", title="Arch のブロゴスフィア") Planet Arch
+				li
+					a(href="https://wiki.archlinux.org/index.php/International_communities", title="様々な言語の Arch コミュニティ") 国際コミュニティ
+					span  (英語)
+			h4 サポート
+			
+			ul
+				li
+					a(href="/donate/", title="Arch Linux のサポート") 寄付
+			h4 ツール
+			ul
+				li
+					a(href="https://www.archlinux.org/mirrorlist/", title="データベースからカスタムミラーリストを取得") ミラーリストアップデータ
+					span  (英語)
+				li
+					a(href="https://www.archlinux.org/mirrors/", title="利用可能な全てのミラーのリスト") ミラーリスト
+					span  (英語)
+				li
+					a(href="https://www.archlinux.org/mirrors/status/", title="全てのミラーの状態を確認") ミラーの状態
+					span  (英語)
+			h4 開発
+			ul
+				li
+					a(href="https://github.com/ArchLinuxJP", title="Arch 日本語コミュニティプロジェクト (git)") プロジェクト (Git)
+				li
+					a(href="/svn/", title="パッケージの SVN エントリ") SVN リポジトリ
+				li
+					a(href="https://www.archlinux.org/groups/", title="利用可能なパッケージグループ") パッケージグループ
+					span  (英語)
+				li
+					a(href="/releng/releases/", title="リリースエンジニアリング ISO リスト") ISO リリースリスト
+			h4 人々
+			ul
+				li
+					a(href="/people/", title="Arch Linux JP Project の紹介") 日本 Arch Linux ユーザー会
+			h4 その他
+			ul
+				li
+					a(href="https://wiki.archlinuxjp.org/index.php/Arch_Linux_%E3%83%97%E3%83%AC%E3%82%B9%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8", title="Arch Linux の掲載") プレスカバレッジ
+				li
+					a(href="/art/", title="プロモーション用の Arch ロゴやアートワーク") ロゴ &amp; アートワーク
+				li
+					a(href="/news/", title="ニュースアーカイブ") ニュースアーカイブ
+				li
+					a(href="/feeds/", title="様々な RSS フィード") RSS フィード
