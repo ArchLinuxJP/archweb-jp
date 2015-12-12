@@ -1,10 +1,66 @@
-var isopen=true;
-function $(id){ return document.getElementById(id) }
-ajax={};ajax.x=function(){try{return new ActiveXObject('Msxml2.XMLHTTP')}catch(e){try{return new ActiveXObject('Microsoft.XMLHTTP')}catch(e){return new XMLHttpRequest()}}};
-ajax.send=function(u,f,m,a){var x=ajax.x();x.open(m,u,true);x.onreadystatechange=function(){if(x.readyState==4)f(x.responseText)};if(m=='POST')x.setRequestHeader('Content-type','application/x-www-form-urlencoded');x.send(a)};ajax.get=function(url,func){ajax.send(url,func,'GET')};
-function menuopen(){ isopen=false;$("globalWrapper").style.cssText="margin-left:0 !important;overflow:hidden !important;";$("p-cactions").style.cssText="margin-left:0 !important;overflow:hidden !important;";$("content").ontouchstart=function(){menuclose()}; }
-function menuclose(){ isopen=true;$("globalWrapper").style.cssText="margin-left:-12.2em !important;overflow:visible !important;";$("p-cactions").style.cssText="margin-left:-12.2em !important;overflow:visible !important;";$("content").ontouchstart=function(){}; }
-function tablewikim(){ var ei=document.getElementsByTagName("table");for(i=0;i<ei.length;i++){if(ei[i].className=="wikitable"){ei[i].outerHTML="<div style='overflow:auto;'><table class='wikitable' style='"+ei[i].style.cssText+"'>"+ei[i].innerHTML+"</table></div>"}} }
-function translatebox(){ if($("pkgdesc").getElementsByTagName("input").length==0){ $("pkgdesc").innerHTML='<input type="text" value="'+$("pkgdesc").innerHTML+'" size=50 id="translate"> <input type="button" value="翻訳" onclick="translateend();">' } }
-function translateend(){ ajax.get("https://www.archlinuxjp.org/packages/translate.php?name="+$("pkgdetails").getElementsByTagName("h2")[0].innerHTML.split(" ")[0]+"&arch="+$("pkginfo").getElementsByTagName("a")[0].innerHTML+"&repo="+$("pkginfo").getElementsByTagName("a")[1].innerHTML+"&txt="+encodeURIComponent($("translate").value),function(txt){$("pkgdesc").innerHTML=txt});$("pkgdesc").innerHTML="翻訳を送信中..." }
-window.onload=function(){ if(navigator.userAgent.indexOf('iPhone')>0||navigator.userAgent.indexOf('iPod')>0||(navigator.userAgent.indexOf('Android')>0&&navigator.userAgent.indexOf('Mobile')>0)){var obj=document.createElement('div');obj.id="archnavbaricon";obj.onclick=function(){$("archnavbarlogo").style.display="none";$("archnavbaricon").style.cssText="display:none !important;";$("archnavbar").style.cssText="margin-left:0 !important;overflow:auto !important;white-space:nowrap !important;";$("archnavbarmenu").style.display=""};obj.innerHTML='<img src="https://www.archlinuxjp.org/img/menu.png">';$("archnavbar").insertBefore(obj,$("archnavbarmenu"));$("archnavbarmenu").style.display="none";if($("column-one")){var obj=document.createElement('div');obj.id="wikimenuicon";obj.innerHTML='<img src="https://www.archlinuxjp.org/img/wikimenu.png">';$("content").insertBefore(obj,$("content").firstChild);$("wikimenuicon").children[0].onclick=function(){if(isopen){menuopen()}else{menuclose()}}}}if($("actionlist")){$("actionlist").getElementsByTagName("ul")[0].innerHTML+='<li><a href="javascript:translatebox();" title="説明文を翻訳する">パッケージの説明を翻訳</a></li>';$("filelink").onclick=function(){arch=$("pkginfo").getElementsByTagName("a")[0].innerHTML.toLowerCase();if(arch=="any"){arch="x86_64"}$("filelink").parentNode.innerHTML="リストをロード中...";ajax.get("https://www.archlinuxjp.org/packages/db/past/"+$("pkginfo").getElementsByTagName("a")[1].innerHTML.toLowerCase()+"/"+arch+"/"+$("pkgdetails").getElementsByTagName("h2")[0].innerHTML.split(" ").join("-")+"/files",function(txt){list="<ul>";file=txt.split("\n");for(i=1;i<file.length;i++){if(file[i]!=""){if(file[i].slice(-1)=="/"){list+='<li class="d">'+file[i]+'</li>'}else{list+='<li class="f">'+file[i]+'</li>'}}}list+="</ul>";$("pkgfilelist").innerHTML=list});return false}} };
+var isopen = true;
+
+// getelement
+function $(id) {
+	return document.getElementById(id);
+}
+
+// wiki
+function menuopen() {
+	isopen = false;
+	$("globalWrapper").style.cssText = "margin-left:0 !important;overflow:hidden !important;";
+	$("p-cactions").style.cssText = "margin-left:0 !important;overflow:hidden !important;";
+	$("content").ontouchstart = function() {
+		menuclose();
+	};
+}
+
+function menuclose() {
+	isopen = true;
+	$("globalWrapper").style.cssText = "margin-left:-12.2em !important;overflow:visible !important;";
+	$("p-cactions").style.cssText = "margin-left:-12.2em !important;overflow:visible !important;";
+	$("content").ontouchstart = function(){};
+}
+
+function tablewikim() {
+	var ei = document.getElementsByTagName("table");
+	for (i=0;i<ei.length;i++) {
+		if (ei[i].className == "wikitable" ){
+			ei[i].outerHTML = "<div style='overflow:auto;'><table class='wikitable' style='"+ei[i].style.cssText+"'>" + ei[i].innerHTML + "</table></div>";
+		}
+	}
+}
+
+window.onload = function() {
+	if (
+		navigator.userAgent.indexOf('iPhone') > 0 ||
+		navigator.userAgent.indexOf('iPod') > 0 ||
+		(navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('Mobile') > 0)
+	) {
+		var obj = document.createElement('div');
+		obj.id = "archnavbaricon";
+		obj.onclick = function() {
+			$("archnavbarlogo").style.display = "none";
+			$("archnavbaricon").style.cssText = "display:none !important;";
+			$("archnavbar").style.cssText = "margin-left:0 !important;overflow:auto !important;white-space:nowrap !important;";
+			$("archnavbarmenu").style.display="";
+		};
+		obj.innerHTML = '<img src="https://www.archlinuxjp.org/img/menu.png">';
+		$("archnavbar").insertBefore(obj, $("archnavbarmenu"));
+		
+		$("archnavbarmenu").style.display = "none";
+		if ($("column-one")){
+			var obj = document.createElement('div');
+			obj.id = "wikimenuicon";
+			obj.innerHTML = '<img src="https://www.archlinuxjp.org/img/wikimenu.png">';
+			$("content").insertBefore(obj, $("content").firstChild);
+			$("wikimenuicon").children[0].onclick = function() {
+				if (isopen) {
+					menuopen();
+				} else {
+					menuclose();
+				}
+			}
+		}
+	}
+};
