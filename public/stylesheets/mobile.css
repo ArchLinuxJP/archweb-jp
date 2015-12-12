@@ -1,1 +1,72 @@
-#archnavbaricon{display:inline!important;float:right!important;margin:0!important;padding:0!important;line-height:45px!important;}#archnavbarlist{float:none !important}#archnavbarlist li{float:none !important;display:inline !important;line-height:38px!important;pedding-right:0 !important}#archnavbarlist li:last-child{padding-right:28px!important}body{min-width:initial !important}#content-left-wrapper{float:none !important;width:auto !important;}#content-left{margin:0 !important}#content-right{float:none !important;width:auto !important;margin-left:0 !important}#pkgsearch{margin-top:1.5em}.pkglist-stats{padding:0 .65em}#pkglist-results{overflow:auto;padding:.65em 0}#exact-matches{overflow:auto;padding:.65em 0}#news div p{word-wrap:break-word;}#news div ul{word-wrap:break-word;}
+/* navbar */
+#archnavbaricon {
+    display:inline !important;
+    float:right !important;
+    margin:0 !important;
+    padding:0 !important;
+    line-height:45px !important;
+}
+
+#archnavbarlist{
+    float:none !important;
+}
+
+#archnavbarlist li{
+    float:none !important;
+    display:inline !important;
+    line-height:38px !important;
+    pedding-right:0 !important;
+}
+
+#archnavbarlist li:last-child{
+    padding-right:28px !important;
+}
+
+/* general layout */
+body{
+    min-width:initial !important;
+}
+
+#content-left-wrapper{
+    float:none !important;
+    width:auto !important;
+}
+
+#content-left{
+    margin:0 !important;
+}
+
+#content-right{
+    float:none !important;
+    width:auto !important;
+    margin-left:0 !important;
+}
+
+/* home: pkgsearch box */
+#pkgsearch{
+    margin-top:1.5em;
+}
+
+/* home: news */
+#news div p{
+    word-wrap:break-word;
+}
+
+#news div ul{
+    word-wrap:break-word;
+}
+
+/* pkglist: results navigation */
+.pkglist-stats{
+    padding:0 .65em;
+}
+
+#pkglist-results{
+    overflow:auto;
+    padding:.65em 0;
+}
+
+#exact-matches{
+    overflow:auto;
+    padding:.65em 0;
+}
