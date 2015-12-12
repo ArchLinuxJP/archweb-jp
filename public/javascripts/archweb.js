@@ -47,8 +47,8 @@ window.onload = function() {
 		};
 		obj.innerHTML = '<img src="https://www.archlinuxjp.org/img/menu.png">';
 		$("archnavbar").insertBefore(obj, $("archnavbarmenu"));
-		
 		$("archnavbarmenu").style.display = "none";
+		
 		if ($("column-one")){
 			var obj = document.createElement('div');
 			obj.id = "wikimenuicon";

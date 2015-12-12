@@ -1,0 +1,14 @@
+extends simple
+
+block article
+	p PKGBUILD ファイルは ABS ユーティリティを使って取得することができます。ABS については、<a href="https://wiki.archlinuxjp.org/index.php/ABS">ABS の wiki ページ</a>を見て下さい。
+	p SVN リポジトリは git リポジトリに複製されており、cgit インターフェイスで閲覧することができます。別のリポジトリとなっている <a href="https://projects.archlinux.org/svntogit/community.git/">community や multilib</a> を除いて<a href="https://projects.archlinux.org/svntogit/packages.git/">全てのパッケージ</a>が確認できます。
+	p SVN から個別の PKGBUILD を直接取得することもできます。古いバージョンのパッケージをコンパイルする必要がある場合に特にこの方法は有用です。<strong>SVN リポジトリ全体をチェックアウトしてはいけません</strong>。あなたの IP アドレスがブロックされる可能性があります。特定のパッケージをチェックアウトしたいときは以下のコマンドを使って下さい:
+	pre svn checkout --depth=empty svn://svn.archlinux.org/packages
+		| cd packages
+		| svn update &lt;your-package-name&gt;
+	p community と multilib リポジトリのパッケージの場合、以下のコマンドを使って下さい:
+	pre svn checkout --depth=empty svn://svn.archlinux.org/community
+		| cd community
+		| svn update &lt;your-package-name&gt;
+	p svn で PKGBUILD をチェックアウト・更新するヒントが <a href="https://wiki.archlinux.org/index.php?title=Getting_PKGBUILDS_From_SVN">wiki</a> に載っています。
