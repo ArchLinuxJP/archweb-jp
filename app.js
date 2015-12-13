@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var simple = require('./routes/simple');
+var article = require('./routes/article');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/news/dropping-plasma-4', article);
 
 app.use('/about', simple);
 app.use('/svn', simple);
