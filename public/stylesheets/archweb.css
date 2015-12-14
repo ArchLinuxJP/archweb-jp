@@ -916,8 +916,11 @@ table td.country {
 
 .arch-bio-entry {
     width: 75%;
-    min-width: 640px;
+    /* min-width: 640px; */
+    min-width: auto;
     margin: 0 auto;
+    /* mobile */
+    word-break: break-all;
 }
 
     .arch-bio-entry td.pic {
