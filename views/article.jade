@@ -2,4 +2,11 @@ extends layout
 
 block content
 	div(itemtype="http://schema.org/Article", itemscope).news-article.box
-		include news/dropping-plasma-4
+		h2(itemprop="headline")= title.replace("ニュース: ","")
+		meta(itemprop="dateCreated", content=created)
+		meta(itemprop="datePublished", content=created)
+		meta(itemprop="dateModified", content=modified)
+		meta(itemprop="inLanguage", content="ja")
+		p.article-info #{created} - #{author}
+		div(itemprop="articleBody").article-content
+			block body
