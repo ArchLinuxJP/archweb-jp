@@ -15,6 +15,12 @@ block content
 					span.arrow
 				a(href="https://www.archlinuxjp.org/feeds/news/", title="Arch ニュース RSS フィード").rss-icon
 					img(src="./images/rss.png", alt="RSS フィード", width="16", height="16")
+				- var i = 0; news.forEach(function(article){
+					h4
+						a(href="/news/" + article.url +"/", title="全文を読む: " + article.headline)= article.headline
+					p.timestamp= article.created
+					div.article-content !{body[i]}
+				- ++i });
 				h3
 					a(href="https://www.archlinuxjp.org/news/", title="ニュースアーカイブを閲覧") 昔のニュース
 					span.arrow

@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/news/dropping-plasma-4', article);
+app.use('/news/:news([0-9a-zA-Z\-]+)', article);
 
 app.use('/about', simple);
 app.use('/svn', simple);
