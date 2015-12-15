@@ -1,0 +1,11 @@
+<p>Xorg 1.18.0 が [testing] に入りました。以下の変更がされています:</p>
+<ul>
+<li>
+<p><code>xf86-input-evdev</code> と <code>xf86-input-libinput</code> を選択できるようになりました。</p>
+</li>
+<li>
+<p>xorg-1.18.0 が [extra] に移動されるとき <code>xf86-input-aiptek</code> は更新されず削除されます。</p>
+</li>
+</ul>
+<p>注意事項:</p>
+<p>NVIDIA ドライバーはまだ 1.18.0 に対応していません。pacman コマンドに --ignoregroup=xorg を追加するか pacman.conf の IgnoreGroup に 'xorg' を追加することでアップグレードをブロックできます。</p>

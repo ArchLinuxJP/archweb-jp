@@ -1,0 +1,10 @@
+<p>GCC 5.x から libstdc++ で<a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html">デュアル ABI</a> をサポートするようになったため新しい ABI に切り替えるようにしました。</p>
+<p>古い C++ ABI も依然として使用できますが、リポジトリに含まれていないパッケージは全て新しい ABI を使うようにビルドすることを推奨します。新しい ABI でビルドされた他のライブラリにリンクしている場合は特に重要です。以下のシェルスクリプトを使うことでリビルドするべきパッケージのリストを取得できます:</p>
+<pre><code>#!/bin/bash
+
+while read pkg; do
+    mapfile -t files &lt; &lt;(pacman -Qlq $pkg | grep -v /$)
+    grep -Fq libstdc++.so.6 "${files[@]}" 2&gt;/dev/null &amp;&amp; echo $pkg
+done &lt; &lt;(pacman -Qmq)
+</code></pre>
+<p>(オリジナルのアナウンス文章は Allan McRae によって書かれました [<a href="https://lists.archlinux.org/pipermail/arch-dev-public/2015-December/027597.html">リンク</a>])</p>

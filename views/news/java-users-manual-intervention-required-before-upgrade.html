@@ -1,0 +1,14 @@
+<p>ファイルが衝突する問題を迂回するために、<code>java-common</code> パッケージがインストールされている場合、手動で操作する必要があります。以下のコマンドでこのパッケージがインストールされているか確認できます:</p>
+<pre><code>$ pacman -Q java-common
+java-common ...
+</code></pre>
+<p>以上のように表示された場合、アップグレードする<strong>前</strong>に以下を実行してください:</p>
+<pre><code># archlinux-java unset
+# pacman -Sydd --asdeps java-runtime-common
+:: java-runtime-common and java-common are in conflict. Remove java-common? [y/N] y
+# archlinux-java fix
+</code></pre>
+<p>その後アップグレードをすることができます:</p>
+<pre><code># pacman -Su
+</code></pre>
+<p>新しいパッケージの <a href="https://www.archlinux.org/packages/extra/any/java-common/"><code>java-runtime-common</code></a> は以前のパッケージである <code>java-common</code> がしていたように <code>JAVA_HOME</code> を使用したり強制的にサポートすることは<strong>ない</strong>ので注意してください。詳細は <a href="https://archlinuxjp.kusakata.com/wiki/Java">Java の wiki ページ</a>を参照。</p>

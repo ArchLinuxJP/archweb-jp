@@ -1,0 +1,4 @@
+<p>すぐに MariaDB の新しいメジャーリリースが [extra] に移行します。提供される機能を MySQL とはっきり区別するためにバージョンに変更が加わりました。今後は、公式リポジトリにある MySQL 実装を簡単に変更することはできなくなります。</p>
+<p>MariaDB 10.0 では大きな変更が入ったため、アップグレードする前にテーブルをダンプして、アップグレード後にダンプファイルをリロードすることが (必須ではありませんが) 推奨されています。新しいバージョンにアップグレードした後は、忘れずに <code>mysqld.service</code> を再起動してから <code>mysql_upgrade</code> を実行しデータベースにエラーが出てないか確認して下さい。</p>
+<p>また、何度もビルドが失敗するため TokuDB ストレージエンジンは無効化されました。ご不便をおかけして申し訳ありません。<strong>TokuDB は MariaDB 10.0.12-2 からまた利用できるようになりました。</strong></p>
+<p>アップグレードの手順と変更について詳しい情報は、<a href="https://mariadb.com/kb/en/what-is-mariadb-100/">MariaDB Knowledge Base</a> や <a href="https://dev.mysql.com/doc/refman/5.6/en/upgrading.html">MySQL Reference Manual</a> を参照してください。Akonadi を使っている場合、フォーラムに<a href="https://bbs.archlinux.org/viewtopic.php?pid=1435932">詳しいハウツー</a>が載っています。</p>

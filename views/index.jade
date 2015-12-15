@@ -15,16 +15,21 @@ block content
 					span.arrow
 				a(href="https://www.archlinuxjp.org/feeds/news/", title="Arch ニュース RSS フィード").rss-icon
 					img(src="./images/rss.png", alt="RSS フィード", width="16", height="16")
-				- var i = 0; news.forEach(function(article){
+				- for(var i = 0;i < 5;++i){
 					h4
-						a(href="/news/" + article.url +"/", title="全文を読む: " + article.headline)= article.headline
-					p.timestamp= article.created
+						a(href="/news/" + news[i].url +"/", title="全文を読む: " + news[i].headline)= news[i].headline
+					p.timestamp= news[i].created
 					div.article-content !{body[i]}
-				- ++i });
+				- }
 				h3
 					a(href="https://www.archlinuxjp.org/news/", title="ニュースアーカイブを閲覧") 昔のニュース
 					span.arrow
-				dl.newslist
+			dl.newslist
+				- for(var i = 5;i < 15;++i){
+					dt= news[i].created
+					dd
+						a(href="/news/" + news[i].url +"/", title="全文を読む: " + news[i].headline)= news[i].headline
+				- }
 	div#content-right
 		div#pkgsearch.widget
 			form(method="get", action="https://www.archlinuxjp.org/packages/")#pkgsearch-form

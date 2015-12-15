@@ -1,0 +1,7 @@
+<p>ローカルの CA 証明書の扱い方が変更されました。ローカルで信頼した証明書を追加していた場合:</p>
+<ol>
+<li>/usr/local/share/ca-certificates/*.crt を /etc/ca-certificates/trust-source/anchors/ に移動してください</li>
+<li>手動で追加した /etc/ssl/certs/*.pem ファイルも全て移動して名前を *.crt に変更してください</li>
+<li><code>update-ca-certificates</code> の代わりに、<code>trust extract-compat</code> を実行してください</li>
+</ol>
+<p><code>man 8 update-ca-trust</code> や <code>trust --help</code> も参照。</p>

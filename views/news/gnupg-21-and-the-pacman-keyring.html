@@ -1,0 +1,11 @@
+<p>gnupg-2.1 にアップグレードすると pacman のキーリングが新しい上流のフォーマットに移植されますが、その過程でローカルのマスターキーで他のキーに署名できなくなります。これは pacman のキーリングをカスタマイズする場合にのみ問題となりますが、それでも、新しいキーリングを生成することで修正することを全てのユーザーに推奨します。</p>
+<p>加えて、システムエントロピーを生成するデーモンである、haveged をインストールすることを推奨します。haveged は gnupg などの暗号プログラムに不可欠な操作 (新しいキーリングの生成など) を高速化します。</p>
+<p>上記を全て行うには、以下を root で実行:</p>
+<pre><code>pacman -Syu haveged
+systemctl start haveged
+systemctl enable haveged
+
+rm -fr /etc/pacman.d/gnupg
+pacman-key --init
+pacman-key --populate archlinux
+</code></pre>

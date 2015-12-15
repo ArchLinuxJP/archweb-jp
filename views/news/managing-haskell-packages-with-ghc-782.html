@@ -1,0 +1,20 @@
+<p>このリリースでは以下の変更がされています:</p>
+<ol>
+<li>
+<p>ghc や cabal-install 以外のパッケージは全て [community] に移動されました。cabal-install のためにこれらのパッケージを使っていなかったため、haskell のコアなライブラリのサポートが良くなるでしょう。</p>
+</li>
+<li>
+<p>パッケージをインストールするのにユーザーが使える方法は以下の通りです:</p>
+<ol>
+<li>
+<p>cabal-install を使って haskell パッケージをインストールする。hackage にある全ての haskell パッケージにアクセスすることができます。問題としては pacman の管理下にないパッケージを使うことになります。cabal-install 1.18 で新しいサンドボックスが導入されたため、もし haskell のアプリケーションを開発しているのであれば、cabal-install が一番良い選択肢でしょう。</p>
+</li>
+<li>
+<p>pacman を使って haskell パッケージをインストールする。archlinux で動作するとされている限られた数の hackage パッケージにアクセスすることができます。haskell で開発をしていない場合は問題ないと思われます。</p>
+</li>
+<li>
+<p>非公式リポジトリの Arch Haskell を使う。このリポジトリに関する情報はこちらの<a href="https://github.com/archhaskell/habs/blob/master/README.md">ページ</a>で見ることができます。</p>
+</li>
+</ol>
+</li>
+</ol>

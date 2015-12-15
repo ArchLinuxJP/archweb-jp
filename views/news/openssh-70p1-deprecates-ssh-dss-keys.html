@@ -1,0 +1,5 @@
+<p>最近になって脆弱性が発見されたため、新しくリリースされた <code>openssh-7.0p1</code> では <code>ssh-dss</code> タイプの鍵 (DSA 鍵) が無効になっています。詳しくは<a href="http://lists.mindrot.org/pipermail/openssh-unix-announce/2015-August/000122.html">上流のアナウンス</a>を参照してください。</p>
+<p>リモートホストで <code>sshd</code> をアップデートして再起動する前に、DSA 鍵を使ってリモートホストに接続していないことを確認して下さい。アカウントにアクセス権を付与している DSA 鍵を確認するには、次を実行:</p>
+<pre><code>grep ssh-dss ~/.ssh/authorized_keys</code></pre>
+<p>DSA 鍵が存在する場合、他のタイプの鍵のペアや、パスワード認証など、他の方法でログインできることを確認して下さい。</p>
+<p>また、<code>ssh-dss</code> タイプのホスト鍵も無効になるため、アップデートしたサーバーに接続する際に (別のタイプのホスト鍵の) 新しいフィンガープリントを確認する必要があります。</p>

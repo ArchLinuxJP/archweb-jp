@@ -7,12 +7,12 @@ var db = new sqlite3.Database("views/news/index.sqlite3");
 /* GET home page. */
 router.get("/", function(req, res, next) {
 	db.serialize(function() {
-		db.all("SELECT * FROM news", function(err, rows){
+		db.all("SELECT * FROM news LIMIT 15", function(err, rows){
 			if (!err) {
 				var article = new Array();
-				rows.forEach(function(news){
-					article.push(fs.readFileSync("views/news/" + news.url + ".html", "utf-8"));
-				});
+				for(var i = 0;i < 5;++i){
+					article.push(fs.readFileSync("views/news/" + rows[i].url + ".html", "utf-8"));
+				}
 				res.render("index", {
 					title: "Arch Linux JP Project",
 					news: rows,
