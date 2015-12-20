@@ -628,6 +628,14 @@ div.widget {
     margin: 0.75em;
 }
 
+/* mobile img */
+@media screen and (max-width: 600px) {
+	#artwork img {
+		max-width: 90%;
+		height: auto;
+	}
+}
+
 /* news: article list */
 .news-nav {
     float: right;
