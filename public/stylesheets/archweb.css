@@ -630,7 +630,7 @@ div.widget {
 
 /* mobile img */
 @media screen and (max-width: 600px) {
-	img {
+	#artwork img {
 		max-width: 90%;
 		height: auto;
 	}
