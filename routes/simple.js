@@ -11,6 +11,9 @@ router.get("/", function(req, res, next) {
 		case "svn":
 			var stitle = "SVN リポジトリ";
 			break;
+		case "donate":
+			var stitle = "Arch Linux への寄付";
+			break;
 	}
 	res.render(url, {
 		title: stitle,

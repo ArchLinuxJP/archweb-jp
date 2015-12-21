@@ -30,6 +30,7 @@ app.use('/news/:news([0-9a-zA-Z\-]+)', article);
 app.use('/download', download);
 
 app.use('/about', simple);
+app.use('/donate', simple);
 app.use('/svn', simple);
 
 // catch 404 and forward to error handler
