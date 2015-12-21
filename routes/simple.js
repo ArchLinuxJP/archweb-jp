@@ -14,6 +14,9 @@ router.get("/", function(req, res, next) {
 		case "donate":
 			var stitle = "Arch Linux への寄付";
 			break;
+		case "people":
+			var stitle = "日本 Arch Linux ユーザー会";
+			break;
 	}
 	res.render(url, {
 		title: stitle,
