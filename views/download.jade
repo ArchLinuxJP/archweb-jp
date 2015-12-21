@@ -6,9 +6,9 @@ block content
 		h3 リリース情報
 		p このイメージを ISO ファイルとしてマウントして CD に書き込んだり、`dd` などのユーティリティを使って USB スティックに直接書き込むことができます。このイメージは新しくインストールするためのものです。既存の Arch Linux 環境は `pacman -Syu` を使うことでいつでも更新できます。
 		ul
-			li <strong>最新リリース:</strong> 2015.12.01
-			li <strong>含まれているカーネル:</strong> 4.2.5
-			li <strong>ISO 容量:</strong> 663.0 MB
+			li <strong>最新リリース:</strong> !{isoinfo.date}
+			li <strong>含まれているカーネル:</strong> !{isoinfo.kernel}
+			li <strong>ISO 容量:</strong> !{isoinfo.size}
 			li
 				a(href="https://wiki.archlinuxjp.org/index.php/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89") インストールガイド
 			li
@@ -26,22 +26,22 @@ block content
 		p 最新リリースのファイル整合性チェックサムは次のとおりです:
 		ul
 			li
-				a(href="https://www.archlinux.org/iso/2015.12.01/archlinux-2015.12.01-dual.iso.sig", title="PGP 署名") PGP 署名
-			li <strong>MD5:</strong> bbcd48b73851ae8f31c08f83a86b8ef2
-			li <strong>SHA1:</strong> 7de3315b1384e5d2769eca13453e87a8d303050e
+				a(href="https://www.archlinux.org/iso/" + isoinfo.date + "/archlinux-" + isoinfo.date + "-dual.iso.sig", title="PGP 署名") PGP 署名
+			li <strong>MD5:</strong> !{isoinfo.md5hash}
+			li <strong>SHA1:</strong> !{isoinfo.sha1hash}
 		div#download-mirrors
 			h5 <img src="/images/japan.png"> 日本のサーバー
 			ul
 				li
-					a(href="http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/iso/2015.12.01/", title="http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/ からダウンロード") jaist.ac.jp
+					a(href="http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/iso/" + isoinfo.date + "/", title="http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/ からダウンロード") jaist.ac.jp
 				li
-					a(href="http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/iso/2015.12.01/", title="http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/ からダウンロード") ftp.tsukuba.wide.ad.jp
+					a(href="http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/iso/" + isoinfo.date + "/", title="http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/ からダウンロード") ftp.tsukuba.wide.ad.jp
 		p Arch Linux の公式ミラーになりたい場合は<a href="https://wiki.archlinux.org/index.php/DeveloperWiki:NewMirrors">こちら</a>に記載されている指示に従って下さい。
 		h3 BitTorrent でダウンロード
 		p 可能なかぎり、ダウンロードが完了した後もクライアントは開き続けて下さい。他の人へシードバックすることができます。<em>ダウンロード速度を最大限出すためにウェブシードに対応しているクライアントが推奨されます。</em>
 		ul
-			li <a href="magnet:?xt=urn:btih:09e37f73e51f403bb543517f0d0a2e1283d61eb0&amp;dn=archlinux-2015.12.01-dual.iso&amp;tr=udp://tracker.archlinux.org:6969&amp;tr=http://tracker.archlinux.org:6969/announce" title="マグネットリンク">2015.12.01 のマグネットリンク <img width="12" height="12" src="https://www.archlinuxjp.org/img/magnet.png" alt=""/></a>
-			li <a href="https://www.archlinux.org/releng/releases/2015.12.01/torrent/" title="torrent のダウンロード">2015.12.01 の Torrent <img width="12" height="12" src="https://www.archlinuxjp.org/img/download.png" alt=""/></a>
+			li <a href="!{isoinfo.magnet}" title="マグネットリンク">!{isoinfo.date} のマグネットリンク <img width="12" height="12" src="https://www.archlinuxjp.org/img/magnet.png" alt=""/></a>
+			li <a href="https://www.archlinux.org/releng/releases/!{isoinfo.date}/torrent/" title="torrent のダウンロード">!{isoinfo.date} の Torrent <img width="12" height="12" src="https://www.archlinuxjp.org/img/download.png" alt=""/></a>
 		h3 Netboot
 		p 有線接続が使える場合は、ネットワークを介して直接、最新リリースを起動することができます。
 		ul
