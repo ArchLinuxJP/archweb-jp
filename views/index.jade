@@ -8,12 +8,12 @@ block content
 				p <strong>Arch Linux</strong> のウェブサイトにようこそ。Keep It Simple を標榜する、軽量で柔軟性に優れた Linux® ディストリビューションです。
 				p 公式パッケージは i686 と x86-64 アーキテクチャに最適化されています。さらに公式パッケージを補足するものとして<a href="https://aur.archlinux.org/" title="Arch User Repository (AUR)">コミュニティによって運営されているパッケージリポジトリ</a>があり、日々、その質量ともに成長しています。
 				p Arch Linux の強固なコミュニティは多様かつ助けになり、広範なスキルセットと、それによって Arch を利用していることに誇りを持っています。<a href="https://bbs.archlinuxjp.org/" title="Arch フォーラム">フォーラム</a>や<a href="https://mailman.archlinux.org/mailman/listinfo/" title="Arch メーリングリスト">メーリングリスト</a>を見て参加してみて下さい。<a href="https://archlinuxjp-slack.herokuapp.com/">Slack</a> で Arch ユーザーと会話することもできます (誰でも自由に参加できます)。また、Arch について知識を深めたいと考えたのであれば、<a href="https://wiki.archlinuxjp.org/" title="ArchWiki">ArchWiki</a> も覗いてみましょう。
-				p.readmore <a href="https://www.archlinuxjp.org/about/" title="Arch Linux のことを詳しく学ぶ">もっと詳しく...</a>
+				p.readmore <a href="/about/" title="Arch Linux のことを詳しく学ぶ">もっと詳しく...</a>
 			div#news
 				h3
-					a(href="https://www.archlinuxjp.org/news/", title="ニュースアーカイブを閲覧") 最新ニュース
+					a(href="/news/", title="ニュースアーカイブを閲覧") 最新ニュース
 					span.arrow
-				a(href="https://www.archlinuxjp.org/feeds/news/", title="Arch ニュース RSS フィード").rss-icon
+				a(href="/feeds/news/", title="Arch ニュース RSS フィード").rss-icon
 					img(src="./images/rss.png", alt="RSS フィード", width="16", height="16")
 				- for(var i = 0;i < 5;++i){
 					h4
@@ -22,7 +22,7 @@ block content
 					div.article-content !{body[i]}
 				- }
 				h3
-					a(href="https://www.archlinuxjp.org/news/", title="ニュースアーカイブを閲覧") 昔のニュース
+					a(href="/news/", title="ニュースアーカイブを閲覧") 昔のニュース
 					span.arrow
 			dl.newslist
 				- for(var i = 5;i < 15;++i){
@@ -32,14 +32,14 @@ block content
 				- }
 	div#content-right
 		div#pkgsearch.widget
-			form(method="get", action="https://www.archlinuxjp.org/packages/")#pkgsearch-form
+			form(method="get", action="/packages/")#pkgsearch-form
 				fieldset
 					label(for="pkgsearch-field") パッケージ検索 :
 					input(type="text", name="q", size="18", maxlength="200")#pkgsearch-field
 		div#pkg-updates.widget.box
 			h3 最近のアップデート
-				span.more  (<a href="https://www.archlinuxjp.org/packages/?sort=-last_update" title="最新パッケージを全て閲覧">もっと見る</a>)
-			a(href="https://www.archlinuxjp.org/feeds/packages/", title="Arch パッケージアップデート RSS フィード").rss-icon
+				span.more  (<a href="/packages/?sort=-last_update" title="最新パッケージを全て閲覧">もっと見る</a>)
+			a(href="/feeds/packages/", title="Arch パッケージアップデート RSS フィード").rss-icon
 				img(width="16", height="16", src="/images/rss.png", alt="RSS フィード")
 			table
 		div#nav-sidebar.widget

@@ -33,6 +33,7 @@ app.use('/about', simple);
 app.use('/donate', simple);
 app.use('/svn', simple);
 app.use('/people', simple);
+app.use('/art', simple);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

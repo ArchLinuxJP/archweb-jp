@@ -7,19 +7,28 @@ router.get("/", function(req, res, next) {
 	switch(url) {
 		case "about":
 			var stitle = "Arch Linux について";
+			var id = "intro";
 			break;
 		case "svn":
 			var stitle = "SVN リポジトリ";
+			var id = "svn";
 			break;
 		case "donate":
-			var stitle = "Arch Linux への寄付";
+			var stitle = "寄付";
+			var id = "donations";
 			break;
 		case "people":
 			var stitle = "日本 Arch Linux ユーザー会";
+			var id = "dev-tu-profiles";
+			break;
+		case "art":
+			var stitle = "ロゴとアートワーク";
+			var id = "artwork";
 			break;
 	}
 	res.render(url, {
 		title: stitle,
+		style: id,
 		selected: "anb-home"
 	});
 });
