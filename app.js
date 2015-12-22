@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var article = require('./routes/article');
+var news = require('./routes/news');
 var download = require('./routes/download');
 var simple = require('./routes/simple');
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/news/:news([0-9a-zA-Z\-]+)', article);
+app.use('/news', news);
 
 app.use('/download', download);
 
