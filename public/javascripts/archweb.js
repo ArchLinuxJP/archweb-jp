@@ -31,24 +31,20 @@ function tablewikim() {
 	}
 }
 
+// mobile navbar
+$("archnavbaricon").onclick = function() {
+	$("archnavbarlogo").style.display = "none";
+	$("archnavbaricon").style.cssText = "display:none !important;";
+	$("archnavbar").style.cssText = "margin-left:0 !important;overflow:auto !important;white-space:nowrap !important;";
+	$("archnavbarmenu").style.display="block";
+}
+
 window.onload = function() {
 	if (
 		navigator.userAgent.indexOf('iPhone') > 0 ||
 		navigator.userAgent.indexOf('iPod') > 0 ||
 		(navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('Mobile') > 0)
-	) {
-		var obj = document.createElement('div');
-		obj.id = "archnavbaricon";
-		obj.onclick = function() {
-			$("archnavbarlogo").style.display = "none";
-			$("archnavbaricon").style.cssText = "display:none !important;";
-			$("archnavbar").style.cssText = "margin-left:0 !important;overflow:auto !important;white-space:nowrap !important;";
-			$("archnavbarmenu").style.display="";
-		};
-		obj.innerHTML = '<img src="https://www.archlinuxjp.org/img/menu.png">';
-		$("archnavbar").insertBefore(obj, $("archnavbarmenu"));
-		$("archnavbarmenu").style.display = "none";
-		
+	) {		
 		if ($("column-one")){
 			var obj = document.createElement('div');
 			obj.id = "wikimenuicon";

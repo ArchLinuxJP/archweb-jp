@@ -1,10 +1,14 @@
 /* navbar */
 #archnavbaricon {
     display: inline !important;
-    float: right !important;
     margin: 0 !important;
     padding: 0 !important;
     line-height: 45px !important;
+    float: right;
+}
+
+#archnavbarmenu {
+    display: none;
 }
 
 #archnavbarlist {
@@ -48,25 +52,16 @@ body {
 }
 
 /* home: news */
-#news div p {
-    word-wrap: break-word;
-}
-
-#news div ul {
+#news div p, #news div ul {
     word-wrap: break-word;
 }
 
 /* pkglist: results navigation */
 .pkglist-stats {
-    padding: 0 .65em;
+    padding: 0 0.65em;
 }
 
-#pkglist-results {
-    overflow: auto;
-    padding: 0.65em 0;
-}
-
-#exact-matches {
+#pkglist-results, #exact-matches {
     overflow: auto;
     padding: 0.65em 0;
 }
