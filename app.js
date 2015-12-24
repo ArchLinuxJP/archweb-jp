@@ -41,6 +41,7 @@ app.use('/art', simple);
 app.use(function(req, res, next) {
 	var err = new Error('Not Found');
 	err.status = 404;
+	err.stack = "申し訳ありません。あなたがリクエストしたページは存在しません。";
 	next(err);
 });
 
