@@ -6,7 +6,7 @@ var db = new sqlite3.Database("views/news/index.sqlite3");
 /* GET home page. */
 router.get("/", function(req, res, next) {
 	db.serialize(function() {
-		db.all("SELECT * FROM news LIMIT 50", function(err, rows){
+		db.all("SELECT *, (SELECT COUNT(url) FROM news) AS count FROM news LIMIT 50", function(err, rows){
 			if (!err) {
 				res.render("news", {
 					title: "ニュース",
