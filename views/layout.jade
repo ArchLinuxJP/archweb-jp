@@ -15,9 +15,16 @@ html(lang="ja")
 		link(rel="apple-touch-icon", sizes="144x144", href="/images/apple-touch-icon-144x144.png")
 	body
 		div#archnavbar(class=selected)
+			- var dt = new Date(); dt.setTime(dt.getTime() + 32400000);
+			- if(dt.getMonth() == 11 && dt.getDate() > 15){
+			div#archnavbarlogo.xmas
+				h1
+					a(href="/", title="メリークリスマス！") Arch Linux
+			- }else{
 			div#archnavbarlogo
 				h1
 					a(href="/", title="メインページに戻る") Arch Linux
+			- }
 			div#archnavbaricon
 				img(src="https://www.archlinuxjp.org/img/menu.png")
 			div#archnavbarmenu
@@ -40,7 +47,7 @@ html(lang="ja")
 			div#archdev-navbar
 			block content
 			div#footer
-				- var dt = new Date(); dt.setTime(dt.getTime() + 32400000); var year = dt.getFullYear();
+				- var year = dt.getFullYear();
 				p Copyright &copy; 2014-!{year} <a href="https://github.com/ArchLinuxJP">Arch Linux JP Project</a>.
 				p The Arch Linux name and logo are recognized <a href="https://wiki.archlinux.org/index.php/DeveloperWiki:TrademarkPolicy" title="Arch Linux Trademark Policy">trademarks</a>. Some rights reserved.
 				p The registered trademark Linux® is used pursuant to a sublicense from LMI, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.

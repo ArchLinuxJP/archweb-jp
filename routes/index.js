@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var sqlite3 = require("sqlite3").verbose();
 var fs = require('fs');
-var db = new sqlite3.Database("views/news/index.sqlite3");
+var db = new sqlite3.Database("admin/index.sqlite3");
 
 /* GET home page. */
 router.get("/", function(req, res, next) {

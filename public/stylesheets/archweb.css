@@ -29,6 +29,10 @@
     background: url('../images/archlogo.png') no-repeat;
 }
 
+#archnavbarlogo.xmas {
+    background: url('../images/archxmas.png') no-repeat;
+}
+
 @media only screen and (min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 1.5) {
     #archnavbarlogo {
         background-image: url('../images/archlogo.svg');
