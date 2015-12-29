@@ -15,21 +15,12 @@ block content
 					span.arrow
 				a(href="/feeds/news/", title="Arch ニュース RSS フィード").rss-icon
 					img(src="./images/rss.png", alt="RSS フィード", width="16", height="16")
-				- for(var i = 0;i < 5;++i){
-					h4
-						a(href="/news/" + news[i].url +"/", title="全文を読む: " + news[i].headline)= news[i].headline
-					p.timestamp= news[i].created
-					div.article-content !{body[i]}
-				- }
+				include ../admin/newnews
 				h3
 					a(href="/news/", title="ニュースアーカイブを閲覧") 昔のニュース
 					span.arrow
 			dl.newslist
-				- for(var i = 5;i < 15;++i){
-					dt= news[i].created
-					dd
-						a(href="/news/" + news[i].url +"/", title="全文を読む: " + news[i].headline)= news[i].headline
-				- }
+				include ../admin/oldnews
 	div#content-right
 		div#pkgsearch.widget
 			form(method="get", action="/packages/")#pkgsearch-form
@@ -42,6 +33,7 @@ block content
 			a(href="/feeds/packages/", title="Arch パッケージアップデート RSS フィード").rss-icon
 				img(width="16", height="16", src="/images/rss.png", alt="RSS フィード")
 			table
+				include ../admin/newpkg
 		div#nav-sidebar.widget
 			h4 ドキュメント
 			ul

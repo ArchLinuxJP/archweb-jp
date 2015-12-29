@@ -1,0 +1,69 @@
+extends layout
+
+block content
+	div#pkglist-search.box.filter-criteria
+		h2 パッケージ検索
+		form(method="get", action="/packages/")#pkg-search
+			p
+				input(name="sort", type="hidden", value="")#id_sort
+			fieldset
+				legend 条件を入力
+				div
+					label(for="id_arch", title="特定の CPU アーキテクチャを検索") アーキテクチャ
+					select(multiple="multiple", name="arch[]")#id_arch
+						option(value="any") any
+						option(value="i686") i686
+						option(value="x86_64") x86_64
+				div
+					label(for="id_repo", title="特定のリポジトリを検索") リポジトリ
+					select(multiple="multiple", name="repo[]")#id_repo
+						option(value="Community") Community
+						option(value="Community-Testing") Community-Testing
+						option(value="Core") Core
+						option(value="Extra") Extra
+						option(value="Multilib") Multilib
+						option(value="Multilib-Testing") Multilib-Testing
+						option(value="Testing") Testing
+				div
+					label(for="id_q", title="検索したいキーワードを入力") キーワード
+					input(name="q", size="40", type="text")#id_q
+				div
+					label &nbsp;
+					input(title="この条件でパッケージを検索", type="submit", value="検索")
+	div#pkglist-results.box
+		div.pkglist-stats
+			p マッチするパッケージ: 13519。ページ: 1/136。
+			div.pkglist-nav
+				span.prev &lt; 前 
+				span.next 次 &gt; 
+		form#pkglist-results-form
+			table.results
+				thead
+					tr
+						th
+							a(href="/packages/?sort=arch", title="アーキテクチャでパッケージをソート") アーキテクチャ
+						th
+							a(href="/packages/?sort=arch", title="リポジトリでパッケージをソート") リポジトリ
+						th
+							a(href="/packages/?sort=arch", title="パッケージ名でパッケージをソート") 名前
+						th バージョン
+						th 説明
+						th
+							a(href="/packages/?sort=-last_update", title="最終更新日でパッケージをソート") 最終更新
+				tbody
+					tr.odd
+						td i686
+						td Community
+						td
+							a(href="/packages/community/i686/0ad/", title="0ad パッケージの情報を表示") 0ad
+						td a19-3
+						td.wrap Cross-platform, 3D and historically-based real-time strategy game
+						td 2015-12-22
+		div.pkglist-stats
+			p マッチするパッケージ: 13519。ページ: 1/136。
+			div.pkglist-nav
+				span.prev &lt; 前 
+				span.next 次 &gt; 
+	div#pkglist-about.box
+		p 探しているパッケージが見つからない場合は、検索条件を変えてみたり、<a href="https://aur.archlinux.org/">AUR</a> を検索してください。
+		p こちらは Arch Linux パッケージデータベースです。公式でサポートされているリポジトリに含まれているパッケージに関する情報を見ることができます。

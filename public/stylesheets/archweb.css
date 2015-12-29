@@ -38,6 +38,11 @@
         background-image: url('../images/archlogo.svg');
         background-size: 100%;
     }
+
+    #archnavbarlogo.xmas {
+        background-image: url('../images/archxmas.svg');
+        background-size: 100%;
+    }
 }
 
 /* move the heading text offscreen */

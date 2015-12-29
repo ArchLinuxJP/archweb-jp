@@ -7,16 +7,22 @@ html(lang="ja")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		link(rel="stylesheet", href="/stylesheets/archweb.css", media="screen, projection")
 		link(rel="stylesheet", href="/stylesheets/mobile.css", media="only screen and (max-width:790px)")
+		- var dt = new Date(); dt.setTime(dt.getTime() + 32400000);
+		- if(dt.getMonth() == 11 && dt.getDate() > 15){ var xmas = true; }else{ var xmas = false; }
+		- if(xmas){
+		link(rel="icon", type="image/x-icon", href="/images/xmas.ico")
+		link(rel="shortcut icon", type="image/x-icon", href="/images/xmas.ico")
+		- }else{
 		link(rel="icon", type="image/x-icon", href="/images/favicon.ico")
 		link(rel="shortcut icon", type="image/x-icon", href="/images/favicon.ico")
+		- }
 		link(rel="apple-touch-icon", href="/images/apple-touch-icon-57x57.png")
 		link(rel="apple-touch-icon", sizes="72x72", href="/images/apple-touch-icon-72x72.png")
 		link(rel="apple-touch-icon", sizes="114x114", href="/images/apple-touch-icon-114x114.png")
 		link(rel="apple-touch-icon", sizes="144x144", href="/images/apple-touch-icon-144x144.png")
 	body
 		div#archnavbar(class=selected)
-			- var dt = new Date(); dt.setTime(dt.getTime() + 32400000);
-			- if(dt.getMonth() == 11 && dt.getDate() > 15){
+			- if(xmas){
 			div#archnavbarlogo.xmas
 				h1
 					a(href="/", title="メリークリスマス！") Arch Linux
