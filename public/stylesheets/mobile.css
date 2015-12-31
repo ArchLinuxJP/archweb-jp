@@ -71,3 +71,8 @@ body {
     max-width: 90%;
     height: auto;
 }
+
+tbody {
+    word-break: break-all;
+    /* white-space: inherit; */
+}
