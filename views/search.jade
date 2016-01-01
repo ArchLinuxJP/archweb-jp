@@ -11,19 +11,59 @@ block content
 				div
 					label(for="id_arch", title="特定の CPU アーキテクチャを検索") アーキテクチャ
 					select(multiple="multiple", name="arch")#id_arch
+						- if(criteria.match(/arch=any/)){
+						option(value="any", selected) any
+						- }else{
 						option(value="any") any
+						- }
+						- if(criteria.match(/arch=i686/)){
+						option(value="i686", selected) i686
+						- }else{
 						option(value="i686") i686
+						- }
+						- if(criteria.match(/arch=x86_64/)){
+						option(value="x86_64", selected) x86_64
+						- }else{
 						option(value="x86_64") x86_64
+						- }
 				div
 					label(for="id_repo", title="特定のリポジトリを検索") リポジトリ
 					select(multiple="multiple", name="repo")#id_repo
+						- if(criteria.match(/repo=community&/)){
+						option(value="community", selected) community
+						- }else{
 						option(value="community") community
+						- }
+						- if(criteria.match(/repo=community-testing/)){
+						option(value="community-testing", selected) community-testing
+						- }else{
 						option(value="community-testing") community-testing
+						- }
+						- if(criteria.match(/repo=core/)){
+						option(value="core", selected) core
+						- }else{
 						option(value="core") core
+						- }
+						- if(criteria.match(/repo=extra/)){
+						option(value="extra", selected) extra
+						- }else{
 						option(value="extra") extra
+						- }
+						- if(criteria.match(/repo=multilib&/)){
+						option(value="multilib", selected) multilib
+						- }else{
 						option(value="multilib") multilib
+						- }
+						- if(criteria.match(/repo=multilib-testing/)){
+						option(value="multilib-testing", selected) multilib-testing
+						- }else{
 						option(value="multilib-testing") multilib-testing
+						- }
+						- if(criteria.match(/repo=testing/)){
+						option(value="testing", selected) testing
+						- }else{
 						option(value="testing") testing
+						- }
 				div
 					label(for="id_q", title="検索したいキーワードを入力") キーワード
 					input(name="q", size="40", type="text", value=q, pattern="^[0-9a-zA-Z\@\.\_\+\-]+$")#id_q
@@ -50,15 +90,15 @@ block content
 				thead
 					tr
 						th
-							a(href="/packages/?sort=" + ((sort == "arch")?"-arch":"arch"), title="アーキテクチャでパッケージをソート") アーキテクチャ
+							a(href="/packages/?sort=" + ((sort == "arch")?"-arch":"arch") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="アーキテクチャでパッケージをソート") アーキテクチャ
 						th
-							a(href="/packages/?sort=" + ((sort == "repo")?"-repo":"repo"), title="リポジトリでパッケージをソート") リポジトリ
+							a(href="/packages/?sort=" + ((sort == "repo")?"-repo":"repo") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="リポジトリでパッケージをソート") リポジトリ
 						th
-							a(href="/packages/?sort=" + ((sort == "pkgname")?"-pkgname":"pkgname"), title="パッケージ名でパッケージをソート") 名前
+							a(href="/packages/?sort=" + ((sort == "pkgname")?"-pkgname":"pkgname") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="パッケージ名でパッケージをソート") 名前
 						th バージョン
 						th 説明
 						th
-							a(href="/packages/?sort=" + ((sort == "-last_update")?"last_update":"-last_update"), title="最終更新日でパッケージをソート") 最終更新
+							a(href="/packages/?sort=" + ((sort == "-last_update")?"last_update":"-last_update") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="最終更新日でパッケージをソート") 最終更新
 				tbody
 					- if(package[0].count == 0){
 					tr.empty

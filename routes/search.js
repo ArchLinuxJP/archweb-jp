@@ -12,16 +12,17 @@ router.get("/", function(req, res, next) {
 			case "repo":
 			case "pkgname":
 			case "last_update":
-				order = "ORDER BY " + req.query.sort + " ASC";
+				order = " ORDER BY " + req.query.sort + " ASC";
 				break;
 			case "-arch":
 			case "-repo":
 			case "-pkgname":
 			case "-last_update":
-				order = "ORDER BY " + req.query.sort.substr(1) + " DESC";
+				order = " ORDER BY " + req.query.sort.substr(1) + " DESC";
 				break;
 			default:
-				order = "ORDER BY pkgname ASC";
+				order = " ORDER BY pkgname ASC";
+				break;
 		}
 		
 		// 検索条件
@@ -41,19 +42,103 @@ router.get("/", function(req, res, next) {
 		}else{
 			var q = "";
 		}
+		if(Array.isArray(req.query.arch)){
+			var arch = "";
+			for(var i = 0; i < req.query.arch.length; i++){
+				switch(req.query.arch[i]){
+					case "any":
+					case "i686":
+					case "x86_64":
+						if(arch != ""){
+							arch += " OR ";
+						}
+						arch += "arch = \"" + req.query.arch[i] + "\"";
+						break;
+				}
+			}
+			if(arch != ""){
+				if(where != ""){
+					where += " AND ( " + arch +" )";
+				}else{
+					where += " ( " + arch +" )";
+				}
+			}
+		}else if(req.query.arch != undefined){
+			switch(req.query.arch){
+				case "any":
+				case "i686":
+				case "x86_64":
+					if(where != ""){
+						where += " AND arch = \"" + req.query.arch + "\"";
+					}else{
+						where += " arch = \"" + req.query.arch + "\"";
+					}
+					break;
+			}
+		}
+		if(Array.isArray(req.query.repo)){
+			var repo = "";
+			for(var i = 0; i < req.query.repo.length; i++){
+				switch(req.query.repo[i]){
+					case "community":
+					case "community-testing":
+					case "core":
+					case "extra":
+					case "multilib":
+					case "multilib-testing":
+					case "testing":
+						if(repo != ""){
+							repo += " OR ";
+						}
+						repo += "repo = \"" + req.query.repo[i] + "\"";
+						break;
+				}
+			}
+			if(repo != ""){
+				if(where != ""){
+					where += " AND ( " + repo +" )";
+				}else{
+					where += " ( " + repo +" )";
+				}
+			}
+		}else if(req.query.repo != undefined){
+			switch(req.query.repo){
+				case "community":
+				case "community-testing":
+				case "core":
+				case "extra":
+				case "multilib":
+				case "multilib-testing":
+				case "testing":
+					if(where != ""){
+						where += " AND repo = \"" + req.query.repo + "\"";
+					}else{
+						where += " repo = \"" + req.query.repo + "\"";
+					}
+					break;
+			}
+		}
 		if(where != ""){
 			where = " WHERE" + where;
 		}
 		
 		// オフセット
-		var limit = "LIMIT 100";
+		var limit = " LIMIT 100";
 		var page = (req.query.page != undefined) ? parseInt(req.query.page) : 1;
 		if(page > 1){
-			limit = "LIMIT " + ((page - 1) * 100) + ", 100";
+			limit = " LIMIT " + ((page - 1) * 100) + ", 100";
 		}
 		
-		db.all("SELECT *, (SELECT COUNT(pkgname) FROM package" + where + ") AS count FROM package " + where + order + " " + limit, function(err, rows){			
+		db.all("SELECT arch, repo, pkgname, pkgver, pkgrel, pkgdesc, last_update, (SELECT COUNT(pkgname) FROM package" + where + ") AS count FROM package" + where + order + limit, function(err, rows){
 			if (!err) {
+				var criteria = "";
+				if(Object.keys(req.query).length > 0){
+					criteria = req.originalUrl.split("?").pop().replace(/page=[0-9]+/, "").replace(/\"/,"").replace(/\'/,"").replace(/\>/,"").replace(/\</,"");
+					if(criteria != "" && criteria[0] != "&"){
+						criteria = "&" + criteria;
+					}
+				}
+				
 				if(rows.length == 0){
 					res.render("search", {
 						title: "パッケージ検索",
@@ -63,7 +148,7 @@ router.get("/", function(req, res, next) {
 						total: 1,
 						nextp: 0,
 						prevp: 0,
-						criteria: "",
+						criteria: criteria,
 						q: q,
 						selected: "anb-packages"
 					});
@@ -71,15 +156,6 @@ router.get("/", function(req, res, next) {
 					var total = Math.ceil(rows[0].count * 0.01);
 					var nextp = (page < total) ? page + 1 : 0;
 					var prevp = (page > 1) ? page - 1 : 0;
-					var criteria = "";
-					if(Object.keys(req.query).length > 1){
-						criteria = req.originalUrl.split("?").pop().replace("page=" + page, "");
-						if(criteria[0] != "&"){
-							criteria = "&" + criteria;
-						}
-					}else if(Object.keys(req.query).length == 1 && req.query.page == undefined){
-						criteria = "&" + req.originalUrl.split("?").pop();
-					}
 					
 					res.render("search", {
 						title: "パッケージ検索",

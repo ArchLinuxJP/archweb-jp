@@ -2,67 +2,93 @@ extends layout
 
 block content
 	div#pkgdetails.box
-		h2 0ad a19-3
+		h2 !{package["pkgname"]} !{package["pkgver"]}-!{package["pkgrel"]}
 		div#detailslinks.listing
 			div#actionlist
 				h4 パッケージアクション
 				ul.small
-					li <a href="https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/0ad" title="0ad のソースファイル">ソースファイル</a> / <a href="https://projects.archlinux.org/svntogit/community.git/log/trunk?h=packages/0ad" title="0ad の変更履歴">変更履歴</a>
+					- var repo = (package["repo"] == "community" || package["repo"] == "community-testing") ? "community" : "packages";
+					li <a href="https://projects.archlinux.org/svntogit/!{repo}.git/tree/trunk?h=packages/#{package["pkgname"]}" title="#{package["pkgname"]} のソースファイル">ソースファイル</a> / <a href="https://projects.archlinux.org/svntogit/!{repo}.git/log/trunk?h=packages/#{package["pkgname"]}" title="#{package["pkgname"]} の変更履歴">変更履歴</a>
 					li
-						a(href="https://wiki.archlinuxjp.org/index.php?title=%E7%89%B9%E5%88%A5%3A%E6%A4%9C%E7%B4%A2&search=0ad", title="0ad について wiki で検索") ArchWiki を検索
-					li <a href="https://www.archlinux.org/packages/community/i686/0ad/flag/" title="0ad の out-of-date フラグを立てる">パッケージの Out-of-Date フラグを立てる</a> <a href="/static/flaghelp.html" title="パッケージのフラグ立てに関するヘルプ" onclick="return !window.open('/static/flaghelp.html','FlagHelp','height=350,width=450,location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=no');">(?)</a>
+						a(href="https://wiki.archlinuxjp.org/index.php?title=%E7%89%B9%E5%88%A5%3A%E6%A4%9C%E7%B4%A2&search=" + package["pkgname"], title=package["pkgname"] + " について wiki で検索") ArchWiki を検索
+					li <a href="https://www.archlinux.org/packages/#{package["repo"]}/#{package["arch"]}/#{package["pkgname"]}/flag/" title="#{package["pkgname"]} の out-of-date フラグを立てる">パッケージの Out-of-Date フラグを立てる</a> <a href="/static/flaghelp.html" title="パッケージのフラグ立てに関するヘルプ" onclick="return !window.open('/static/flaghelp.html','FlagHelp','height=350,width=450,location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=no');">(?)</a>
 					li
-						a(href="https://www.archlinux.org/packages/community/i686/0ad/download/", rel="nofollow", title="ミラーから 0ad をダウンロード") ミラーからダウンロード
+						a(href="https://www.archlinux.org/packages/" + package["repo"] + "/" + package["arch"] + "/" + package["pkgname"] + "/download/", rel="nofollow", title="ミラーから " + package["pkgname"] + " をダウンロード") ミラーからダウンロード
 		div(itemscope, itemtype="http://schema.org/SoftwareApplication")
-			meta(itemprop="name", content="0ad")
-			meta(itemprop="version", content="a19-3")
-			meta(itemprop="softwareVersion", content="a19-3")
-			meta(itemprop="fileSize", content="7807156")
-			meta(itemprop="dateCreated", content="2015-12-22")
-			meta(itemprop="datePublished", content="2015-12-22")
+			meta(itemprop="name", content=package["pkgname"])
+			meta(itemprop="version", content=package["pkgver"] + "-" + package["pkgrel"])
+			meta(itemprop="softwareVersion", content=package["pkgver"] + "-" + package["pkgrel"])
+			meta(itemprop="fileSize", content=package["csize"])
+			meta(itemprop="dateCreated", content=package["last_update"].split(" ")[0])
+			meta(itemprop="datePublished", content=package["last_update"].split(" ")[0])
 			meta(itemprop="operatingSystem", content="Arch Linux")
 			table#pkginfo
 				tr
 					th アーキテクチャ:
 					td
-						a(href="/packages/?arch[]=i686", title="i686 アーキテクチャのパッケージ") i686
+						a(href="/packages/?arch=" + package["arch"], title=package["arch"] + " アーキテクチャのパッケージ")= package["arch"]
 				tr
 					th リポジトリ:
 					td
-						a(href="/packages/?repo[]=Community", title="Community リポジトリ") Community
+						a(href="/packages/?repo=" + package["repo"], title=package["repo"] + " リポジトリ")= package["repo"]
+				- if(package["pkgbase"] != ""){
+				tr
+					th ベースパッケージ:
+					td= package["pkgbase"]
+				- }
 				tr
 					th 説明:
-					td(itemprop="description")#pkgdesc.wrap Cross-platform, 3D and historically-based real-time strategy game
+					td(itemprop="description")#pkgdesc.wrap= package["pkgdesc"]
 				tr
 					th 上流 URL:
 					td
-						a(itemprop="url", href="http://play0ad.com/", title="0ad のウェブサイト") http://play0ad.com/
+						a(itemprop="url", href=package["url"], title=package["pkgname"] + " のウェブサイト")= package["url"]
 				tr
 					th ライセンス:
-					td.wrap GPL2, CCPL
+					td.wrap= package["license"].replace(/ /,", ")
+				- if(package["provides"] != ""){ var provides = "<span class=\"related\">" + package["provides"].replace(/ /, "</span>, <span class=\"related\">") + "</span>";
+				tr
+					th 提供:
+					td.wrap.relatedto!= provides
+				- } if(package["replaces"] != ""){ var replaces = "<span class=\"related\">" + package["replaces"].replace(/ /, "</span>, <span class=\"related\">") + "</span>";
+				tr
+					th 置換パッケージ:
+					td.wrap.relatedto!= replaces
+				- } if(package["conflicts"] != ""){ var conflicts = "<span class=\"related\">" + package["conflicts"].replace(/ /, "</span>, <span class=\"related\">") + "</span>";
+				tr
+					th 衝突パッケージ:
+					td.wrap.relatedto!= conflicts
+				- }
 				tr
 					th パッケージ容量:
-					td 7.4 MB
+					- if(package["csize"] > 1000000){ var csize = (package["csize"] * 0.000001).toFixed(1) + " MB"; }else if(package["csize"] > 1000){ var csize = (package["csize"] * 0.001).toFixed(1) + " KB"; }else{ var csize = package["csize"] + " B"; }
+					td= csize
 				tr
 					th インストール容量:
-					td 29 MB
+					- if(package["isize"] > 1000000){ var isize = (package["isize"] * 0.000001).toFixed(1) + " MB"; }else if(package["isize"] > 1000){ var isize = (package["isize"] * 0.001).toFixed(1) + " KB"; }else{ var isize = package["isize"] + " B"; }
+					td= isize
 				tr
 					th パッケージ作成者:
-					td Felix Yan
+					td= package["packager"].split(" <")[0]
 				tr
-					th 最終更新
-					td 2015-12-22 03:58:59 JST
+					th 最終更新:
+					td !{package["last_update"]} JST
 		div#metadata
 			div#pkgdeps.listing
-				h3(title="0ad は以下のパッケージに依存しています") 依存パッケージ (25)
+				- if(package["depends"] != ""){ var deps = package["depends"].split(" "); }else{ var deps = new Array(); } if(package["optdeps"] != ""){ var optdeps = package["optdeps"].split("<>"); }else{ var optdeps = new Array(); } if(package["makedeps"] != ""){ var makedeps = package["makedeps"].split(" "); }else{ var makedeps = new Array(); } var totaldeps = deps.length + optdeps.length + makedeps.length;
+				h3(title=package["pkgname"] + " は以下のパッケージに依存しています") 依存パッケージ (!{totaldeps})
 				ul#pkgdepslist
-					li binutils
-					li boost-libs
-					li boost <span class="make-dep"> (ビルド)</span>
+					- for(var i = 0; i < deps.length; i++){
+					li= deps[i]
+					- } for(var i = 0; i < optdeps.length; i++){
+					li !{optdeps[i].split(":")[0]} <span class="opt-dep">(任意)</span>
+					- } for(var i = 0; i < makedeps.length; i++){
+					li !{makedeps[i]} <span class="make-dep">(ビルド)</span>
+					- }
 			div#pkgreqs.listing
 				h3 　
 			div#pkgfiles.listing
 				h3(title="このパッケージに含まれている全てのファイルのリスト") パッケージの中身
 				div#pkgfilelist
 					p
-						a(href="files/", title="クリックして 0ad の全てのファイルのリストを見る") 0ad のファイルリストを表示
+						a(href="files/", title="クリックして " + package["pkgname"] + " の全てのファイルのリストを見る") !{package["pkgname"]} のファイルリストを表示

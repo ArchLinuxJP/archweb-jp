@@ -2,67 +2,13 @@ extends layout
 
 block content
 	div#pkgdetails.box
-		h2 0ad a19-3
-		div#detailslinks.listing
-			div#actionlist
-				h4 パッケージアクション
-				ul.small
-					li <a href="https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/0ad" title="0ad のソースファイル">ソースファイル</a> / <a href="https://projects.archlinux.org/svntogit/community.git/log/trunk?h=packages/0ad" title="0ad の変更履歴">変更履歴</a>
-					li
-						a(href="https://wiki.archlinuxjp.org/index.php?title=%E7%89%B9%E5%88%A5%3A%E6%A4%9C%E7%B4%A2&search=0ad", title="0ad について wiki で検索") ArchWiki を検索
-					li <a href="https://www.archlinux.org/packages/community/i686/0ad/flag/" title="0ad の out-of-date フラグを立てる">パッケージの Out-of-Date フラグを立てる</a> <a href="/packages/flaghelp/" title="パッケージのフラグ立てに関するヘルプ" onclick="return !window.open('/packages/flaghelp/','FlagHelp','height=350,width=450,location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=no');">(?)</a>
-					li
-						a(href="https://www.archlinux.org/packages/community/i686/0ad/download/", rel="nofollow", title="ミラーから 0ad をダウンロード") ミラーからダウンロード
-		div(itemscope, itemtype="http://schema.org/SoftwareApplication")
-			meta(itemprop="name", content="0ad")
-			meta(itemprop="version", content="a19-3")
-			meta(itemprop="softwareVersion", content="a19-3")
-			meta(itemprop="fileSize", content="7807156")
-			meta(itemprop="dateCreated", content="2015-12-22")
-			meta(itemprop="datePublished", content="2015-12-22")
-			meta(itemprop="operatingSystem", content="Arch Linux")
-			table#pkginfo
-				tr
-					th アーキテクチャ:
-					td
-						a(href="/packages/?arch[]=i686", title="i686 アーキテクチャのパッケージ") i686
-				tr
-					th リポジトリ:
-					td
-						a(href="/packages/?repo[]=Community", title="Community リポジトリ") Community
-				tr
-					th 説明:
-					td(itemprop="description")#pkgdesc.wrap Cross-platform, 3D and historically-based real-time strategy game
-				tr
-					th 上流 URL:
-					td
-						a(itemprop="url", href="http://play0ad.com/", title="0ad のウェブサイト") http://play0ad.com/
-				tr
-					th ライセンス:
-					td.wrap GPL2, CCPL
-				tr
-					th パッケージ容量:
-					td 7.4 MB
-				tr
-					th インストール容量:
-					td 29 MB
-				tr
-					th パッケージ作成者:
-					td Felix Yan
-				tr
-					th 最終更新
-					td 2015-12-22 03:58:59 JST
+		h2= title.replace(" -", "")
+		p パッケージには!{numf}個のファイルと!{numd}個のディレクトリが入っています。
+		p
+			a(href="../") パッケージに戻る
 		div#metadata
-			div#pkgdeps.listing
-				h3(title="0ad は以下のパッケージに依存しています") 依存パッケージ (25)
-				ul#pkgdepslist
-					li binutils
-					li boost-libs
-					li boost <span class="make-dep"> (ビルド)</span>
-			div#pkgreqs.listing
-				h3 　
-			div#pkgfiles.listing
-				h3(title="このパッケージに含まれている全てのファイルのリスト") パッケージの中身
-				div#pkgfilelist
-					p
-						a(href="files/", title="クリックして 0ad の全てのファイルのリストを見る") 0ad のファイルリストを表示
+			div#pkgfilelist
+				ul
+					- for(var i = 0; i < files.length; i++){
+					li(class=files[i].type)= files[i].file
+					- }
