@@ -1,0 +1,169 @@
+extends simple
+
+block article
+	p Arch ウェブサイトを利用するにあたって複数の RSS フィードを使うことができます。ほとんどの RSS フィードはパッケージ関連のフィードで、気をつけたいアップデートにあわせてカスタマイズすることが可能です。
+	h3 ニュースとアクティビティのフィード
+	p Arch Linux の開発スタッフによる最新ニュースを知るには<a href="/feeds/news.xml" class="rss" title="Arch Linux ニュースフィード">ニュースアイテムフィード</a> を購読してください。
+	p <a href="https://wiki.archlinuxjp.org/" title="Arch Wiki コミュニティドキュメント">Arch Wiki</a> のドキュメントの変更を追いたいときは <a href="https://wiki.archlinuxjp.org/index.php?title=Special:RecentChanges&amp;feed=rss" title="ArchWiki 最近の変更フィード" class="rss">Arch Wiki: 最近の変更フィード</a> を購読しましょう。
+	h3 パッケージのフィード
+	p <a href="/feeds/packages.xml" class="rss" title="Arch Linux パッケージアップデートフィード">全てのパッケージのアップデート</a> に興味がある場合は、このフィードを購読してください。複数のアーキテクチャでパッケージが更新された場合、個々のパッケージが表示されます。もしくは、以下の行から特定のパッケージだけのフィードを必要に応じて選択できます。どれか一つのアーキテクチャにしか興味がないならば、様々なフィードが選択できます。'i686' など、特定のアーキテクチャのフィードには、'any' (アーキテクチャに依存しない) パッケージのパッケージアップデートも全て含まれています。
+	div(style="overflow-x:auto;")
+		table.pretty2
+			thead
+				tr
+					th
+					th 全アーキテクチャ
+					th any
+					th i686
+					th x86_64
+			tbody
+				tr
+					td
+						strong 全リポジトリ
+					td
+						a(href="/feeds/packages.xml").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/any/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/i686/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/x86_64/").rss フィード
+				tr
+					td
+						strong Community
+					td
+						a(href="https://www.archlinux.org/feeds/packages/all/community/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/any/community/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/i686/community/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/x86_64/community/").rss フィード
+				tr
+					td
+						strong Community-Testing
+					td
+						a(href="https://www.archlinux.org/feeds/packages/all/community-testing/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/any/community-testing/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/i686/community-testing/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/x86_64/community-testing/").rss フィード
+				tr
+					td
+						strong Core
+					td
+						a(href="https://www.archlinux.org/feeds/packages/all/core/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/any/core/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/i686/core/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/x86_64/core/").rss フィード
+				tr
+					td
+						strong Extra
+					td
+						a(href="https://www.archlinux.org/feeds/packages/all/extra/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/any/extra/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/i686/extra/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/x86_64/extra/").rss フィード
+				tr
+					td
+						strong Multilib
+					td
+						a(href="https://www.archlinux.org/feeds/packages/all/multilib/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/any/multilib/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/i686/multilib/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/x86_64/multilib/").rss フィード
+				tr
+					td
+						strong Multilib-Testing
+					td
+						a(href="https://www.archlinux.org/feeds/packages/all/multilib-testing/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/any/multilib-testing/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/i686/multilib-testing/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/x86_64/multilib-testing/").rss フィード
+				tr
+					td
+						strong Testing
+					td
+						a(href="https://www.archlinux.org/feeds/packages/all/testing/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/any/testing/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/i686/testing/").rss フィード
+					td
+						a(href="https://www.archlinux.org/feeds/packages/x86_64/testing/").rss フィード
+	p <a href="https://aur.archlinux.org/" title="AUR ホームページ">Arch User Repository (AUR)</a> にも<a href="https://aur.archlinux.org/rss/" class="rss" title="AUR 最新パッケージフィード">最新のパッケージフィード</a> は存在します。
+	h3 リリースのフィード
+	p ISO がリリースされたときにシードしたい場合は <a href="https://www.archlinux.org/feeds/releases/" class="rss" title="Arch Linux リリースフィード">ISO リリースフィード</a> を購読してください。
+	h3 開発のフィード
+	p <a href="https://bugs.archlinux.org/" title="Arch Linux バグ">Arch Linux バグトラッカー</a>のバグチケットや機能リクエストを捕捉するには以下のフィードを購読してください:
+	div(style="overflow-x:auto;")
+		table.pretty2
+			thead
+				tr
+					th プロジェクト
+					th 最近開かれたタスク
+					th 最近編集されたタスク
+					th 最近閉じられたタスク
+			tbody
+				tr
+					td 全プロジェクト
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;project=0").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=edit&amp;project=0").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=clo&amp;project=0").rss フィード
+				tr
+					td Arch Linux
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;project=1").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=edit&amp;project=1").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=clo&amp;project=1").rss フィード
+				tr
+					td リリースエンジニアリング
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;project=6").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=edit&amp;project=6").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=clo&amp;project=6").rss フィード
+				tr
+					td Pacman 開発
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;project=3").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=edit&amp;project=3").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=clo&amp;project=3").rss フィード
+				tr
+					td Community パッケージ
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;project=5").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=edit&amp;project=5").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=clo&amp;project=5").rss フィード
+				tr
+					td AUR
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;project=2").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=edit&amp;project=2").rss フィード
+					td
+						a(href="https://bugs.archlinux.org/feed.php?feed_type=rss2&amp;topic=clo&amp;project=2").rss フィード

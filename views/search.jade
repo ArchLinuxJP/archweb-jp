@@ -10,60 +10,84 @@ block content
 				legend 条件を入力
 				div
 					label(for="id_arch", title="特定の CPU アーキテクチャを検索") アーキテクチャ
-					select(multiple="multiple", name="arch[]")#id_arch
+					select(multiple="multiple", name="arch")#id_arch
 						option(value="any") any
 						option(value="i686") i686
 						option(value="x86_64") x86_64
 				div
 					label(for="id_repo", title="特定のリポジトリを検索") リポジトリ
-					select(multiple="multiple", name="repo[]")#id_repo
-						option(value="Community") Community
-						option(value="Community-Testing") Community-Testing
-						option(value="Core") Core
-						option(value="Extra") Extra
-						option(value="Multilib") Multilib
-						option(value="Multilib-Testing") Multilib-Testing
-						option(value="Testing") Testing
+					select(multiple="multiple", name="repo")#id_repo
+						option(value="community") community
+						option(value="community-testing") community-testing
+						option(value="core") core
+						option(value="extra") extra
+						option(value="multilib") multilib
+						option(value="multilib-testing") multilib-testing
+						option(value="testing") testing
 				div
 					label(for="id_q", title="検索したいキーワードを入力") キーワード
-					input(name="q", size="40", type="text")#id_q
+					input(name="q", size="40", type="text", value=q, pattern="^[0-9a-zA-Z\@\.\_\+\-]+$")#id_q
 				div
 					label &nbsp;
 					input(title="この条件でパッケージを検索", type="submit", value="検索")
 	div#pkglist-results.box
 		div.pkglist-stats
-			p マッチするパッケージ: 13519。ページ: 1/136。
+			p マッチするパッケージ: !{package[0].count}。ページ: !{page}/!{total}。
 			div.pkglist-nav
-				span.prev &lt; 前 
-				span.next 次 &gt; 
+				- if(prevp != 0){
+				span.prev
+					a(href="?page=" + prevp + criteria, title="前のページヘ") &lt; 前
+				- }else{
+				span.prev &lt; 前
+				- } if(nextp != 0){
+				span.next
+					a(href="?page=" + nextp + criteria, title="次のページヘ") 次 &gt;
+				- }else{
+				span.next 次 &gt;
+				- }
 		form#pkglist-results-form
 			table.results
 				thead
 					tr
 						th
-							a(href="/packages/?sort=arch", title="アーキテクチャでパッケージをソート") アーキテクチャ
+							a(href="/packages/?sort=" + ((sort == "arch")?"-arch":"arch"), title="アーキテクチャでパッケージをソート") アーキテクチャ
 						th
-							a(href="/packages/?sort=arch", title="リポジトリでパッケージをソート") リポジトリ
+							a(href="/packages/?sort=" + ((sort == "repo")?"-repo":"repo"), title="リポジトリでパッケージをソート") リポジトリ
 						th
-							a(href="/packages/?sort=arch", title="パッケージ名でパッケージをソート") 名前
+							a(href="/packages/?sort=" + ((sort == "pkgname")?"-pkgname":"pkgname"), title="パッケージ名でパッケージをソート") 名前
 						th バージョン
 						th 説明
 						th
-							a(href="/packages/?sort=-last_update", title="最終更新日でパッケージをソート") 最終更新
+							a(href="/packages/?sort=" + ((sort == "-last_update")?"last_update":"-last_update"), title="最終更新日でパッケージをソート") 最終更新
 				tbody
-					tr.odd
-						td i686
-						td Community
+					- if(package[0].count == 0){
+					tr.empty
+						td(colspan="8")
+							em 一致するパッケージが見つかりませんでした
+					- }else{ var odd = false; package.forEach(function(item){ odd = odd ? false : true; item.last_update = item.last_update.split(" ")[0];
+					tr(class=odd?"odd":"even")
+						td= item.arch
+						td= item.repo
 						td
-							a(href="/packages/community/i686/0ad/", title="0ad パッケージの情報を表示") 0ad
-						td a19-3
-						td.wrap Cross-platform, 3D and historically-based real-time strategy game
-						td 2015-12-22
+							a(href="/packages/" + item.repo + "/" + item.arch + "/" + item.pkgname + "/", title=item.pkgname + "0ad パッケージの情報を表示")= item.pkgname
+						td !{item.pkgver}-!{item.pkgrel}
+						td.wrap= item.pkgdesc
+						td= item.last_update
+					- }) }
 		div.pkglist-stats
-			p マッチするパッケージ: 13519。ページ: 1/136。
+			p マッチするパッケージ: !{package[0].count}。ページ: !{page}/!{total}。
 			div.pkglist-nav
-				span.prev &lt; 前 
-				span.next 次 &gt; 
+				- if(prevp != 0){
+				span.prev
+					a(href="?page=" + prevp + criteria, title="前のページヘ") &lt; 前
+				- }else{
+				span.prev &lt; 前
+				- } if(nextp != 0){
+				span.next
+					a(href="?page=" + nextp + criteria, title="次のページヘ") 次 &gt;
+				- }else{
+				span.next 次 &gt;
+				- }
 	div#pkglist-about.box
 		p 探しているパッケージが見つからない場合は、検索条件を変えてみたり、<a href="https://aur.archlinux.org/">AUR</a> を検索してください。
 		p こちらは Arch Linux パッケージデータベースです。公式でサポートされているリポジトリに含まれているパッケージに関する情報を見ることができます。

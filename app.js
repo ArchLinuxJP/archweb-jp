@@ -9,6 +9,9 @@ var routes = require('./routes/index');
 var article = require('./routes/article');
 var news = require('./routes/news');
 var download = require('./routes/download');
+var search = require('./routes/search');
+var package = require('./routes/package');
+var files = require('./routes/files');
 var simple = require('./routes/simple');
 
 var app = express();
@@ -26,16 +29,22 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+
 app.use('/news/:news([0-9a-zA-Z\-]+)', article);
 app.use('/news', news);
 
 app.use('/download', download);
+
+app.use('/packages/:repo([0-9a-zA-Z\-]+)/:arch([0-9a-zA-Z\_]+)/:pkgname([0-9a-zA-Z\@\.\_\+\-]+)/files', files);
+app.use('/packages/:repo([0-9a-zA-Z\-]+)/:arch([0-9a-zA-Z\_]+)/:pkgname([0-9a-zA-Z\@\.\_\+\-]+)', package);
+app.use('/packages', search);
 
 app.use('/about', simple);
 app.use('/donate', simple);
 app.use('/svn', simple);
 app.use('/people', simple);
 app.use('/art', simple);
+app.use('/feeds', simple);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -52,8 +61,13 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
 	app.use(function(err, req, res, next) {
 		res.status(err.status || 500);
+		if (err.status == 404) {
+			var stitle = "404 - Not Found";
+		}else{
+			var stitle = "500 - Internal Server Error";
+		}
 		res.render('error', {
-			title: err.status + " - " + err.message,
+			title: stitle,
 			error: err
 		});
 	});
@@ -63,8 +77,13 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
+	if (err.status == 404) {
+		var stitle = "404 - Not Found";
+	}else{
+		var stitle = "500 - Internal Server Error";
+	}
 	res.render('error', {
-		title: err.status + " - " + err.message,
+		title: stitle,
 		error: {}
 	});
 });

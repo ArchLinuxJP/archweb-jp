@@ -25,6 +25,10 @@ router.get("/", function(req, res, next) {
 			var stitle = "ロゴとアートワーク";
 			var id = "artwork";
 			break;
+		case "feeds":
+			var stitle = "RSS フィード";
+			var id = "rss-feeds";
+			break;
 	}
 	res.render(url, {
 		title: stitle,

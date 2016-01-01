@@ -743,6 +743,10 @@ table.results {
     .results tr.even {
         background: #e4eeff;
     }
+    
+    .results tr.empty td {
+    	text-align: center;
+    }
 
     .results .flagged {
         color: red;
