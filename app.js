@@ -50,7 +50,6 @@ app.use('/feeds', simple);
 app.use(function(req, res, next) {
 	var err = new Error('Not Found');
 	err.status = 404;
-	err.stack = "申し訳ありません。あなたがリクエストしたページは存在しません。";
 	next(err);
 });
 
@@ -79,12 +78,13 @@ app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
 	if (err.status == 404) {
 		var stitle = "404 - Not Found";
+		err.stack = "申し訳ありません。あなたがリクエストしたページは存在しません。";
 	}else{
 		var stitle = "500 - Internal Server Error";
 	}
 	res.render('error', {
 		title: stitle,
-		error: {}
+		error: err
 	});
 });
 
