@@ -15,12 +15,11 @@ block content
 					span.arrow
 				a(href="/feeds/news.xml", title="Arch ニュース RSS フィード").rss-icon
 					img(src="./images/rss.png", alt="RSS フィード", width="16", height="16")
-				include ../admin/newnews
+				div !{body.newnews}
 				h3
 					a(href="/news/", title="ニュースアーカイブを閲覧") 昔のニュース
 					span.arrow
-			dl.newslist
-				include ../admin/oldnews
+			dl.newslist !{body.oldnews}
 	div#content-right
 		div#pkgsearch.widget
 			form(method="get", action="/packages/")#pkgsearch-form
@@ -32,8 +31,7 @@ block content
 				span.more  (<a href="/packages/?sort=-last_update" title="最新パッケージを全て閲覧">もっと見る</a>)
 			a(href="/feeds/packages.xml", title="Arch パッケージアップデート RSS フィード").rss-icon
 				img(width="16", height="16", src="/images/rss.png", alt="RSS フィード")
-			table
-				include ../admin/newpkg
+			table !{body.newpkg}
 		div#nav-sidebar.widget
 			h4 ドキュメント
 			ul
