@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"php-70-packages-released",
+		"PHP 7.0 パッケージがリリースされました",
+		"2016-01-03",
+		"2016-01-03",
+		"Pierre Schmitz"
+	),
+	(
 		"dropping-plasma-4",
 		"Plasma 4 のサポート終了",
 		"2015-12-12",

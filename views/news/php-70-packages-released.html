@@ -1,0 +1,23 @@
+<p>新しいメジャーバージョンの PHP パッケージが安定版リポジトリでリリースされました。新しい <a href="http://php.net/archive/2015.php#id2015-12-03-1">PHP 7 の機能</a>の他に、以下のパッケージに変更があります。これによりパッケージの設定が PHP プロジェクトによって意図されている構成に近づきました。上流の <strong><a href="http://php.net/manual/ja/migration70.php">PHP 7 の移行ガイド</a></strong>も参照してください。</p>
+<h4>削除されたパッケージ</h4>
+<ul>
+<li><strong>php-pear</strong></li>
+<li><strong>php-mssql</strong></li>
+<li><strong>php-ldap</strong> <a href="https://www.archlinuxjp.org/packages/extra/x86_64/php/">php</a> パッケージにモジュールが含まれるようになりました。</li>
+<li><strong>php-mongo</strong> 新しい <strong><a href="https://www.archlinuxjp.org/packages/community/x86_64/php-mongodb/">php-mongodb</a></strong> パッケージによって置き換わります。ただし完全な互換性があるわけではありません。</li>
+<li><strong>php-xcache</strong> PHP に含まれている <a href="http://php.net/opcache">OPcache</a> や <a href="https://www.archlinuxjp.org/packages/extra/x86_64/php-apcu/">APCu</a> のユーザーデータキャッシュを使うようにしてください。</li>
+<li><strong><a href="https://www.archlinuxjp.org/packages/extra/x86_64/graphviz/">graphviz</a></strong> PHP バインディングは削除されました。</li>
+</ul>
+<h4>新しいパッケージ</h4>
+<ul>
+<li><strong><a href="https://www.archlinuxjp.org/packages/extra/x86_64/php-apcu-bc/">php-apcu-bc</a></strong> <strong>apc_</strong>* 関数が必要な場合はこのモジュールをインストール・有効化してください。</li>
+<li><strong><a href="https://www.archlinuxjp.org/packages/community/x86_64/php-mongodb/">php-mongodb</a></strong></li>
+</ul>
+<h4>設定の変更</h4>
+<ul>
+<li><strong>open_basedir</strong> はデフォルトでは設定されなくなりました。</li>
+<li><strong>openssl</strong>, <strong>phar</strong>, <strong>posix</strong> 拡張は PHP に組み込まれるようになりました。</li>
+<li><a href="https://www.archlinuxjp.org/packages/extra/x86_64/php-fpm/">php-fpm</a> に <strong>logrotate</strong> の設定は含まれなくなりました。代わりにデフォルトで syslog/journald が使われます。</li>
+<li><a href="https://www.archlinuxjp.org/packages/extra/x86_64/php-fpm/">php-fpm</a> のサービスファイルはもはや <strong>PrivateTmp=true</strong> を設定しません。</li>
+<li><a href="https://www.archlinuxjp.org/packages/extra/x86_64/php-apache/">php-apache</a> の設定とモジュールは <strong>php7_module.conf</strong> と <strong>libphp7.so</strong> に名前が変更されました。</li>
+</ul>
