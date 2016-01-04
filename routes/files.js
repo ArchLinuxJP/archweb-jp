@@ -40,6 +40,8 @@ router.get("/", function(req, res, next) {
 					selected: "anb-packages"
 				});
 				*/
+			}else{
+				next(err);
 			}
 		}, function(err, count){
 			if (count == 0){

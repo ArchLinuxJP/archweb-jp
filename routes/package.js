@@ -16,6 +16,8 @@ router.get("/", function(req, res, next) {
 					package: row,
 					selected: "anb-packages"
 				});
+			}else{
+				next(err);
 			}
 		}, function(err, count){
 			if (count == 0){

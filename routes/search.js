@@ -170,6 +170,8 @@ router.get("/", function(req, res, next) {
 						selected: "anb-packages"
 					});
 				}
+			}else{
+				next(err);
 			}
 		});
 	});
