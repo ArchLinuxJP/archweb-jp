@@ -33,8 +33,7 @@
 #archnavbarlogofont {
     float: left !important;
     margin: 0 !important;
-    padding-top: 4px !important;
-    /* background: url('../images/archlogo.png') no-repeat; */
+    padding-top: 1px !important;
 }
 
 #archnavbarlogo.xmas {

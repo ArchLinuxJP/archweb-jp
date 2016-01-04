@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?ilynch');
-    src:    url('fonts/icomoon.eot?ilynch#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?ilynch') format('truetype'),
-        url('fonts/icomoon.woff?ilynch') format('woff'),
-        url('fonts/icomoon.svg?ilynch#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?3w2gpl');
+    src:    url('fonts/icomoon.eot?3w2gpl#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?3w2gpl') format('truetype'),
+        url('fonts/icomoon.woff?3w2gpl') format('woff'),
+        url('fonts/icomoon.svg?3w2gpl#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,13 +24,19 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-archlinux-font-linux:before {
+    content: "\e903";
+}
+.icon-archlinux-font-arch:before {
+    content: "\e904";
+}
 .icon-archlinux:before {
     content: "\e900";
 }
 .icon-archlinuxjp:before {
     content: "\e901";
 }
-.icon-archlinux-logo-honeycomb-icomoon:before {
+.icon-archlinuxjp-simple:before {
     content: "\e902";
 }
 
@@ -42,18 +48,26 @@ span.icon-archlinux:hover {
 	color: #38B7EA;
 }
 
-div#archnavbarlogofont span.icon-archlinux-logo-honeycomb-icomoon {
-	/* padding-left: 10px; */
-	font-size: 38px;
+div#archnavbarlogofont span.icon-archlinuxjp {
+	font-size: 45px;
+	color: #1794D1;
+	position:absolute;
+}
+
+div#archnavbarlogofont span.icon-archlinuxjp-simple {
+	font-size: 45px;
 	color: #fff;
 	position:relative;
 }
 
-div#archnavbarlogofont span.icon-archlinuxjp {
-	/* padding-left: 10px; */
+div#archnavbarlogofont span.icon-archlinux-font-arch {
+	font-size: 38px;
+	color: #fff;
+}
+
+div#archnavbarlogofont span.icon-archlinux-font-linux {
 	font-size: 38px;
 	color: #1794D1;
-	position:absolute;
 }
 
 div#archnavbarlogofont span.icon-archlinuxjp:hover {
@@ -62,6 +76,8 @@ div#archnavbarlogofont span.icon-archlinuxjp:hover {
 
 div#archnavbarlogofont h1 img {
 	position: absolute;
+        top: 6px !important;
+	width: 155px;
 }
 
 div#archnavbarlogofont a:link {
@@ -99,7 +115,7 @@ a:hover span.icon-archlinuxjp {
 	color:#38b7ea;
 }
 
-a:hover span.icon-archlinux-logo-honeycomb-icomoon {
+a:hover span.icon-archlinuxjp-simple {
 	-webkit-transition: 0.3s ease-in-out;
 	-moz-transition: 0.3s ease-in-out;
 	-o-transition: 0.3s ease-in-out;
