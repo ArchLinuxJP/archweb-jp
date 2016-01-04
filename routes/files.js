@@ -12,10 +12,6 @@ router.get("/", function(req, res, next) {
 		var pkgname = req.originalUrl.split("/")[4];
 		db.each("SELECT * FROM package WHERE repo = '" + repo + "' AND arch = '" + arch + "' AND pkgname = '" + pkgname + "'", function(err, row){
 			if (!err) {
-				res.redirect(302, "https://www.archlinux.org/packages/" + repo + "/" + arch + "/" + pkgname + "/files/");
-				
-				// todo: make following code to deal with files.tar.gz
-				/*
 				if(arch == "any"){
 					var archf = "x86_64";
 				}else{
@@ -39,7 +35,6 @@ router.get("/", function(req, res, next) {
 					numd: numd,
 					selected: "anb-packages"
 				});
-				*/
 			}
 		}, function(err, count){
 			if (count == 0){
