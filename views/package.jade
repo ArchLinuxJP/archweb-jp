@@ -49,7 +49,7 @@ block content
 				- if(package["pkggrp"] != ""){
 				tr
 					th グループ:
-					- var pkggrp = package["pkggrp"].split(" "); for(var i = 0; i < pkggrp.length; i++){ pkggrp[i] = "<a href=\"/groups/" + package["arch"] + "/" + pkggrp[i] + "/\" title=\"" + pkggrp[i] + " グループのパッケージ\">" + pkggrp[i] + "</a>"; }
+					- var pkggrp = package["pkggrp"].split(" "); for(var i = 0; i < pkggrp.length; i++){ pkggrp[i] = "<a href=\"/groups/" + ((package["arch"] == "any") ? "x86_64" : package["arch"]) + "/" + pkggrp[i] + "/\" title=\"" + pkggrp[i] + " グループのパッケージ\">" + pkggrp[i] + "</a>"; }
 					td!= pkggrp.join(", ")
 				- } if(package["provides"] != ""){ var provides = "<span class=\"related\">" + package["provides"].replace(/ /g, "</span>, <span class=\"related\">") + "</span>";
 				tr
