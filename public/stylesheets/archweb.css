@@ -13,9 +13,10 @@
  */
 
 /* container for the entire bar */
+/* #archnavbar { height: 40px !important; padding: 10px 15px !important; background: #333 !important; border-bottom: 5px #08c solid !important; } */
 #archnavbar {
     height: 40px !important;
-    padding: 10px 15px !important;
+    padding: 6px 15px 14px !important;
     background: #333 !important;
     border-bottom: 5px #08c solid !important;
 }
@@ -27,6 +28,12 @@
     height: 40px !important;
     width: 180px !important;
     background: url('../images/archlogo.png') no-repeat;
+}
+
+#archnavbarlogofont {
+    float: left !important;
+    margin: 0 !important;
+    padding-top: 1px !important;
 }
 
 #archnavbarlogo.xmas {

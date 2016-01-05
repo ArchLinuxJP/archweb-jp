@@ -20,19 +20,18 @@ html(lang="ja")
 		link(rel="apple-touch-icon", sizes="72x72", href="/images/apple-touch-icon-72x72.png")
 		link(rel="apple-touch-icon", sizes="114x114", href="/images/apple-touch-icon-114x114.png")
 		link(rel="apple-touch-icon", sizes="144x144", href="/images/apple-touch-icon-144x144.png")
+		link(rel="stylesheet", href="/stylesheets/font-awesome/css/font-awesome.min.css")
+		link(rel="stylesheet", href="/stylesheets/icomoon/icomoon.css")
 	body
 		div#archnavbar(class=selected)
-			- if(xmas){
-			div#archnavbarlogo.xmas
+			div#archnavbarlogofont
 				h1
-					a(href="/", title="メリークリスマス！") Arch Linux
-			- }else{
-			div#archnavbarlogo
-				h1
-					a(href="/", title="メインページに戻る") Arch Linux
-			- }
+					a(href="/", title="ArchLinux", class="logo")
+						span(class="icon-archlinuxjp")
+						span(class="icon-archlinuxjp-simple")
+						img(src="../images/archlogofont.png")
 			div#archnavbaricon
-				img(src="/images/menu.png")
+				i(class="fa fa-bars fa-2x")
 			div#archnavbarmenu
 				ul#archnavbarlist
 					li#anb-home
