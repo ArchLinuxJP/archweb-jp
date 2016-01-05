@@ -40,8 +40,12 @@ block content
 		h3 BitTorrent でダウンロード
 		p 可能なかぎり、ダウンロードが完了した後もクライアントは開き続けて下さい。他の人へシードバックすることができます。<em>ダウンロード速度を最大限出すためにウェブシードに対応しているクライアントが推奨されます。</em>
 		ul
-			li <a href="!{isoinfo.magnet}" title="マグネットリンク">!{isoinfo.date} のマグネットリンク <img width="12" height="12" src="https://www.archlinuxjp.org/img/magnet.png" alt=""/></a>
-			li <a href="https://www.archlinux.org/releng/releases/!{isoinfo.date}/torrent/" title="torrent のダウンロード">!{isoinfo.date} の Torrent <img width="12" height="12" src="https://www.archlinuxjp.org/img/download.png" alt=""/></a>
+			li
+				a(href=isoinfo.magnet, title="マグネットリンク") !{isoinfo.date} のマグネットリンク
+					i.icon-magnet
+			li
+				a(href="https://www.archlinux.org/releng/releases/" + isoinfo.date + "/torrent/", title="torrent のダウンロード") !{isoinfo.date} の Torrent
+					i.icon-download
 		h3 Netboot
 		p 有線接続が使える場合は、ネットワークを介して直接、最新リリースを起動することができます。
 		ul

@@ -7,6 +7,17 @@
     float: right;
 }
 
+#archnavbaricon i:before {
+    font-family: "fontello";
+    font-style: normal;
+    content: '\e800';
+    color: #DDD;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 40px;
+    margin-right: 5px;
+}
+
 #archnavbarmenu {
     display: none;
 }
@@ -79,4 +90,8 @@ body {
 #artwork img {
     max-width: 90%;
     height: auto;
+}
+
+#svn pre {
+    overflow-x: auto;
 }

@@ -249,7 +249,7 @@ h5 {
 }
 
 div.box {
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     padding: 0.65em;
     background: #ecf2f5;
     border: 1px solid #bcd;
@@ -257,7 +257,7 @@ div.box {
 
 #footer {
     clear: both;
-    margin: 2em 0 1em;
+    margin: 1.5em 0 1em 0;
 }
 
     #footer p {
@@ -658,10 +658,12 @@ div.widget {
     opacity: 0.6;
 }
 
-/* feeds page */
-#rss-feeds .rss {
-    padding-right: 20px;
-    background: url(../images/rss.png) top right no-repeat;
+#rss-feeds .rss:after {
+    font-family: "fontello";
+    content: '\e801';
+    padding-left: 3px;
+    color: #e90;
+    display: inline-block;
 }
 
 /* artwork: logo images */
@@ -1165,4 +1167,40 @@ ul.signoff-list {
 #visualize-keys svg {
     width: 100%;
     height: 100%;
+}
+
+@font-face {
+    font-family: "fontello";
+    src: url("../font/fontello.eot");
+    src: url("../font/fontello.eot") format("embedded-opentype"),
+        url("../font/fontello.woff") format("woff"),
+        url("../font/fontello.ttf") format("truetype"),
+        url("../font/fontello.svg") format("svg");
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+}
+
+i.icon-rss:before {
+    font-size: 16px;
+    line-height: 16px;
+    content: '\e801';
+    color: #e90;
+}
+
+i.icon-magnet:before {
+    content: '\e802';
+    margin-left: 3px;
+}
+.icon-download:before {
+    content: '\e803';
+    margin-left: 3px;
+}
+.icon-qrcode:before {
+    content: '\e804';
+    color: #000;
 }
