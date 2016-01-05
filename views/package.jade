@@ -45,16 +45,21 @@ block content
 						a(itemprop="url", href=package["url"], title=package["pkgname"] + " のウェブサイト")= package["url"]
 				tr
 					th ライセンス:
-					td.wrap= package["license"].replace(/ /,", ")
-				- if(package["provides"] != ""){ var provides = "<span class=\"related\">" + package["provides"].replace(/ /, "</span>, <span class=\"related\">") + "</span>";
+					td.wrap= package["license"].replace(/ /g,", ")
+				- if(package["pkggrp"] != ""){
+				tr
+					th グループ:
+					- var pkggrp = package["pkggrp"].split(" "); for(var i = 0; i < pkggrp.length; i++){ pkggrp[i] = "<a href=\"/groups/" + ((package["arch"] == "any") ? "x86_64" : package["arch"]) + "/" + pkggrp[i] + "/\" title=\"" + pkggrp[i] + " グループのパッケージ\">" + pkggrp[i] + "</a>"; }
+					td!= pkggrp.join(", ")
+				- } if(package["provides"] != ""){ var provides = "<span class=\"related\">" + package["provides"].replace(/ /g, "</span>, <span class=\"related\">") + "</span>";
 				tr
 					th 提供:
 					td.wrap.relatedto!= provides
-				- } if(package["replaces"] != ""){ var replaces = "<span class=\"related\">" + package["replaces"].replace(/ /, "</span>, <span class=\"related\">") + "</span>";
+				- } if(package["replaces"] != ""){ var replaces = "<span class=\"related\">" + package["replaces"].replace(/ /g, "</span>, <span class=\"related\">") + "</span>";
 				tr
 					th 置換パッケージ:
 					td.wrap.relatedto!= replaces
-				- } if(package["conflicts"] != ""){ var conflicts = "<span class=\"related\">" + package["conflicts"].replace(/ /, "</span>, <span class=\"related\">") + "</span>";
+				- } if(package["conflicts"] != ""){ var conflicts = "<span class=\"related\">" + package["conflicts"].replace(/ /g, "</span>, <span class=\"related\">") + "</span>";
 				tr
 					th 衝突パッケージ:
 					td.wrap.relatedto!= conflicts
@@ -91,4 +96,4 @@ block content
 				h3(title="このパッケージに含まれている全てのファイルのリスト") パッケージの中身
 				div#pkgfilelist
 					p
-						a(href="files/", title="クリックして " + package["pkgname"] + " の全てのファイルのリストを見る") !{package["pkgname"]} のファイルリストを表示
+						a(href="https://www.archlinux.org/packages/" + package["repo"] + "/" + package["arch"] + "/" + package["pkgname"] + "/files/", title="クリックして " + package["pkgname"] + " の全てのファイルのリストを見る") !{package["pkgname"]} のファイルリストを表示

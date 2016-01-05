@@ -133,7 +133,7 @@ router.get("/", function(req, res, next) {
 			if (!err) {
 				var criteria = "";
 				if(Object.keys(req.query).length > 0){
-					criteria = req.originalUrl.split("?").pop().replace(/page=[0-9]+/, "").replace(/\"/,"").replace(/\'/,"").replace(/\>/,"").replace(/\</,"");
+					criteria = req.originalUrl.split("?").pop().replace(/page=[0-9]+/, "").replace(/\"/g,"").replace(/\'/g,"").replace(/\>/g,"").replace(/\</g,"");
 					if(criteria != "" && criteria[0] != "&"){
 						criteria = "&" + criteria;
 					}
@@ -170,6 +170,8 @@ router.get("/", function(req, res, next) {
 						selected: "anb-packages"
 					});
 				}
+			}else{
+				next(err);
 			}
 		});
 	});

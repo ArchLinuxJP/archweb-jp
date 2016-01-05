@@ -16,12 +16,12 @@ block content
 				a(href="/feeds/news.xml", title="Arch ニュース RSS フィード").rss-icon
 					i(class="fa fa-rss fa-lg")
 					// i(class="fa fa-rss-square fa-lg") 
-				include ../admin/newnews
+					// img(src="./images/rss.png", alt="RSS フィード", width="16", height="16")
+				div !{body.newnews}
 				h3
 					a(href="/news/", title="ニュースアーカイブを閲覧") 昔のニュース
 					span.arrow
-			dl.newslist
-				include ../admin/oldnews
+			dl.newslist !{body.oldnews}
 	div#content-right
 		div#pkgsearch.widget
 			form(method="get", action="/packages/")#pkgsearch-form
@@ -34,8 +34,8 @@ block content
 			a(href="/feeds/packages.xml", title="Arch パッケージアップデート RSS フィード").rss-icon
 				i(class="fa fa-rss fa-lg")
 				// i(class="fa fa-rss-square fa-lg") 
-			table
-				include ../admin/newpkg
+				// img(width="16", height="16", src="/images/rss.png", alt="RSS フィード")
+			table !{body.newpkg}
 		div#nav-sidebar.widget
 			h4 ドキュメント
 			ul
@@ -76,8 +76,7 @@ block content
 				li
 					a(href="/svn/", title="パッケージの SVN エントリ") SVN リポジトリ
 				li
-					a(href="https://www.archlinux.org/groups/", title="利用可能なパッケージグループ") パッケージグループ
-					span  (英語)
+					a(href="/groups/", title="利用可能なパッケージグループ") パッケージグループ
 			h4 人々
 			ul
 				li

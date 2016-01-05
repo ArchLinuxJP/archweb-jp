@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	div.box
+		h2 !{grpname} (!{arch})
+		p パッケージ数: !{package[0].count}。
+		table.results
+			thead
+				tr
+					th アーキテクチャ
+					th
+						a(href="/groups/" + arch + "/" + grpname + "/?sort=" + ((sort == "repo")?"-repo":"repo"), title="リポジトリでパッケージをソート") リポジトリ
+					th
+						a(href="/groups/" + arch + "/" + grpname + "/?sort=" + ((sort == "pkgname")?"-pkgname":"pkgname"), title="パッケージ名でパッケージをソート") 名前
+					th バージョン
+					th 説明
+					th
+						a(href="/groups/" + arch + "/" + grpname + "/?sort=" + ((sort == "-last_update")?"last_update":"-last_update"), title="最終更新日でパッケージをソート") 最終更新
+			tbody
+				- var odd = false; package.forEach(function(item){ odd = odd ? false : true; item.last_update = item.last_update.split(" ")[0];
+				tr(class=odd?"odd":"even")
+					td= item.arch
+					td= item.repo
+					td
+						a(href="/packages/" + item.repo + "/" + item.arch + "/" + item.pkgname + "/", title=item.pkgname + " パッケージの情報を表示")= item.pkgname
+					td !{item.pkgver}-!{item.pkgrel}
+					td.wrap= item.pkgdesc
+					td= item.last_update
+				- });

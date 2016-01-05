@@ -11,6 +11,8 @@ var news = require('./routes/news');
 var download = require('./routes/download');
 var search = require('./routes/search');
 var package = require('./routes/package');
+var groups = require('./routes/groups');
+var group = require('./routes/group');
 var files = require('./routes/files');
 var simple = require('./routes/simple');
 
@@ -38,6 +40,9 @@ app.use('/download', download);
 app.use('/packages/:repo([0-9a-zA-Z\-]+)/:arch([0-9a-zA-Z\_]+)/:pkgname([0-9a-zA-Z\@\.\_\+\-]+)/files', files);
 app.use('/packages/:repo([0-9a-zA-Z\-]+)/:arch([0-9a-zA-Z\_]+)/:pkgname([0-9a-zA-Z\@\.\_\+\-]+)', package);
 app.use('/packages', search);
+
+app.use('/groups/:arch([0-9a-zA-Z\_]+)/:grpname([0-9a-zA-Z\_\-]+)', group);
+app.use('/groups', groups);
 
 app.use('/about', simple);
 app.use('/donate', simple);

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	div.box
+		h2 パッケージグループ
+		table.results
+			thead
+				tr
+					th
+						a(href="/groups/?sort=" + ((sort == "arch")?"-arch":"arch"), title="アーキテクチャでグループをソート") アーキテクチャ
+					th
+						a(href="/groups/?sort=" + ((sort == "grpname")?"-grpname":"grpname"), title="グループ名でグループをソート") グループ名
+					th パッケージ数
+					th
+						a(href="/groups/?sort=" + ((sort == "-last_update")?"last_update":"-last_update"), title="最終更新日でグループをソート") 最終更新
+			tbody
+				- var odd = false; group.forEach(function(item){ odd = odd ? false : true; item.last_update = item.last_update.split(" ")[0];
+				tr(class=odd?"odd":"even")
+					td= item.arch
+					td
+						a(href="/groups/" + item.arch + "/" + item.grpname + "/", title=item.grpname + " グループの情報を表示")= item.grpname
+					td= item.number
+					td= item.last_update
+				- });

@@ -13,6 +13,8 @@ router.get("/", function(req, res, next) {
 					news: rows,
 					selected: "anb-home"
 				});
+			}else{
+				next(err);
 			}
 		});
 	});
