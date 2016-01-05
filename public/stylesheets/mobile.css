@@ -66,6 +66,10 @@ body {
     padding: 0.65em 0;
 }
 
+#pkgdetails #detailslinks {
+    float: none;
+}
+
 #pkgdetails #pkginfo td {
     word-break: break-all;
     white-space: normal;
