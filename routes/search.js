@@ -29,14 +29,14 @@ router.get("/", function(req, res, next) {
 		var where = "";
 		if(req.query.q != undefined && /^[0-9a-zA-Z\@\.\_\+\-]+$/.test(req.query.q)){
 			var q = req.query.q;
-			if(q.length > 30){
-				q = q.substr(0, 30);
+			if(q.length > 50){
+				q = q.substr(0, 50);
 			}
 			where += " pkgname LIKE \"%" + q + "%\"";
 		}else if(req.query.name != undefined && /^[0-9a-zA-Z\@\.\_\+\-]+$/.test(req.query.name)){
 			var q = req.query.name;
-			if(q.length > 30){
-				q = q.substr(0, 30);
+			if(q.length > 50){
+				q = q.substr(0, 50);
 			}
 			where += " pkgname = \"" + q + "\"";
 		}else{
