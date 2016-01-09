@@ -13,6 +13,7 @@
  */
 
 /* container for the entire bar */
+/*
 #archnavbar {
     height: 40px !important;
     padding: 10px 15px !important;
@@ -31,6 +32,22 @@
 
 #archnavbarlogo.xmas {
     background: url('../images/archxmas.png') no-repeat;
+}
+*/
+
+/* add */
+#archnavbar {
+    height: 40px !important;
+    padding: 6px 15px 14px !important;
+    /* padding: 10px 15px !important; */
+    background: #333 !important;
+    border-bottom: 5px #08c solid !important;
+}
+
+#archnavbarlogofont {
+    float: left !important;
+    margin: 0 !important;
+    padding-top: 1px !important;
 }
 
 @media only screen and (min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 1.5) {
