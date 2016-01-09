@@ -1184,6 +1184,7 @@ ul.signoff-list {
     height: 100%;
 }
 
+/* ロゴアイコンをプレビューするため一旦コメント
 @font-face {
     font-family: "fontello";
     src: url("../font/fontello.eot");
@@ -1219,3 +1220,4 @@ i.icon-magnet:before {
     content: '\e804';
     color: #000;
 }
+*/
