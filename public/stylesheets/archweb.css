@@ -249,7 +249,7 @@ h5 {
 }
 
 div.box {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     padding: 0.65em;
     background: #ecf2f5;
     border: 1px solid #bcd;
@@ -257,7 +257,7 @@ div.box {
 
 #footer {
     clear: both;
-    margin: 1.5em 0 1em 0;
+    margin: 2em 0 1em;
 }
 
     #footer p {
