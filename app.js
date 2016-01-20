@@ -14,6 +14,8 @@ var package = require('./routes/package');
 var groups = require('./routes/groups');
 var group = require('./routes/group');
 var files = require('./routes/files');
+var mirrorurl = require('./routes/mirrorurl');
+var mirrorstatus = require('./routes/mirrorstatus');
 var simple = require('./routes/simple');
 
 var app = express();
@@ -43,6 +45,9 @@ app.use('/packages', search);
 
 app.use('/groups/:arch([0-9a-zA-Z\_]+)/:grpname([0-9a-zA-Z\_\-]+)', group);
 app.use('/groups', groups);
+
+app.use('/mirrors/status', mirrorstatus);
+app.use('/mirrors/:mirror([a-z\.]+)', mirrorurl);
 
 app.use('/about', simple);
 app.use('/donate', simple);

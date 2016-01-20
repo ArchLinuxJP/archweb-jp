@@ -1,0 +1,37 @@
+extends layout
+
+block content
+	div.box
+		h2= mirror[0].url
+		table.compact
+			tr
+				th URL:
+				td
+					a(href=mirror[0].url)= mirror[0].url
+			tr
+				th ミラー:
+				td= mirror[0].mirror
+		h3 チェックログ
+		table#check_logs.results
+			thead
+				tr
+					th チェック日時
+					th 最終同期日時
+					th 遅延 (hh:mm)
+					th 接続時間 (s)
+					th 接続成功
+			tbody
+				- var odd = false; mirror.forEach(function(item){ odd = odd ? false : true;
+				tr(class=odd?"odd":"even")
+					td= item.checktime
+					- if(item.success == "Yes"){
+					td= item.lastsync
+					td= item.delay
+					td= item.duration
+					- }else{
+					td
+					td
+					td
+					- }
+					td= item.success
+				- });

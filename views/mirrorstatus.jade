@@ -1,0 +1,33 @@
+extends layout
+
+block content
+	div#mirrorstatus.box
+		h2 ミラーステータス
+		p このページでは日本の Arch Linux ミラーの状態を報告します。記載している時間は全て JST です。チェックスクリプトは定期的にリポジトリのルートにある <tt>lastsync</tt> ファイルを調査します。このファイルは中央リポジトリで定期的に更新されているため、値を確認することでミラーが最近同期されているかどうかチェックできます。
+		ul
+			li <em>ミラー URL:</em> チェックされるミラーの URL。
+			li <em>接続成功率 %:</em> ミラーの URL に正しく接続できた確率。100% を下回っている場合、ミラーは不安定な状態です。
+			li <em>μ 遅延:</em> ミラーの遅延の平均値。各ミラー URL における <tt>チェック日時 − 最終同期日時</tt> の平均です。一時間を下回っていれば問題ありません。
+			li <em>μ 接続時間:</em> ミラーの URL から <tt>lastsync</tt> ファイルを取得するのにかかった平均時間。
+			li <em>σ 接続時間:</em> 接続・取得時間の標準偏差。標準偏差が高ければミラーが重くて不安定だということを示します。
+			li <em>ミラースコア:</em> ミラーをランク付けするための略算。<tt>(遅延 + 平均接続時間 + 標準偏差) / 接続成功率</tt> で計算され、数字が低い方が良いミラーです。
+		table#successful_mirrors.results
+			thead
+				tr
+					th ミラー URL
+					th 接続成功率
+					th μ 遅延 (hh:mm)
+					th μ 接続時間 (s)
+					th σ 接続時間 (s)
+					th ミラースコア
+			tbody
+				- var odd = false; mirror.forEach(function(item){ odd = odd ? false : true;
+				tr(class=odd?"odd":"even")
+					td
+						a(href="/mirrors/" + item.mirror +"/")= item.url
+					td !{item.completion}%
+					td= item.delay
+					td= item.mduration
+					td= item.sduration
+					td= item.score
+				- });
