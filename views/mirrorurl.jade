@@ -27,7 +27,7 @@ block content
 					- if(item.success == "Yes"){
 					td= item.lastsync
 					td= item.delay
-					td= item.duration
+					td= parseFloat(item.duration).toFixed(2)
 					- }else{
 					td
 					td
