@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"required-update-to-pacman-501-before-2016-04-23",
+		"2016年4月23日になる前に pacman-5.0.1 にアップデートしてください",
+		"2016-03-25",
+		"2016-03-25",
+		"Allan McRae"
+	),
+	(
 		"php-70-packages-released",
 		"PHP 7.0 パッケージがリリースされました",
 		"2016-01-03",
