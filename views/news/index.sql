@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"screen-440-1-unable-to-attach-old-sessions",
-		"screen-4.4.0-1は古いバージョンのセッションにアタッチできません",
+		"screen-4.4.0-1 は古いバージョンのセッションにアタッチできません",
 		"2016-07-02",
 		"2016-07-02",
 		"Gaetan Bisson"
