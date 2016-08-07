@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"texlive-2016-packages-are-now-available",
+		"TeXLive 2016 パッケージが利用可能です",
+		"2016-08-07",
+		"2016-08-07",
+		"Rémy Oudompheng"
+	),
+	(
 		"test-sec-flags-call-for-assistance",
 		"test-sec-flags: ご協力のお願い",
 		"2016-07-18",
