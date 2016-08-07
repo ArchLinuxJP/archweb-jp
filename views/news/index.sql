@@ -15,8 +15,15 @@ INSERT INTO
 	news
 VALUES
 	(
+		"test-sec-flags-call-for-assistance",
+		"test-sec-flags: ご協力のお願い",
+		"2016-07-18",
+		"2016-07-18",
+		"Allan McRae"
+	),
+	(
 		"screen-440-1-unable-to-attach-old-sessions",
-		"screen-4.4.0-1は古いバージョンのセッションにアタッチできません",
+		"screen-4.4.0-1 は古いバージョンのセッションにアタッチできません",
 		"2016-07-02",
 		"2016-07-02",
 		"Gaetan Bisson"
