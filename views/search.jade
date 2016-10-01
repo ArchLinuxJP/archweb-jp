@@ -2,14 +2,14 @@ extends layout
 
 block content
 	div#pkglist-search.box.filter-criteria
-		h2 パッケージ検索
+		h2 #{__('package-search')}
 		form(method="get", action="/packages/")#pkg-search
 			p
 				input(name="sort", type="hidden", value="")#id_sort
 			fieldset
 				legend 条件を入力
 				div
-					label(for="id_arch", title="特定の CPU アーキテクチャを検索") アーキテクチャ
+					label(for="id_arch", title="特定の CPU アーキテクチャを検索") #{__('arch')}
 					select(multiple="multiple", name="arch")#id_arch
 						- if(criteria.match(/arch=any/)){
 						option(value="any", selected) any
@@ -27,7 +27,7 @@ block content
 						option(value="x86_64") x86_64
 						- }
 				div
-					label(for="id_repo", title="特定のリポジトリを検索") リポジトリ
+					label(for="id_repo", title="特定のリポジトリを検索") #{__('repository')}
 					select(multiple="multiple", name="repo")#id_repo
 						- if(criteria.match(/repo=community&/)){
 						option(value="community", selected) community
@@ -65,7 +65,7 @@ block content
 						option(value="testing") testing
 						- }
 				div
-					label(for="id_q", title="検索したいキーワードを入力") キーワード
+					label(for="id_q", title="検索したいキーワードを入力") #{__('keyword')}
 					input(name="q", size="40", type="text", value=q, pattern="^[0-9a-zA-Z\@\.\_\+\-]+$")#id_q
 				div
 					label &nbsp;
@@ -90,9 +90,9 @@ block content
 				thead
 					tr
 						th
-							a(href="/packages/?sort=" + ((sort == "arch")?"-arch":"arch") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="アーキテクチャでパッケージをソート") アーキテクチャ
+							a(href="/packages/?sort=" + ((sort == "arch")?"-arch":"arch") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="アーキテクチャでパッケージをソート") #{__('arch')}
 						th
-							a(href="/packages/?sort=" + ((sort == "repo")?"-repo":"repo") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="リポジトリでパッケージをソート") リポジトリ
+							a(href="/packages/?sort=" + ((sort == "repo")?"-repo":"repo") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="リポジトリでパッケージをソート") #{__('repository')}
 						th
 							a(href="/packages/?sort=" + ((sort == "pkgname")?"-pkgname":"pkgname") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="パッケージ名でパッケージをソート") 名前
 						th バージョン

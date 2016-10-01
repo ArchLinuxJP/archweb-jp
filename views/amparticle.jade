@@ -1,0 +1,181 @@
+doctype html
+html(⚡)
+	head
+		meta(charset="utf-8")
+		- var titlebar = "Arch Linux JP Project - " + title;
+		title= titlebar
+		link(rel="canonical", href="../")
+		meta(name="viewport", content="width=device-width,minimum-scale=1,initial-scale=1")
+		style(amp-custom).
+			h1 { color: #08c; }
+			#archnavbar {
+				height: 40px;
+				padding: 10px 15px;
+				background: #333;
+				border-bottom: 5px #08c solid;
+			}
+			#archnavbarlogo {
+			    float: left;
+			    margin: 0;
+			    padding: 0;
+			    height: 40px;
+			    width: 180px;
+			    background: url('https://www.archlinuxjp.org/images/archlogo.png') no-repeat;
+			}
+			#archnavbarlogo h1 {
+				margin: 0;
+				padding: 0;
+				text-indent: -9999px;
+			}
+			#archnavbarlogo a {
+				display: block;
+				height: 40px;
+				width: 180px;
+			}
+			* {
+				margin: 0;
+				padding: 0;
+				line-height: 1.4;
+			}
+			body {
+				min-width: 650px;
+				background: #f6f9fc;
+				color: #222;
+				font: normal 100% sans-serif;
+				text-align: center;
+			}
+			p {
+				margin: .33em 0 1em;
+			}
+			ol, ul {
+				margin-bottom: 1em;
+				padding-left: 2em;
+			}
+			ul {
+				list-style: square;
+			}
+			code {
+				font-family: monospace;
+				background: #ffd;
+				padding: 0.15em 0.25em;
+			}
+			pre {
+				font-family: monospace;
+				border: 1px solid #bdb;
+				background: #dfd;
+				padding: 0.5em;
+				margin: 1em;
+			}
+			pre.error {
+				background: transparent;
+				border: 0;
+				padding: 0;
+				margin: 0.5em;
+			}
+			pre code {
+				display: block;
+				background: none;
+				overflow: auto;
+			}
+			blockquote {
+				margin: 1.5em 2em;
+			}
+			hr {
+				border: none;
+				border-top: 1px solid #888;
+			}
+			#content {
+				font-size: 0.812em;
+			}
+			a {
+				text-decoration: none;
+			}
+			a:link {
+				color: #07b;
+			}
+			a:visited {
+				color: #666;
+			}
+			a:hover {
+				color: #666;
+			}
+			a:active {
+				color: #e90;
+			}
+			h2 {
+				font-size: 1.5em;
+				margin-bottom: 0.5em;
+				border-bottom: 1px solid #888;
+			}
+			h3 {
+				font-size: 1.25em;
+				margin-top: .5em;
+			}
+			h4 {
+				font-size: 1.15em;
+				margin-top: 1em;
+			}
+			h5 {
+				font-size: 1em;
+				margin-top: 1em;
+			}
+			#content {
+				width: 95%;
+				margin: 0 auto;
+				text-align: left;
+			}
+			div.box {
+				margin-top: 1.5em;
+				margin-bottom: 1.5em;
+				padding: 0.65em;
+				background: #ecf2f5;
+				border: 1px solid #bcd;
+			}
+			#footer {
+				clear: both;
+				margin: 2em 0 1em;
+			}
+			#footer p {
+				margin: 0;
+				text-align: center;
+				font-size: 0.85em;
+			}
+			div.news-article .article-info {
+				margin: 0;
+				color: #999;
+			}
+		script(type="application/ld+json").
+			{
+				"@context": "http://schema.org",
+				"@type": "Article",
+				"publisher": {
+					"@type": "Organization",
+					"name": "Arch Linux JP Project",
+					"logo": "https://www.archlinuxjp.org/images/archlogo.svg"
+				}
+				"headline": "#{title}",
+				"datePublished": "#{created}",
+				"inLanguage": "ja"
+			}
+		script(async, custom-element="amp-carousel", src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js")
+		style(amp-boilerplate).
+			body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+		noscript
+			style(amp-boilerplate).
+				body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
+		script(async, src="https://cdn.ampproject.org/v0.js")
+	body
+		div#archnavbar
+			div#archnavbarlogo
+				h1
+					a(href="/") Arch Linux
+		div#content
+			div.news-article.box
+				h2= title.replace("ニュース: ","")
+				p.article-info #{created} - #{author}
+				div.article-content !{body}
+			div#footer
+				- var dt = new Date(); var year = dt.getFullYear();
+				p Copyright &copy; 2014-!{year} <a href="https://www.archlinuxjp.org/people/">Arch Linux JP Project</a>.
+				p The Arch Linux name and logo are recognized <a href="https://wiki.archlinux.org/index.php/DeveloperWiki:TrademarkPolicy" title="Arch Linux Trademark Policy">trademarks</a>. Some rights reserved.
+				p The registered trademark Linux® is used pursuant to a sublicense from LMI, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
