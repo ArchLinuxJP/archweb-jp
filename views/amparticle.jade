@@ -151,11 +151,31 @@ html(⚡)
 				"publisher": {
 					"@type": "Organization",
 					"name": "Arch Linux JP Project",
-					"logo": "https://www.archlinuxjp.org/images/archlogo.svg"
-				}
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://www.archlinuxjp.org/images/archlogo.png",
+						"width": 190,
+						"height": 40
+					}
+				},
+				"author": {
+					"@type": "Person",
+					"name": "#{author}"
+				},
 				"headline": "#{title}",
 				"datePublished": "#{created}",
-				"inLanguage": "ja"
+				"dateModified": "#{modified}",
+				"image": {
+					"@type": "ImageObject",
+					"url": "https://www.archlinuxjp.org/images/apple-touch-icon-512x512.png",
+					"width": 512,
+					"height": 512
+				},
+				"inLanguage": "ja",
+				"mainEntityOfPage": {
+					"@type": "WebPage",
+					"@id": "https://www.archlinuxjp.org"
+				}
 			}
 		script(async, custom-element="amp-carousel", src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js")
 		style(amp-boilerplate).
