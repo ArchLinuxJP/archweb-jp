@@ -1,30 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-	<ShortName>Arch Packages</ShortName>
-	<LongName>Arch Linux Package Repository Search</LongName>
-	<Description>Search the Arch Linux package repositories by keyword in package names and descriptions.</Description>
-	<Tags>linux archlinux package software</Tags>
-	<Image height="16" width="16" type="image/x-icon">https://www.archlinuxjp.org/images/favicon.ico</Image>
-	<Image height="64" width="64" type="image/png">https://www.archlinuxjp.org/images/archlogo.png</Image>
-	<Language>ja-jp</Language>
-	<InputEncoding>UTF-8</InputEncoding>
-	<OutputEncoding>UTF-8</OutputEncoding>
-	<Query role="example" searchTerms="initscripts"/>
-	<Url type="text/html" template="https://www.archlinuxjp.org/packages/?q={searchTerms}"/>
-	<Url rel="suggestions" type="application/x-suggestions+json"
-		template="https://www.archlinux.org/opensearch/packages/suggest?q={searchTerms}"/>
-	<Url rel="self" type="application/opensearchdescription+xml"
-		template="https://www.archlinuxjp.org/opensearch.xml"/>
-</OpenSearchDescription>
-<!-- min
-<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-<ShortName>Arch Packages</ShortName>
-<Description>Search Arch Linux</Description>
+<Url type="text/html" method="get" template="https://www.archlinuxjp.org/packages/?q={searchTerms}"/>
 <InputEncoding>UTF-8</InputEncoding>
-<Image height="16" type="image/x-icon" width="16">
-https://www.archlinuxjp.org/images/favicon.ico
-</Image>
-<Url method="get" template="https://www.archlinuxjp.org/packages/?q={searchTerms}" type="text/html"/>
-<moz:SearchForm>https://www.archlinuxjp.org/packages</moz:SearchForm>
+<Image width="16" height="16">https://www.archlinuxjp.org/images/favicon.ico</Image>
+<ShortName>Arch Packages</ShortName>
+<Description>Search the Arch Linux package repositories by keyword in package names and descriptions.</Description>
 </OpenSearchDescription>
--->
