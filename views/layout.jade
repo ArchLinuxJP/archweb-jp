@@ -25,6 +25,17 @@ html(lang="ja")
 		link(rel="apple-touch-icon", sizes="144x144", href="/images/apple-touch-icon-144x144.png")
 		link(rel="search", href="/static/opensearch.xml", type="application/opensearchdescription+xml", title="Arch Linux")
 		meta(name="theme-color", content="#08C")
+		script(type="application/ld+json").
+			{
+				"@context": "http://schema.org",
+				"@type": "WebSite",
+				"url": "https://www.archlinuxjp.org/",
+				"potentialAction": {
+					"@type": "SearchAction",
+					"target": "https://wiki.archlinuxjp.org/index.php?search={search_term}",
+					"query-input": "required name=search_term"
+				}
+			}
 	body
 		div#archnavbar(class=selected)
 			- if(xmas){
