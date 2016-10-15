@@ -1,0 +1,8 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<Url type="text/html" method="get" template="https://www.archlinuxjp.org/packages/?q={searchTerms}"/>
+<InputEncoding>UTF-8</InputEncoding>
+<Image height="16" width="16" type="image/x-icon">https://www.archlinuxjp.org/images/favicon.ico</Image>
+<Image height="64" width="64" type="image/png">https://www.archlinuxjp.org/images/amplogo.png</Image>
+<ShortName>Arch Packages</ShortName>
+<Description>Search the Arch Linux package repositories by keyword in package names and descriptions.</Description>
+</OpenSearchDescription>
