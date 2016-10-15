@@ -13,7 +13,7 @@ block content
 						a(href="https://wiki.archlinuxjp.org/index.php?title=%E7%89%B9%E5%88%A5%3A%E6%A4%9C%E7%B4%A2&search=" + package["pkgname"], title=package["pkgname"] + " について wiki で検索") ArchWiki を検索
 					li <a href="https://www.archlinux.org/packages/#{package["repo"]}/#{package["arch"]}/#{package["pkgname"]}/flag/" title="#{package["pkgname"]} の out-of-date フラグを立てる">パッケージの Out-of-Date フラグを立てる</a> <a href="/static/flaghelp.html" title="パッケージのフラグ立てに関するヘルプ" onclick="return !window.open('/static/flaghelp.html','FlagHelp','height=350,width=450,location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=no');">(?)</a>
 					li
-						a(href="https://www.archlinux.org/packages/" + package["repo"] + "/" + package["arch"] + "/" + package["pkgname"] + "/download/", rel="nofollow", title="ミラーから " + package["pkgname"] + " をダウンロード") ミラーからダウンロード
+						a(href="https://mirror.archlinuxjp.org/" + package["repo"] + "/os/" + package["arch"] + "/" + package["pkgname"] + "-" + package["pkgver"] + "-" + package["pkgrel"] + "-" + package["arch"] + ".pkg.tar.xz", rel="nofollow", title="ミラーから " + package["pkgname"] + " をダウンロード") ミラーからダウンロード
 		div(itemscope, itemtype="http://schema.org/SoftwareApplication")
 			meta(itemprop="name", content=package["pkgname"])
 			meta(itemprop="version", content=package["pkgver"] + "-" + package["pkgrel"])
