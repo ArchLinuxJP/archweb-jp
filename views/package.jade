@@ -14,14 +14,7 @@ block content
 					li <a href="https://www.archlinux.org/packages/#{package["repo"]}/#{package["arch"]}/#{package["pkgname"]}/flag/" title="#{package["pkgname"]} の out-of-date フラグを立てる">パッケージの Out-of-Date フラグを立てる</a> <a href="/static/flaghelp.html" title="パッケージのフラグ立てに関するヘルプ" onclick="return !window.open('/static/flaghelp.html','FlagHelp','height=350,width=450,location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=no');">(?)</a>
 					li
 						a(href="https://mirror.archlinuxjp.org/" + package["repo"] + "/os/" + package["arch"] + "/" + package["pkgname"] + "-" + package["pkgver"] + "-" + package["pkgrel"] + "-" + package["arch"] + ".pkg.tar.xz", rel="nofollow", title="ミラーから " + package["pkgname"] + " をダウンロード") ミラーからダウンロード
-		div(itemscope, itemtype="http://schema.org/SoftwareApplication")
-			meta(itemprop="name", content=package["pkgname"])
-			meta(itemprop="version", content=package["pkgver"] + "-" + package["pkgrel"])
-			meta(itemprop="softwareVersion", content=package["pkgver"] + "-" + package["pkgrel"])
-			meta(itemprop="fileSize", content=package["csize"])
-			meta(itemprop="dateCreated", content=package["last_update"].split(" ")[0])
-			meta(itemprop="datePublished", content=package["last_update"].split(" ")[0])
-			meta(itemprop="operatingSystem", content="Arch Linux")
+		div
 			table#pkginfo
 				tr
 					th アーキテクチャ:
@@ -38,11 +31,11 @@ block content
 				- }
 				tr
 					th 説明:
-					td(itemprop="description")#pkgdesc.wrap= package["pkgdesc"]
+					td#pkgdesc.wrap= package["pkgdesc"]
 				tr
 					th 上流 URL:
 					td
-						a(itemprop="url", href=package["url"], title=package["pkgname"] + " のウェブサイト")= package["url"]
+						a(href=package["url"], title=package["pkgname"] + " のウェブサイト")= package["url"]
 				tr
 					th ライセンス:
 					td.wrap= package["license"].replace(/ /g,", ")
@@ -134,3 +127,23 @@ block content
 				div#pkgfilelist
 					p
 						a(href="https://www.archlinux.org/packages/" + package["repo"] + "/" + package["arch"] + "/" + package["pkgname"] + "/files/", title="クリックして " + package["pkgname"] + " の全てのファイルのリストを見る") !{package["pkgname"]} のファイルリストを表示
+		script(type="application/ld+json").
+			{
+				"@context": "http://schema.org",
+				"@type": "SoftwareApplication",
+				"name": "#{package["pkgname"]}",
+				"version": "#{package["pkgver"]}-#{package["pkgrel"]}",
+				"softwareVersion": "#{package["pkgver"]}-#{package["pkgrel"]}",
+				"fileSize": "#{package["csize"]}",
+				"description": "#{package["pkgdesc"]}",
+				"url": "#{package["url"]}",
+				"dateCreated": "#{package["last_update"].split(" ")[0]}",
+				"datePublished": "#{package["last_update"].split(" ")[0]}",
+				"operatingSystem": "Arch Linux",
+				"downloadUrl": "https://mirror.archlinuxjp.org/#{package["repo"]}/os/#{package["arch"]}/#{package["pkgname"]}-#{package["pkgver"]}-#{package["pkgrel"]}-#{package["arch"]}.pkg.tar.xz",
+				"offers": {
+					"@type": "Offer",
+					"price": "0.00",
+					"priceCurrency": "JPY"
+				}
+			}

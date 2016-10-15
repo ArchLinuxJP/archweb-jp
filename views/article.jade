@@ -1,11 +1,40 @@
 extends layout
 
 block content
-	div(itemtype="http://schema.org/Article", itemscope).news-article.box
-		h2(itemprop="headline")= title.replace("ニュース: ","")
-		meta(itemprop="dateCreated", content=created)
-		meta(itemprop="datePublished", content=created)
-		meta(itemprop="dateModified", content=modified)
-		meta(itemprop="inLanguage", content="ja")
+	div.news-article.box
+		h2= title.replace("ニュース: ","")
 		p.article-info #{created} - #{author}
-		div(itemprop="articleBody").article-content !{body}
+		div.article-content !{body}
+		script(type="application/ld+json").
+			{
+				"@context": "http://schema.org",
+				"@type": "Article",
+				"publisher": {
+					"@type": "Organization",
+					"name": "Arch Linux JP Project",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://www.archlinuxjp.org/images/archlogo.png",
+						"width": 190,
+						"height": 40
+					}
+				},
+				"author": {
+					"@type": "Person",
+					"name": "#{author}"
+				},
+				"headline": "#{title}",
+				"datePublished": "#{created}",
+				"dateModified": "#{modified}",
+				"image": {
+					"@type": "ImageObject",
+					"url": "https://www.archlinuxjp.org/images/amplogo.png",
+					"width": 1024,
+					"height": 1024
+				},
+				"inLanguage": "ja",
+				"mainEntityOfPage": {
+					"@type": "WebPage",
+					"@id": "https://www.archlinuxjp.org"
+				}
+			}
