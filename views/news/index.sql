@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"ttf-dejavu-237-will-require-forced-upgrade",
+		"ttf-dejavu 2.37 は強制的なアップグレードが必要になります",
+		"2016-10-31",
+		"2016-10-31",
+		"Jan de Groot"
+	),
+	(
 		"texlive-2016-packages-are-now-available",
 		"TeXLive 2016 パッケージが利用可能です",
 		"2016-08-07",
