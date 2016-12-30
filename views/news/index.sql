@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"openvpn-240-update-requires-administrative-interaction",
+		"OpenVPN 2.4.0 アップデートには管理操作が必要になります",
+		"2016-12-30",
+		"2016-12-30",
+		"Christian Hesse"
+	),
+	(
 		"ttf-dejavu-237-will-require-forced-upgrade",
 		"ttf-dejavu 2.37 は強制的なアップグレードが必要になります",
 		"2016-10-31",
