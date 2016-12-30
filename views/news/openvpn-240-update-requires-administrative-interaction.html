@@ -1,0 +1,7 @@
+<p>OpenVPN 2.4.0 への更新は、以前のバージョンの設定と互換性のない変更を伴います。<strong>リモートアクセス</strong>の VPN 接続に依存している場合は<strong>特に注意してください</strong>! 管理操作が必要になります:</p>
+<ul>
+	<li>サブディレクトリに設定が必要です。ファイルを<code>/etc/openvpn/</code>から<code>/etc/openvpn/server/</code>もしくは<code>/etc/openvpn/client/</code>に移動してください。</li>
+	<li>プラグインのルックアップパスが変更されるので、追加の<code>plugins/</code>を相対パスから削除してください。</li>
+	<li>systemd ユニットの<code>openvpn@.service</code>は<code>openvpn-client@.service</code>と<code>openvpn-server@.service</code>に置き換えられます。それに応じてサービスの再起動と再有効化を行ってください。</li>
+</ul>
+<p>これは<code>networkmanager</code>、<code>connman</code>または<code>qopenvpn</code>の機能には影響しません。</p>
