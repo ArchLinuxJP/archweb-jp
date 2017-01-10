@@ -44,8 +44,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
-app.use('/news/:news([0-9a-zA-Z\-]+)/amp', article);
-app.use('/news/:news([0-9a-zA-Z\-]+)', article);
+app.use('/news/:news([0-9a-zA-Z\-\.\_]+)/amp', article);
+app.use('/news/:news([0-9a-zA-Z\-\.\_]+)', article);
 app.use('/news', news);
 
 app.use('/download', download);
@@ -54,7 +54,7 @@ app.use('/packages/:repo([0-9a-zA-Z\-]+)/:arch([0-9a-zA-Z\_]+)/:pkgname([0-9a-zA
 app.use('/packages/:repo([0-9a-zA-Z\-]+)/:arch([0-9a-zA-Z\_]+)/:pkgname([0-9a-zA-Z\@\.\_\+\-]+)', package);
 app.use('/packages', search);
 
-app.use('/groups/:arch([0-9a-zA-Z\_]+)/:grpname([0-9a-zA-Z\_\-]+)', group);
+app.use('/groups/:arch([0-9a-zA-Z\_]+)/:grpname([0-9a-zA-Z\@\.\_\+\-]+)', group);
 app.use('/groups', groups);
 
 app.use('/mirrors/status', mirrorstatus);
