@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"xorg-server-1191-is-now-in-extra",
-		"xorg-server 1.19.1 is now in extra",
+		"xorg-server 1.19.1 は現在 extra にあります",
 		"2017-01-14",
 		"2017-01-14",
 		"Laurent Carlier"
