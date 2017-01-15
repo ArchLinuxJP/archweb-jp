@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"xorg-server-1191-is-now-in-extra",
+		"xorg-server 1.19.1 は現在 extra にあります",
+		"2017-01-14",
+		"2017-01-14",
+		"Laurent Carlier"
+	),
+	(
 		"openvpn-240-update-requires-administrative-interaction",
 		"OpenVPN 2.4.0 アップデートには管理操作が必要になります",
 		"2016-12-30",
