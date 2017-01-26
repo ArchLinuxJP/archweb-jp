@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"phasing-out-i686-support",
+		"i686サポートの段階的廃止について",
+		"2017-01-25",
+		"2017-01-25",
+		"Bartłomiej Piotrowski"
+	),
+	(
 		"xorg-server-1191-is-now-in-extra",
 		"xorg-server 1.19.1 は現在 extra にあります",
 		"2017-01-14",
