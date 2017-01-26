@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"phasing-out-i686-support",
-		"i686サポートの段階的廃止について",
+		"i686 サポートの段階的廃止について",
 		"2017-01-25",
 		"2017-01-25",
 		"Bartłomiej Piotrowski"
