@@ -1,0 +1,22 @@
+extends simple
+
+block article
+	h3 Netboot について
+	p Netboot イメージはシステムの起動時に最新の Arch Linux リリースをダウンロードすることができる小さなイメージです (&lt;1MB)。netboot イメージはアップデートする必要がなく、自動的に最新のリリースが利用できるようになります。
+	p Netboot はカスタマイズした <a href="http://ipxe.org">iPXE</a> ビルドを使用しています。ライブ環境を動作させるために Arch Linux のミラーから Linux カーネルと initramfs、そして squashfs のファイルがダウンロードされます。ダウンロードしたファイルの整合性は全て署名によって検証されます。
+	h3 要件
+	p netboot を使用するには、以下の要件を満たしている必要があります:
+		ul
+			li DHCP による自動設定が可能な有線 (ethernet) インターネット接続
+			li ライブ環境を保存・動作させるのに十分なメモリ容量
+	h3 ダウンロード
+	h4 BIOS
+	ul
+		li <a href="https://www.archlinux.org/static/netboot/ipxe.b754d04e0868.lkrn">ipxe.lkrn</a> (<a href="https://www.archlinux.org/static/netboot/ipxe.lkrn.b1ce8e14b24d.sig">PGP 署名</a>) - あらゆる Linux ブートローダーで起動できる Linux カーネルのようなイメージ
+		li <a href="https://www.archlinux.org/static/netboot/ipxe.083f1308b358.pxe">ipxe.pxe</a> (<a href="/static/netboot/ipxe.pxe.1cacf692116b.sig">PGP 署名</a>) - PXE 環境からチェインロードするための PXE イメージ
+	h4 UEFI
+	ul
+		li <a href="https://www.archlinux.org/static/netboot/ipxe.56c94cb5b4c7.efi">ipxe.efi</a> (<a href="/static/netboot/ipxe.efi.d31e473f68bb.sig">PGP 署名</a>) - x86_64 UEFI 実行ファイル
+	p netboot に対応した iPXE イメージを自分で作成することもできます。詳しくは <a href="https://aur.archlinux.org/packages/ipxe-netboot">ipxe-netboot の AUR パッケージ</a>を見てください。
+	h3 参照
+	p 詳しい使用方法については <a href="https://wiki.archlinuxjp.org/index.php/Netboot">netboot の wiki ページ</a>を参照してください。

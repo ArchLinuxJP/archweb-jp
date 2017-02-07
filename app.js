@@ -66,6 +66,7 @@ app.use('/svn', simple);
 app.use('/people', simple);
 app.use('/art', simple);
 app.use('/feeds', simple);
+app.use('/netboot', simple);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

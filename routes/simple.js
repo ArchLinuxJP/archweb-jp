@@ -29,6 +29,10 @@ router.get("/", function(req, res, next) {
 			var stitle = "RSS フィード";
 			var id = "rss-feeds";
 			break;
+		case "netboot":
+			var stitle = "Arch Linux のネットワークブート";
+			var id = "netboot";
+			break;
 	}
 	res.render(url, {
 		title: stitle,
