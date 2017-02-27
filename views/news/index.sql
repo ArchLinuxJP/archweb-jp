@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"mesa-with-libglvnd-support-is-now-in-testing",
+		"libglvnd のサポートが有効になった mesa が testing に入りました",
+		"2017-02-27",
+		"2017-02-27",
+		"Laurent Carlier"
+	),
+	(
 		"phasing-out-i686-support",
 		"i686 サポートの段階的廃止について",
 		"2017-01-25",
