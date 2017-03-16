@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"ca-certificates-utils-20170307-1-upgrade-requires-manual-intervention",
+		"ca-certificates-utils 20170307-1 のアップグレードでは手動の操作が必要です",
+		"2017-03-15",
+		"2017-03-15",
+		"Jan Steffens"
+	),
+	(
 		"mesa-with-libglvnd-support-is-now-in-testing",
 		"libglvnd のサポートが有効になった mesa が testing に入りました",
 		"2017-02-27",
