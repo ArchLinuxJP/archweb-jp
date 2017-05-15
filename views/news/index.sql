@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"deprecation-of-abs",
+		"ABS の廃止",
+		"2017-05-15",
+		"2017-05-15",
+		"Bartłomiej Piotrowski"
+	),
+	(
 		"ca-certificates-utils-20170307-1-upgrade-requires-manual-intervention",
 		"ca-certificates-utils 20170307-1 のアップグレードでは手動の操作が必要です",
 		"2017-03-15",

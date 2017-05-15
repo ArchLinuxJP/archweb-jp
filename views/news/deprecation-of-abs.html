@@ -1,0 +1,5 @@
+<p>Arch Build
+System 関連のスクリプトの保守コストが高いことから、<code>abs</code> ツールは廃止して、それに合わせて rsync による PKGBUILD の取得も止めることに決まりました。</p>
+<p>今後は <code>abs</code> と同じような機能を提供する <code>asp</code> ツールが [extra] リポジトリからインストールできます。<code>asp export パッケージ名</code> でそのまま <code>abs</code> を置き換えることができます。<code>asp</code> の詳しい使い方は<a href="https://github.com/falconindy/asp/blob/master/man/asp.1.txt">ドキュメント</a>を読んでください。また、<a href="https://www.archlinuxjp.org/svn/">こちら</a>に記載されているように Subversion のスパースチェックアウトを使うことで同じようなことが可能です。全ての PKGBUILD を取得したい場合、<a href="https://git.archlinux.org/svntogit/">svntogit</a> ミラーをクローンすることを推奨します。</p>
+<p><code>extra/abs</code> パッケージは既に公式リポジトリから外されていますが、rsync
+のエンドポイント (rsync://rsync.archlinux.org/abs) については今月末までに使用不可とする予定です。</p>
