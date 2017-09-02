@@ -1,0 +1,8 @@
+<p>今後 perl パッケージが使用するモジュールのパスにはバージョンが含まれるようになります。異なるバージョンの perl 用にビルドされたモジュールはロードされなくなるため、再ビルドが必要です。</p>
+<p>影響を受けるモジュールについてはアップグレード時に pacman フックによって以下のような警告が表示されます:</p>
+<pre><code>WARNING: '/usr/lib/perl5/vendor_perl' contains data from at least 143 packages which will NOT be used by the installed perl interpreter.
+ -&gt; Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/vendor_perl'
+</code></pre>
+<p>新しい perl パッケージにあわせて影響のあるパッケージを全て再ビルドすることで再度使えるようになります。CPAN で直接インストールしたモジュールも同様です。将来的に予定されている 5.28 や 5.30 など perl のメジャーアップデートがあるたびに再ビルドが必要になります。</p>
+<p>今までもメジャーアップデートがあったときは再ビルドが必要でしたが、これからは perl がモジュールをロードしなくなるため問題が発生します。</p>
+<p>ソフトウェアのビルドシステムが変更を自動的に認識しない場合、PKGBUILD で <code>perl -V:vendorarch</code> を使って perl に正しいパスを問い合わせることができます。pacman でパッケージ化されていないソフトウェアについては <code>sitearch</code> も存在します。</p>

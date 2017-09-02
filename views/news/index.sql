@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"perl-library-path-change",
+		"Perl ライブラリのパスが変わります",
+		"2017-09-02",
+		"2017-09-02",
+		"Florian Pritz"
+	),
+	(
 		"deprecation-of-abs",
 		"ABS の廃止",
 		"2017-05-15",
