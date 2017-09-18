@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-<Url type="text/html" method="get" template="https://www.archlinuxjp.org/packages/?q={searchTerms}"/>
+<Url type="text/html" method="get" template="https://www.archlinux.jp/packages/?q={searchTerms}"/>
 <InputEncoding>UTF-8</InputEncoding>
 <OutputEncoding>UTF-8</OutputEncoding>
-<Image height="16" width="16" type="image/x-icon">https://www.archlinuxjp.org/images/favicon.ico</Image>
-<Image height="1024" width="1024" type="image/png">https://www.archlinuxjp.org/images/amplogo.png</Image>
+<Image height="16" width="16" type="image/x-icon">https://www.archlinux.jp/images/favicon.ico</Image>
+<Image height="1024" width="1024" type="image/png">https://www.archlinux.jp/images/amplogo.png</Image>
 <ShortName>Arch パッケージ</ShortName>
 <LongName>Arch Linux パッケージリポジトリ検索</LongName>
 <Description>Arch Linux のパッケージリポジトリをパッケージ名で検索します。</Description>

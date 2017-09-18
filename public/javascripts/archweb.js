@@ -8,7 +8,7 @@ document.getElementById("archnavbaricon").onclick = function() {
 
 // wiki table
 window.onload = function() {
-	if(location.href.indexOf("wiki.archlinuxjp.org") != -1 && (window.innerWidth || document.documentElement.clientWidth) < 800) {
+	if(location.href.indexOf("wiki.archlinux.jp") != -1 && (window.innerWidth || document.documentElement.clientWidth) < 800) {
 		var tables = document.getElementsByTagName("table");
 		for(var i = 0; i < tables.length; i++) {
 			if(tables[i].className.indexOf("wikitable") != -1) {
