@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"new-domain-2",
+		"archlinux.jp ドメインを取得しました",
+		"2017-09-20",
+		"2017-09-20",
+		"Shohei Kusakata"
+	),
+	(
 		"perl-library-path-change",
 		"Perl ライブラリのパスが変わります",
 		"2017-09-02",
