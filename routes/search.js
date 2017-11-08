@@ -47,7 +47,6 @@ router.get("/", function(req, res, next) {
 			for(var i = 0; i < req.query.arch.length; i++){
 				switch(req.query.arch[i]){
 					case "any":
-					case "i686":
 					case "x86_64":
 						if(arch != ""){
 							arch += " OR ";
@@ -66,7 +65,6 @@ router.get("/", function(req, res, next) {
 		}else if(req.query.arch != undefined){
 			switch(req.query.arch){
 				case "any":
-				case "i686":
 				case "x86_64":
 					if(where != ""){
 						where += " AND arch = \"" + req.query.arch + "\"";
