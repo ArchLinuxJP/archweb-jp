@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"ithe-end-of-i686-support",
+		"i686 サポートの終了について",
+		"2017-11-08",
+		"2017-11-08",
+		"Bartłomiej Piotrowski"
+	),
+	(
 		"new-domain-2",
 		"archlinux.jp ドメインを取得しました",
 		"2017-09-20",
