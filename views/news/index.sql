@@ -15,7 +15,7 @@ INSERT INTO
 	news
 VALUES
 	(
-		"ithe-end-of-i686-support",
+		"the-end-of-i686-support",
 		"i686 サポートの終了について",
 		"2017-11-08",
 		"2017-11-08",
