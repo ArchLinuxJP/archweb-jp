@@ -25,6 +25,13 @@ html(lang="ja")
 		link(rel="apple-touch-icon", sizes="144x144", href="/images/apple-touch-icon-144x144.png")
 		link(rel="search", href="/static/opensearch.xml", type="application/opensearchdescription+xml", title="Arch Linux パッケージ")
 		meta(name="theme-color", content="#08C")
+		- if(titlebar.indexOf("- ニュース:") != -1){
+		meta(name="twitter:card", content="summary")
+		meta(name="twitter:site", content="@archlinux_jp")
+		meta(name="twitter:title", content=title)
+		meta(name="twitter:description", content=body.replace(/\r?\n/g, "").replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'').replace(/\"/g,"").replace(/\'/g,"").substr(0, 200).replace(/(.*)。.*$/, "$1。"))
+		meta(name="twitter:image", content="https://www.archlinux.jp/images/amplogo.png")
+		- }
 		script(type="application/ld+json").
 			{
 				"@context": "http://schema.org",
