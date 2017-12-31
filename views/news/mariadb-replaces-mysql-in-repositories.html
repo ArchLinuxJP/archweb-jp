@@ -1,0 +1,12 @@
+<p>Arch Linux の公式の MySQL のデフォルト実装は MariaDB になりました。MariaDB は MySQL と<a href="https://kb.askmonty.org/en/mariadb-vs-mysql-compatibility/">ほとんど</a>互換性を保っているため、アップグレードは特に気にせず行うことができます。ただし、互換性の懸念が全くないわけではないため、自動置換は行いません。</p>
+<p>全てのユーザーはアップグレードすることを推奨します。近日中に MySQL は公式リポジトリから AUR に移動します。</p>
+<p>MariaDB に切り替えたいユーザーは <code>mariadb</code>, <code>libmariadbclient</code> または <code>mariadb-clients</code> をインストールしてから <code>mysql_upgrade</code> を実行してシステムを移行してください。</p>
+<p>移行例:</p>
+<pre><code># systemctl stop mysqld
+# pacman -S mariadb libmariadbclient mariadb-clients
+# systemctl start mysqld
+# mysql_upgrade -p
+</code></pre>
+<p>もうひとつの MySQL フォークである <code>percona-server</code> は [community] から利用できます。Percona Server は Oracle MySQL Enterprise により近いデータベースになりますが、MariaDB に存在する新機能が含まれていません。</p>
+<p>[extra] の <code>mysql 5.5.30-7</code> から、MySQL に依存していたパッケージは全て MariaDB を使うように再ビルドされます。他のパッケージのメンテナは MariaDB のパッケージに依存するように移行してください。</p>
+<p>詳しい情報は<a href="https://mailman.archlinux.org/pipermail/arch-dev-public/2013-February/024478.html">メーリングリスト</a>を見てください。</p>

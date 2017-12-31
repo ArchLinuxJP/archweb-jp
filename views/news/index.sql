@@ -307,4 +307,172 @@ VALUES
 		"2014-04-20",
 		"2014-04-20",
 		"Gaetan Bisson"
+	),
+	(
+		"linux-313-warning-ps2-keyboard-support-is-now-modular",
+		"Linux 3.13 の警告: PS/2 キーボードのサポートはモジュールになりました",
+		"2014-02-21",
+		"2014-02-21",
+		"Thomas Bächler"
+	),
+	(
+		"deprecation-of-etcsysctlconf",
+		"/etc/sysctl.conf の廃止",
+		"2013-09-17",
+		"2013-09-17",
+		"Gaetan Bisson"
+	),
+	(
+		"php-55-available-in-the-extra-repository",
+		"PHP 5.5 が [extra] リポジトリから利用可能です",
+		"2013-08-17",
+		"2013-08-17",
+		"Pierre Schmitz"
+	),
+	(
+		"texlive-2013-update-may-require-user-intervention",
+		"TeXLive 2013 アップデートではユーザーの操作が必要です",
+		"2013-07-15",
+		"2013-07-15",
+		"Rémy Oudompheng"
+	),
+	(
+		"binaries-move-to-usrbin-requiring-update-intervention",
+		"バイナリが /usr/bin に移動されるにあたってアップデートが必要です",
+		"2013-06-03",
+		"2013-06-03",
+		"Allan McRae"
+	),
+	(
+		"netctl-is-now-in-core",
+		"netctl が [core] に入りました",
+		"2013-04-10",
+		"2013-04-10",
+		"Florian Pritz"
+	),
+	(
+		"mariadb-replaces-mysql-in-repositories",
+		"公式リポジトリの MySQL が MariaDB に置き換わります",
+		"2013-03-25",
+		"2013-03-25",
+		"Bartłomiej Piotrowski"
+	),
+	(
+		"end-of-initscripts-support",
+		"initscripts のサポートの終了",
+		"2012-11-04",
+		"2012-11-04",
+		"Tom Gundersen"
+	),
+	(
+		"consolekit-replaced-by-logind",
+		"ConsoleKit は logind に置き換わります",
+		"2012-10-30",
+		"2012-10-30",
+		"Allan McRae"
+	),
+	(
+		"systemd-is-now-the-default-on-new-installations",
+		"systemd が新規環境のデフォルトです",
+		"2012-10-13",
+		"2012-10-13",
+		"Thomas Bächler"
+	),
+	(
+		"install-medium-20121006-introduces-systemd",
+		"インストールメディア 2012.10.06 から systemd が導入されます",
+		"2012-10-07",
+		"2012-10-07",
+		"Pierre Schmitz"
+	),
+	(
+		"fontconfig-2101-update-manual-intervention-required",
+		"Fontconfig 2.10.1 のアップデートでは手動作業が必要です",
+		"2012-09-06",
+		"2012-09-06",
+		"Andreas Radke"
+	),
+	(
+		"pkgstats-now-collects-modules-usage",
+		"pkgstats はモジュールの使用情報も収集するようになります",
+		"2012-07-30",
+		"2012-07-30",
+		"Tom Gundersen"
+	),
+	(
+		"grub-legacy-no-longer-supported",
+		"GRUB Legacy のサポートの打ち切り",
+		"2012-07-20",
+		"2012-07-20",
+		"Ronald van Haren"
+	),
+	(
+		"the-lib-directory-becomes-a-symlink",
+		"/lib ディレクトリはシンボリックリンクになります",
+		"2012-07-14",
+		"2012-07-14",
+		"Allan McRae"
+	),
+	(
+		"arch-linux-turns-10",
+		"Arch Linux 10周年",
+		"2012-03-12",
+		"2012-03-12",
+		"Dan McGee"
+	),
+	(
+		"hostname-utility-moved-from-net-tools-to-inetutils",
+		"hostname ユーティリティが net-tools から inetutils に移動しました",
+		"2011-10-06",
+		"2011-10-06",
+		"Eric Bélanger"
+	),
+	(
+		"changes-to-kernel-package-and-filenames",
+		"カーネルパッケージとファイル名の変更",
+		"2011-08-07",
+		"2011-08-07",
+		"Dieter Plaetinck"
+	),
+	(
+		"deprecation-of-net-tools",
+		"net-tools の廃止",
+		"2011-06-08",
+		"2011-06-08",
+		"Tom Gundersen"
+	),
+	(
+		"the-canterbury-project",
+		"Canterbury プロジェクト",
+		"2011-04-01",
+		"2011-04-01",
+		"Pierre Schmitz"
+	),
+	(
+		"python-is-now-python-3",
+		"デフォルトの Python は Python 3 になりました",
+		"2010-10-18",
+		"2010-10-18",
+		"Allan McRae"
+	),
+	(
+		"pkgstats-round-two-take-your-vote-and-help-improving-arch",
+		"pkgstats ラウンドツー: 投票して Arch に貢献",
+		"2010-09-24",
+		"2010-09-24",
+		"Pierre Schmitz"
+	),
+	(
+		"switching-to-xz-compression-for-new-packages",
+		"新しいパッケージから xz 圧縮に切り替わります",
+		"2010-03-23",
+		"2010-03-23",
+		"Pierre Schmitz"
+	),
+	(
+		"pkgstats-contribution-was-never-that-easy",
+		"pkgstats: 一番簡単な貢献方法",
+		"2008-11-06",
+		"2008-11-06",
+		"Pierre Schmitz"
 	);

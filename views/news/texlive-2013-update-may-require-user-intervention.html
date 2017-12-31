@@ -1,0 +1,15 @@
+<p>TeXLive 2013 パッケージがすぐに <code>[extra]</code> に入る予定です: TeXLive 2012 からアップグレードしたユーザーは TeX エンジン (latex, xelatex, luatex など) を使おうとすると以下のようなエラーメッセージが表示されるでしょう:</p>
+<pre><code>(Fatal format file error; I'm stymied)
+</code></pre>
+<p>pacman によるインストール時に以下のようなメッセージが表示されることでも確認できます:</p>
+<pre><code>&gt;&gt;&gt; texlive: recreating all formats...
+/usr/bin/fmtutil: line 395: /usr/share/texmf/texconfig/tcfmgr: No such file or directory
+fmtutil: config file `fmtutil.cnf' not found.
+ done.
+</code></pre>
+<p><code>/etc/texmf</code> のファイルに変更を加えていない場合、<code>pacman</code> によってインストールされた <code>.pacnew</code> ファイルで設定ファイルを上書きすることで問題を解決できます。<code>pacdiff</code> ユーティリティを使用することで上書きできます。</p>
+<p>設定ファイルをマージしたら、以下のコマンドを実行してください:</p>
+<pre><code>fmtutil-sys --all &gt; /dev/null
+</code></pre>
+<p>エラーメッセージが返ってこないはずです。何か問題を発見したらバグレポートを送ってください。</p>
+<p>TeXLive 2013 をインストールする前に TeXLive 2012 を削除することでも問題を回避できます。</p>

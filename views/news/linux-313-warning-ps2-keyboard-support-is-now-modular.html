@@ -1,0 +1,10 @@
+<p>i8042 キーボードとマウスコントローラはモジュールによってサポートされるように変更されました。使用していない場合はおかしなエラーメッセージが表示され手動探査によって起動が遅くなる可能性があります。Tom によってカーネル側で対処するようになり 3.13 で最終的に変更されます。</p>
+<p>初期 init でキーボード入力を使うには <code>/etc/mkinitcpio.conf</code> の <code>HOOKS=</code> 行に <code>keyboard</code> フックを追加して <code>mkinitcpio -P</code> を実行してください。しばらく前からデフォルト設定となっています。</p>
+<p><strong>警告</strong>: 一部のマザーボード (基本的に古いマザーボードの場合ですが、新しいマザーボードでも発生することがあります) では、i8042 コントローラが自動的に認識されません。非常に稀なケースですが、キーボードが使えなくなる可能性があります。あらかじめ以下のコマンドを実行することでそのような状況にならないか確認できます:</p>
+<pre><code>$ dmesg -t | grep '^i8042'
+i8042: PNP: No PS/2 controller found. Probing ports directly.
+</code></pre>
+<p>PS/2 端子が存在するのに上記のメッセージが表示される場合、<code>mkinitcpio.conf</code> の <code>MODULES=</code> 行に <code>atkbd</code> を追加してから <code>mkinitcpio -P</code> を実行してください。再起動した後にキーボードが使えないことに気づいたとしても、ブートローダーのカーネルコマンドラインに以下を追加することで解決できます:</p>
+<pre><code>earlymodules=atkbd modules-load=atkbd
+</code></pre>
+<p>数時間後に Linux 3.13 を [core] に移動するので、アップグレードするまえにこの記事を読むことができるはずです。移行によって不便をおかけすることを謝罪します。</p>

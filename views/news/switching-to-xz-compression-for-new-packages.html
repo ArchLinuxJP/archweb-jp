@@ -1,0 +1,4 @@
+<p>約1ヶ月前に xz フォーマット (別名 LZMA2) で圧縮されたパッケージをサポートするようにツールをアップデートしました。gzip と比較して xz はパッケージの容量を大幅に縮小します。データによっては 30% 以上の縮小が見込めます。</p>
+<p>パッケージを新しいフォーマットで圧縮したい場合はビルド環境の makepkg.conf の <code>PKGEXT</code> 変数を '.pkg.tar.xz' に変更してください。dbscripts, devtools, namcap などのツール、そして勿論 pacman は xz で圧縮されたパッケージを処理できます。<code>*.pkg.tar.gz</code> ファイルでマッチするカスタムスクリプトを使っている場合、マッチングパターンを <code>*.pkg.tar.*</code> に変更してください。</p>
+<p>古い環境からスムーズにアップデートできるようにするため、しばらくのあいだ pacman, pacman-mirrorlist, libarchive, libfetch, xz-utils パッケージは gz 圧縮を使用します (PKGBUILD に "PKGEXT='.pkg.tar.gz'" を追加することで gz 圧縮が使われます)。</p>
+<p>いまのうちに、全ての開発者および Trusted User は xz フォーマットに切り替えることを強く推奨します。</p>

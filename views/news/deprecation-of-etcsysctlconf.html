@@ -1,0 +1,6 @@
+<p>systemd バージョン 207 から、<code>/etc/sysctl.conf</code> の設定は適用されなくなります。適用されるのは <code>/etc/sysctl.d/*</code> のファイルの設定だけです。procps-ng による <code>/etc/sysctl.conf</code> の設定はカーネルのデフォルト設定となるため、<code>/etc/sysctl.conf</code> ファイルは廃止することを決定しました。</p>
+<p>procps-ng-3.3.8-3 にアップグレードしたときに、<code>/etc/sysctl.conf</code> に変更を加えた設定は全て <code>/etc/sysctl.d</code> に移動するように表示されます。以下のコマンドを実行することで設定を移動できます:</p>
+<pre><code>pacman -Syu
+mv /etc/sysctl.conf.pacsave /etc/sysctl.d/99-sysctl.conf
+</code></pre>
+<p><code>/etc/sysctl.conf</code> をカスタマイズしていない場合は特に何も作業は不要です。</p>

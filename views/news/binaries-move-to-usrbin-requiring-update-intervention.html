@@ -1,0 +1,23 @@
+<p>次回アップデートでは以下のようなエラーメッセージが表示されるはずです:</p>
+<pre><code>error: failed to commit transaction (conflicting files)
+filesystem: /bin exists in filesystem
+</code></pre>
+<p>アップデートによって全てのバイナリは /usr/bin ディレクトリにまとめられます。統合によってArch 環境にとって意味がないバイナリの分散がなくなり開発チームによるパッケージのメンテナンスが単純化されます。バイナリ移動の根拠となる詳しい説明は<a href="https://mailman.archlinux.org/pipermail/arch-dev-public/2012-March/022625.html">こちらの投稿</a>から読むことができます。</p>
+<p>以下の手順に従うことで安全にアップデートすることができます:</p>
+<p>1) /bin, /sbin, /usr/sbin にファイルを配置している非公式パッケージを修正して /usr/bin にファイルを配置するようにしてください。公式リポジトリに含まれていないパッケージで、修正が必要なパッケージのリストは以下のコマンドで確認できます:</p>
+<pre><code>$ pacman -Qqo /bin /sbin /usr/sbin | pacman -Qm -
+</code></pre>
+<p>また、非公式リポジトリからインストールしたパッケージは以下のコマンドで確認できます:</p>
+<pre><code>$ paclist &lt;repo&gt; | awk ' { print $1 } ' | pacman -Ql - | grep ' /s\?bin/\| /usr/sbin/'
+</code></pre>
+<p>2) IgnorePkg あるいは IgnoreGroup に指定しているパッケージが /bin, /sbin, /usr/sbin にファイルをインストールしていないか確認してください。必要であれば修正してください。</p>
+<p>3) どのパッケージにも含まれていないファイルが /bin, /sbin, /usr/sbin にある場合、ファイルを削除してください。以下のコマンドでファイルを確認できます:</p>
+<pre><code>$ find /bin /sbin /usr/sbin -exec pacman -Qo -- {} + &gt;/dev/null
+</code></pre>
+<p>4) autofs を使用している場合は全てのパーティションがマウントされていることを確認してください。アップデートで後に必要になったときに自動マウントされない可能性があります。</p>
+<p>5) システムをアップデートしてください。</p>
+<p>アップデートを実行する前に、root 権限で別のターミナルを開いておいて不測の事態に備えると良いでしょう (特に ssh 経由でアップデートする場合)。</p>
+<pre><code># pacman -Syu --ignore filesystem,bash
+# pacman -S bash
+# pacman -Su
+</code></pre>

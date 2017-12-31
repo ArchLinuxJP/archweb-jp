@@ -1,0 +1,6 @@
+<p>Arch Linux のパッケージによってインストールされている <code>/lib</code> ディレクトリのファイルは全て <code>/usr/lib</code> に移動され、<code>/lib</code> は <code>usr/lib</code> のシンボリックリンクとなります。アップデートの実行時、おそらく pacman は <code>/lib</code> ディレクトリの衝突を検出します。単純な場合、以下のコマンドで衝突を解決できます:</p>
+<pre><code>pacman -Syu --ignore glibc
+pacman -Su
+</code></pre>
+<p>今回のアップデートで <code>--force</code> を使ってはいけません。</p>
+<p>依存関係のバージョンの問題や <code>/lib</code> 内のファイルの衝突などによって上記のコマンドでアップデートが上手く行かない場合、<a href="https://wiki.archlinux.org/index.php/DeveloperWiki%3Ausrlib">こちらのガイド</a>を読んでアップグレードしてください。</p>

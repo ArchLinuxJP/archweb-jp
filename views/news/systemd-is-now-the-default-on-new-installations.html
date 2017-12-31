@@ -1,0 +1,4 @@
+<p>現在 base グループには <code>systemd-sysvcompat</code> パッケージが含まれています。つまり、新しい環境は全てデフォルトで systemd で起動します。</p>
+<p>一部のパッケージにはまだネイティブの systemd ユニットがないため、ユーザーは <code>initscripts</code> パッケージをインストールして <code>/etc/rc.conf</code> の <code>DAEMONS</code> 配列を使って旧式の rc.d スクリプトでサービスを起動できます。</p>
+<p>今回の変更は既存環境には影響しません。しばらくは <code>initscripts</code> と <code>sysvinit</code> パッケージは公式リポジトリから利用できます。ただし、個別のパッケージは systemd で起動する環境に依存するようになります。</p>
+<p>既存環境を systemd に移行する方法は <a href="https://wiki.archlinux.jp/index.php/Systemd">wiki</a> を参照してください。</p>

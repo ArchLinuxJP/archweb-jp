@@ -1,0 +1,7 @@
+<p>Linux カーネルのバージョン 3.0 が <code>[core]</code> に入ったため、<code>kernel26</code> パッケージの名前は <code>linux</code> に変更されました。また、カーネルと initrd の名前も以下のように変更されます:</p>
+<ul>
+<li><code>vmlinuz26</code> は <code>vmlinuz-linux</code> になります。</li>
+<li><code>kernel26.img</code> は <code>initramfs-linux.img</code> になります。</li>
+<li><code>kernel26-fallback.img</code> は <code>initramfs-linux-fallback.img</code> になります。</li>
+</ul>
+<p>アップデートによってシステムが壊れないようにするため、ブートローダーの設定が古いファイルを参照していても機能するようにシンボリックリンクが作成されます。ただしブートローダーの設定を更新してシンボリックリンクは削除することを推奨します。</p>

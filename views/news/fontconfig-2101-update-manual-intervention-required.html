@@ -1,0 +1,24 @@
+<p>fontconfig 2.10.1 のアップデートでは以前のバージョンのパッケージによって作成されたシンボリックリンクが上書きされます。アップデートする前にシンボリックリンクを削除する必要があります:</p>
+<pre><code>rm /etc/fonts/conf.d/20-unhint-small-vera.conf  
+rm /etc/fonts/conf.d/20-fix-globaladvance.conf  
+rm /etc/fonts/conf.d/29-replace-bitmap-fonts.conf  
+rm /etc/fonts/conf.d/30-metric-aliases.conf  
+rm /etc/fonts/conf.d/30-urw-aliases.conf  
+rm /etc/fonts/conf.d/40-nonlatin.conf  
+rm /etc/fonts/conf.d/45-latin.conf  
+rm /etc/fonts/conf.d/49-sansserif.conf  
+rm /etc/fonts/conf.d/50-user.conf  
+rm /etc/fonts/conf.d/51-local.conf  
+rm /etc/fonts/conf.d/60-latin.conf  
+rm /etc/fonts/conf.d/65-fonts-persian.conf  
+rm /etc/fonts/conf.d/65-nonlatin.conf  
+rm /etc/fonts/conf.d/69-unifont.conf  
+rm /etc/fonts/conf.d/80-delicious.conf  
+rm /etc/fonts/conf.d/90-synthetic.conf  
+pacman -Sy fontconfig
+</code></pre>
+<p>メインのシステム全体の設定はシンボリックリンクによって行うようになります (自動ヒント・サブピクセル・LCD フィルタなど):</p>
+<pre><code>cd /etc/fonts/conf.d  
+ln -s ../conf.avail/XX-foo.conf
+</code></pre>
+<p><a href="https://wiki.archlinux.jp/index.php/%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E8%A8%AD%E5%AE%9A">フォント設定</a>や<a href="https://wiki.archlinux.jp/index.php/%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88">フォント</a>の wiki ページを参照してください。</p>

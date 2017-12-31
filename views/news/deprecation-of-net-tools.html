@@ -1,0 +1,8 @@
+<p>次の4月で最後の net-tools のリリースから10周年となります。私たちはこの機会に net-tools を取り払って、net-tools と同じ機能を提供する別のツールを使用することを決定しました。影響範囲は多少ありますが、大抵の人は気づかないでしょう。</p>
+<p>net-tools は公式リポジトリに残るため、net-tools に依存するスクリプトは今後も動作するはずです。</p>
+<h4><code>rc.conf</code></h4>
+<p><code>net-tools</code> の代わりに <code>iproute2</code> を使って簡単なネットワーク設定をするための新しい構文が <code>rc.conf</code> に取り込まれました。旧機能もなくなりはしませんが、新しい機能は期待しないでください。</p>
+<p>新しい構文は非常にシンプルで (静的または dhcp による) 有線ネットワークデバイスのみサポートします。将来的に機能を追加する予定はありません。<code>networkmanager</code> や <code>netcfg</code> などの高度なネットワークソリューションを使用することを推奨します。</p>
+<h4><code>domainname</code> (別名 <code>nisdomainname</code> または <code>ypdomainname</code>)</h4>
+<p>バイナリは <code>net-tools</code> ではなく <code>yp-tools</code> によって提供されるようになります。さらに、initscripts によってドメイン名が設定されることはなくなり、ypbind の rc スクリプトによって扱われるようになります。</p>
+<p>これまでドメイン名は <code>/etc/conf.d/nisdomainname</code> から読み込まれたり <code>/etc/defaultdomain</code> が使われたり一貫性がありませんでした。今後はドメイン名は <code>/etc/conf.d/nisdomainname</code> からのみ読み込まれることになります。</p>
