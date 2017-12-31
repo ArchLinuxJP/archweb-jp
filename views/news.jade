@@ -4,9 +4,19 @@ block content
 	div#news-article-list.box
 		h2 Arch Linux ニュースアーカイブ
 		div.pagination
-			p 記事数: !{news[0].count}。ページ: 1/1。
+			p 記事数: !{news[0].count}。ページ: !{page}/!{total}。
 			p.news-nav
-				span 1
+				- if(prevp != 0){
+				span.prev
+					a(href="?page=" + prevp, title="前のページヘ") &lt; 前
+				- }else{
+				span.prev &lt; 前
+				- } if(nextp != 0){
+				span.next
+					a(href="?page=" + nextp, title="次のページヘ") 次 &gt;
+				- }else{
+				span.next 次 &gt;
+				- }
 		table#article-list.results
 			thead
 				tr
@@ -24,4 +34,14 @@ block content
 		div.pagination
 			p 記事数: !{news[0].count}。ページ: 1/1。
 			p.news-nav
-				span 1
+				- if(prevp != 0){
+				span.prev
+					a(href="?page=" + prevp, title="前のページヘ") &lt; 前
+				- }else{
+				span.prev &lt; 前
+				- } if(nextp != 0){
+				span.next
+					a(href="?page=" + nextp, title="次のページヘ") 次 &gt;
+				- }else{
+				span.next 次 &gt;
+				- }

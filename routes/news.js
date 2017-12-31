@@ -6,12 +6,27 @@ var db = new sqlite3.Database("admin/index.sqlite3");
 /* GET home page. */
 router.get("/", function(req, res, next) {
 	db.serialize(function() {
-		db.all("SELECT *, (SELECT COUNT(url) FROM news) AS count FROM news LIMIT 50", function(err, rows){
+		// オフセット
+		var limit = " LIMIT 50";
+		var page = (req.query.page != undefined) ? parseInt(req.query.page) : 1;
+		if(page > 1){
+			limit = " LIMIT " + ((page - 1) * 50) + ", 50";
+		}
+		
+		db.all("SELECT *, (SELECT COUNT(url) FROM news) AS count FROM news" + limit, function(err, rows){
 			if (!err) {
+				var total = Math.ceil(rows[0].count * 0.02);
+				var nextp = (page < total) ? page + 1 : 0;
+				var prevp = (page > 1) ? page - 1 : 0;
+				
 				res.render("news", {
 					title: "ニュース",
 					news: rows,
-					selected: "anb-home"
+					selected: "anb-home",
+					page: page,
+					total: total,
+					nextp: nextp,
+					prevp: prevp
 				});
 			}else{
 				next(err);
