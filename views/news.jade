@@ -24,15 +24,15 @@ block content
 					th 題名
 					th 著者
 			tbody
-				- var odd = false; news.forEach(function(article){ odd = odd ? false : true;
+				- var odd = false; if(news[0].count != 0){ news.forEach(function(article){ odd = odd ? false : true;
 				tr(class=odd?"odd":"even")
 					td= article.created
 					td.wrap
 						a(href="/news/" + article.url + "/", title ="見る: " + article.headline)= article.headline
 					td= article.author
-				- })
+				- }) }
 		div.pagination
-			p 記事数: !{news[0].count}。ページ: 1/1。
+			p 記事数: !{news[0].count}。ページ: !{page}/!{total}。
 			p.news-nav
 				- if(prevp != 0){
 				span.prev
