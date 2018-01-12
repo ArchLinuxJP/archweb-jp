@@ -27,7 +27,7 @@ app.set('view engine', 'jade');
 
 // i18n setup
 i18n.configure({
-	locales: ['en', 'ja'],
+	locales: ['ar', 'cs', 'en', 'es', 'fr_CA', 'ja', 'pt_BR', 'pt_PT', 'ru_RU', 'sk', 'zh_CN'],
 	defaultLocale: 'ja',
 	queryParameter: 'lang',
 	directory: __dirname + '/admin/translate'
