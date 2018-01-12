@@ -5,71 +5,73 @@ block content
 		h2 !{package["pkgname"]} !{package["pkgver"]}-!{package["pkgrel"]}
 		div#detailslinks.listing
 			div#actionlist
-				h4 パッケージアクション
+				h4 #{__('packageaction')}
 				ul.small
 					- var repo = (package["repo"] == "community" || package["repo"] == "community-testing") ? "community" : "packages";
-					li <a href="https://projects.archlinux.org/svntogit/!{repo}.git/tree/trunk?h=packages/#{package["pkgname"]}" title="#{package["pkgname"]} のソースファイル">ソースファイル</a> / <a href="https://projects.archlinux.org/svntogit/!{repo}.git/log/trunk?h=packages/#{package["pkgname"]}" title="#{package["pkgname"]} の変更履歴">変更履歴</a>
+					li <a href="https://projects.archlinux.org/svntogit/!{repo}.git/tree/trunk?h=packages/#{package["pkgname"]}" title="#{package["pkgname"]} のソースファイル">#{__('sourcefile')}</a> / <a href="https://projects.archlinux.org/svntogit/!{repo}.git/log/trunk?h=packages/#{package["pkgname"]}" title="#{package["pkgname"]} の変更履歴">#{__('viewchanges')}</a>
 					li
-						a(href="https://wiki.archlinux.jp/index.php?title=%E7%89%B9%E5%88%A5%3A%E6%A4%9C%E7%B4%A2&search=" + package["pkgname"], title=package["pkgname"] + " について wiki で検索") ArchWiki を検索
-					li <a href="https://www.archlinux.org/packages/#{package["repo"]}/#{package["arch"]}/#{package["pkgname"]}/flag/" title="#{package["pkgname"]} の out-of-date フラグを立てる">パッケージの Out-of-Date フラグを立てる</a> <a href="/static/flaghelp.html" title="パッケージのフラグ立てに関するヘルプ" onclick="return !window.open('/static/flaghelp.html','FlagHelp','height=350,width=450,location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=no');">(?)</a>
+						a(href=__('archwiki') + package["pkgname"], title=package["pkgname"] + " について wiki で検索") #{__('searchwiki')}
 					li
-						a(href="https://mirror.archlinuxjp.org/" + package["repo"] + "/os/" + package["arch"] + "/" + package["pkgname"] + "-" + package["pkgver"] + "-" + package["pkgrel"] + "-" + package["arch"] + ".pkg.tar.xz", rel="nofollow", title="ミラーから " + package["pkgname"] + " をダウンロード") ミラーからダウンロード
+						a(href="https://security.archlinux.org/package/" + package["pkgname"], title=package["pkgname"] + " のセキュリティ情報を表示") #{__('securityissue')}
+					li <a href="https://www.archlinux.org/packages/#{package["repo"]}/#{package["arch"]}/#{package["pkgname"]}/flag/" title="#{package["pkgname"]} の out-of-date フラグを立てる">#{__('flagoutofdate')}</a> <a href="/static/flaghelp.html" title="パッケージのフラグ立てに関するヘルプ" onclick="return !window.open('/static/flaghelp.html','FlagHelp','height=350,width=450,location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=no');">(?)</a>
+					li
+						a(href="https://mirror.archlinuxjp.org/" + package["repo"] + "/os/" + package["arch"] + "/" + package["pkgname"] + "-" + package["pkgver"] + "-" + package["pkgrel"] + "-" + package["arch"] + ".pkg.tar.xz", rel="nofollow", title="ミラーから " + package["pkgname"] + " をダウンロード") #{__('downloadmirror')}
 		div
 			table#pkginfo
 				tr
-					th アーキテクチャ:
+					th #{__('architecture')}:
 					td
 						a(href="/packages/?arch=" + package["arch"], title=package["arch"] + " アーキテクチャのパッケージ")= package["arch"]
 				tr
-					th リポジトリ:
+					th #{__('repository')}:
 					td
 						a(href="/packages/?repo=" + package["repo"], title=package["repo"] + " リポジトリ")= package["repo"]
 				- if(package["pkgbase"] != ""){
 				tr
-					th ベースパッケージ:
+					th #{__('basepackage')}:
 					td= package["pkgbase"]
 				- }
 				tr
-					th 説明:
+					th #{__('description')}:
 					td#pkgdesc.wrap= package["pkgdesc"]
 				tr
-					th 上流 URL:
+					th #{__('upstream')}:
 					td
 						a(href=package["url"], title=package["pkgname"] + " のウェブサイト")= package["url"]
 				tr
-					th ライセンス:
+					th #{__('license')}:
 					td.wrap= package["license"].replace(/ /g,", ")
 				- if(package["pkggrp"] != ""){
 				tr
-					th グループ:
+					th #{__('groups')}:
 					- var pkggrp = package["pkggrp"].split(" "); for(var i = 0; i < pkggrp.length; i++){ pkggrp[i] = "<a href=\"/groups/" + ((package["arch"] == "any") ? "x86_64" : package["arch"]) + "/" + pkggrp[i] + "/\" title=\"" + pkggrp[i] + " グループのパッケージ\">" + pkggrp[i] + "</a>"; }
 					td!= pkggrp.join(", ")
 				- } if(package["provides"] != ""){ var provides = "<span class=\"related\">" + package["provides"].replace(/ /g, "</span>, <span class=\"related\">") + "</span>";
 				tr
-					th 提供:
+					th #{__('provides')}:
 					td.wrap.relatedto!= provides
 				- } if(package["replaces"] != ""){ var replaces = "<span class=\"related\">" + package["replaces"].replace(/ /g, "</span>, <span class=\"related\">") + "</span>";
 				tr
-					th 置換パッケージ:
+					th #{__('replaces')}:
 					td.wrap.relatedto!= replaces
 				- } if(package["conflicts"] != ""){ var conflicts = "<span class=\"related\">" + package["conflicts"].replace(/ /g, "</span>, <span class=\"related\">") + "</span>";
 				tr
-					th 衝突パッケージ:
+					th #{__('conflicts')}:
 					td.wrap.relatedto!= conflicts
 				- }
 				tr
-					th パッケージ容量:
+					th #{__('packagesize')}:
 					- if(package["csize"] > 1000000){ var csize = (package["csize"] * 0.000001).toFixed(1) + " MB"; }else if(package["csize"] > 1000){ var csize = (package["csize"] * 0.001).toFixed(1) + " KB"; }else{ var csize = package["csize"] + " B"; }
 					td= csize
 				tr
-					th インストール容量:
+					th #{__('installsize')}:
 					- if(package["isize"] > 1000000){ var isize = (package["isize"] * 0.000001).toFixed(1) + " MB"; }else if(package["isize"] > 1000){ var isize = (package["isize"] * 0.001).toFixed(1) + " KB"; }else{ var isize = package["isize"] + " B"; }
 					td= isize
 				tr
-					th パッケージ作成者:
+					th #{__('packager')}:
 					td= package["packager"].split(" <")[0]
 				tr
-					th 最終更新:
+					th #{__('lastupdated')}:
 					td !{package["last_update"]} JST
 		div#metadata
 			div#pkgdeps.listing
@@ -77,7 +79,7 @@ block content
 				- if(package["optdeps"] != ""){ var optdeps = package["optdeps"].split("<>"); }else{ var optdeps = new Array(); }
 				- if(package["makedeps"] != ""){ var makedeps = package["makedeps"].split(" "); }else{ var makedeps = new Array(); }
 				- var totaldeps = deps.length + optdeps.length + makedeps.length;
-				h3(title=package["pkgname"] + " は以下のパッケージに依存しています") 依存パッケージ (!{totaldeps})
+				h3(title=package["pkgname"] + " は以下のパッケージに依存しています") #{__('dependencies')} (!{totaldeps})
 				ul#pkgdepslist
 					- for(var i = 0; i < deps.length; i++){
 					li
@@ -93,7 +95,7 @@ block content
 						- if(depends.length > 1){
 						span= optdeps[i].replace(depends[0], "")
 						- }
-						span.opt-dep  (任意)
+						span.opt-dep  #{__('optional')}
 					- } for(var i = 0; i < makedeps.length; i++){
 					li
 						- var depends = makedeps[i].split(/(>|<|=)/);
@@ -101,14 +103,14 @@ block content
 						- if(depends.length > 1){
 						span= makedeps[i].replace(depends[0], "")
 						- }
-						span.make-dep  (ビルド)
+						span.make-dep  #{__('make')}
 					- }
 			div#pkgreqs.listing
 				- if(package["requires"] != undefined){ var reqs = package["requires"].split(" "); }else{ var reqs = new Array(); }
 				- if(package["optreqs"] != undefined){ var optreqs = package["optreqs"].split(" "); }else{ var optreqs = new Array(); }
 				- if(package["makereqs"] != undefined){ var makereqs = package["makereqs"].split(" "); }else{ var makereqs = new Array(); }
 				- var totalreqs = reqs.length + optreqs.length + makereqs.length;
-				h3(title="以下のパッケージは " + package["pkgname"] + " を必要としています") !{package["pkgname"]} を必要とするパッケージ (!{totalreqs})
+				h3(title="以下のパッケージは " + package["pkgname"] + " を必要としています") #{__('requiredby', package["pkgname"])} (!{totalreqs})
 				ul#pkgreqslist
 					- for(var i = 0; i < reqs.length; i++){
 					li
@@ -116,17 +118,17 @@ block content
 					- } for(var i = 0; i < optreqs.length; i++){
 					li
 						a(href="/packages/?name=" + optreqs[i])= optreqs[i]
-						span.opt-req  (任意)
+						span.opt-req  #{__('optional')}
 					- } for(var i = 0; i < makereqs.length; i++){
 					li
 						a(href="/packages/?name=" + makereqs[i])= makereqs[i]
-						span.make-req  (ビルド)
+						span.make-req  #{__('make')}
 					- }
 			div#pkgfiles.listing
-				h3(title="このパッケージに含まれている全てのファイルのリスト") パッケージの中身
+				h3(title="このパッケージに含まれている全てのファイルのリスト") #{__('packagecontents')}
 				div#pkgfilelist
 					p
-						a(href="https://www.archlinux.org/packages/" + package["repo"] + "/" + package["arch"] + "/" + package["pkgname"] + "/files/", title="クリックして " + package["pkgname"] + " の全てのファイルのリストを見る") !{package["pkgname"]} のファイルリストを表示
+						a(href="https://www.archlinux.org/packages/" + package["repo"] + "/" + package["arch"] + "/" + package["pkgname"] + "/files/", title="クリックして " + package["pkgname"] + " の全てのファイルのリストを見る") #{__('filelist', package["pkgname"])}
 		script(type="application/ld+json").
 			{
 				"@context": "http://schema.org",

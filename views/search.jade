@@ -64,21 +64,21 @@ block content
 					input(name="q", size="40", type="text", value=q, pattern="^[0-9a-zA-Z\@\.\_\+\-]+$")#id_q
 				div
 					label &nbsp;
-					input(title="この条件でパッケージを検索", type="submit", value="検索")
+					input(title="この条件でパッケージを検索", type="submit", value=__('search'))
 	div#pkglist-results.box
 		div.pkglist-stats
-			p マッチするパッケージ: !{package[0].count}。ページ: !{page}/!{total}。
+			p #{__mf("match", {count: package[0].count})} #{__("page", page, total)}
 			div.pkglist-nav
 				- if(prevp != 0){
 				span.prev
-					a(href="?page=" + prevp + criteria, title="前のページヘ") &lt; 前
+					a(href="?page=" + prevp + criteria, title="前のページヘ") &lt; #{__('prev')}
 				- }else{
-				span.prev &lt; 前
+				span.prev &lt; #{__('prev')}
 				- } if(nextp != 0){
 				span.next
-					a(href="?page=" + nextp + criteria, title="次のページヘ") 次 &gt;
+					a(href="?page=" + nextp + criteria, title="次のページヘ") #{__('next')} &gt;
 				- }else{
-				span.next 次 &gt;
+				span.next #{__('next')} &gt;
 				- }
 		form#pkglist-results-form
 			table.results
@@ -89,16 +89,16 @@ block content
 						th
 							a(href="/packages/?sort=" + ((sort == "repo")?"-repo":"repo") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="リポジトリでパッケージをソート") #{__('repository')}
 						th
-							a(href="/packages/?sort=" + ((sort == "pkgname")?"-pkgname":"pkgname") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="パッケージ名でパッケージをソート") 名前
-						th バージョン
-						th 説明
+							a(href="/packages/?sort=" + ((sort == "pkgname")?"-pkgname":"pkgname") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="パッケージ名でパッケージをソート") #{__('name')}
+						th #{__('version')}
+						th #{__('description')}
 						th
-							a(href="/packages/?sort=" + ((sort == "-last_update")?"last_update":"-last_update") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="最終更新日でパッケージをソート") 最終更新
+							a(href="/packages/?sort=" + ((sort == "-last_update")?"last_update":"-last_update") + criteria.replace(/&?sort=[a-z-_]*/, ""), title="最終更新日でパッケージをソート") #{__('lastupdated')}
 				tbody
 					- if(package[0].count == 0){
 					tr.empty
 						td(colspan="8")
-							em 一致するパッケージが見つかりませんでした
+							em #{__('notfound')}
 					- }else{ var odd = false; package.forEach(function(item){ odd = odd ? false : true; item.last_update = item.last_update.split(" ")[0];
 					tr(class=odd?"odd":"even")
 						td= item.arch
@@ -110,19 +110,20 @@ block content
 						td= item.last_update
 					- }) }
 		div.pkglist-stats
-			p マッチするパッケージ: !{package[0].count}。ページ: !{page}/!{total}。
+			p #{__mf("match", {count: package[0].count})} #{__("page", page, total)}
 			div.pkglist-nav
 				- if(prevp != 0){
 				span.prev
-					a(href="?page=" + prevp + criteria, title="前のページヘ") &lt; 前
+					a(href="?page=" + prevp + criteria, title="前のページヘ") &lt; #{__('prev')}
 				- }else{
-				span.prev &lt; 前
+				span.prev &lt; #{__('prev')}
 				- } if(nextp != 0){
 				span.next
-					a(href="?page=" + nextp + criteria, title="次のページヘ") 次 &gt;
+					a(href="?page=" + nextp + criteria, title="次のページヘ") #{__('next')} &gt;
 				- }else{
-				span.next 次 &gt;
+				span.next #{__('next')} &gt;
 				- }
 	div#pkglist-about.box
-		p 探しているパッケージが見つからない場合は、検索条件を変えてみたり、<a href="https://aur.archlinux.org/">AUR</a> を検索してください。
-		p こちらは Arch Linux パッケージデータベースです。公式でサポートされているリポジトリに含まれているパッケージに関する情報を見ることができます。
+		p !{__('about1', '<a href="https://aur.archlinux.org/">AUR</a>')}
+		p #{__('about2')}
+		p !{__('about3', '<a href="https://www.transifex.com/archlinuxjp/arch-package-description/">Transifex</a>')}
