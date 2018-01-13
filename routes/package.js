@@ -9,7 +9,15 @@ router.get("/", function(req, res, next) {
 		var repo = req.originalUrl.split("/")[2];
 		var arch = req.originalUrl.split("/")[3];
 		var pkgname = req.originalUrl.split("/")[4];
-		db.each("SELECT * FROM package WHERE repo = '" + repo + "' AND arch = '" + arch + "' AND pkgname = '" + pkgname + "'", function(err, row){
+		
+		// パッケージ翻訳
+		if(req.getLocale() != "en"){
+			var translate = " LEFT OUTER JOIN translate_" + req.getLocale() + " ON package.pkgname = translate_" + req.getLocale() + ".name";
+		}else{
+			var translate = "";
+		}		
+		
+		db.each("SELECT * FROM package" + translate + " WHERE repo = '" + repo + "' AND arch = '" + arch + "' AND pkgname = '" + pkgname + "'", function(err, row){
 			if (!err) {
 				res.render("package", {
 					title: pkgname + " " + row.pkgver + "-" + row.pkgrel + " (" + arch + ")",

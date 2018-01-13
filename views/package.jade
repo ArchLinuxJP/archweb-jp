@@ -33,7 +33,7 @@ block content
 				- }
 				tr
 					th #{__('description')}:
-					td#pkgdesc.wrap= package["pkgdesc"]
+					td#pkgdesc.wrap= package["desc"] || package["pkgdesc"]
 				tr
 					th #{__('upstream')}:
 					td

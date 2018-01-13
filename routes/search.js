@@ -6,6 +6,15 @@ var db = new sqlite3.Database("admin/package.sqlite3");
 /* GET home page. */
 router.get("/", function(req, res, next) {
 	db.serialize(function() {
+		// パッケージ翻訳
+		if(req.getLocale() != "en"){
+			var pkgdesc = "ifnull(translate_" + req.getLocale() + ".desc, package.pkgdesc) as pkgdesc";
+			var translate = " LEFT OUTER JOIN translate_" + req.getLocale() + " ON package.pkgname = translate_" + req.getLocale() + ".name";
+		}else{
+			var pkgdesc = "pkgdesc";
+			var translate = "";
+		}
+
 		// ソート
 		switch(req.query.sort){
 			case "arch":
@@ -127,7 +136,7 @@ router.get("/", function(req, res, next) {
 			limit = " LIMIT " + ((page - 1) * 100) + ", 100";
 		}
 		
-		db.all("SELECT arch, repo, pkgname, pkgver, pkgrel, pkgdesc, last_update, (SELECT COUNT(pkgname) FROM package" + where + ") AS count FROM package" + where + order + limit, function(err, rows){
+		db.all("SELECT arch, repo, pkgname, pkgver, pkgrel, " + pkgdesc + ", last_update, (SELECT COUNT(pkgname) FROM package" + where + ") AS count FROM package" + translate + where + order + limit, function(err, rows){
 			if (!err) {
 				var criteria = "";
 				if(Object.keys(req.query).length > 0){
