@@ -12,7 +12,7 @@ router.get("/", function(req, res, next) {
 		
 		// パッケージ翻訳
 		if(req.getLocale() != "en"){
-			var translate = " LEFT OUTER JOIN translate_" + req.getLocale() + " ON package.pkgname = translate_" + req.getLocale() + ".name";
+			var translate = " LEFT OUTER JOIN translate_" + req.getLocale().replace("-", "_") + " ON package.pkgname = translate_" + req.getLocale().replace("-", "_") + ".name";
 		}else{
 			var translate = "";
 		}		

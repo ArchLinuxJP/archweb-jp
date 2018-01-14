@@ -8,8 +8,8 @@ router.get("/", function(req, res, next) {
 	db.serialize(function() {
 		// パッケージ翻訳
 		if(req.getLocale() != "en"){
-			var pkgdesc = "ifnull(translate_" + req.getLocale() + ".desc, package.pkgdesc) as pkgdesc";
-			var translate = " LEFT OUTER JOIN translate_" + req.getLocale() + " ON package.pkgname = translate_" + req.getLocale() + ".name";
+			var pkgdesc = "ifnull(translate_" + req.getLocale().replace("-", "_") + ".desc, package.pkgdesc) as pkgdesc";
+			var translate = " LEFT OUTER JOIN translate_" + req.getLocale().replace("-", "_") + " ON package.pkgname = translate_" + req.getLocale().replace("-", "_") + ".name";
 		}else{
 			var pkgdesc = "pkgdesc";
 			var translate = "";

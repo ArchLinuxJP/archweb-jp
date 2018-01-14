@@ -27,10 +27,10 @@ app.set('view engine', 'jade');
 
 // i18n setup
 i18n.configure({
-	locales: ['ar', 'cs', 'en', 'es', 'fr_CA', 'ja', 'pt_BR', 'pt_PT', 'ru_RU', 'sk', 'zh_CN'],
+	locales: ['ar', 'cs', 'en', 'es', 'fr-CA', 'ja', 'pt-BR', 'pt-PT', 'ru-RU', 'sk', 'zh-CN'],
 	defaultLocale: 'ja',
 	queryParameter: 'lang',
-	directory: __dirname + '/admin/translate'
+	directory: __dirname + '/admin/lang'
 });
 
 // uncomment after placing your favicon in /public
