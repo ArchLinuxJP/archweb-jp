@@ -9,6 +9,15 @@ router.get("/", function(req, res, next) {
 		var arch = req.originalUrl.split("/")[2];
 		var grpname = req.originalUrl.split("/")[3];
 		
+		// パッケージ翻訳
+		if(req.getLocale() != "en"){
+			var pkgdesc = "ifnull(translate_" + req.getLocale().replace("-", "_") + ".desc, package.pkgdesc) as pkgdesc";
+			var translate = " LEFT OUTER JOIN translate_" + req.getLocale().replace("-", "_") + " ON package.pkgname = translate_" + req.getLocale().replace("-", "_") + ".name";
+		}else{
+			var pkgdesc = "pkgdesc";
+			var translate = "";
+		}
+		
 		// ソート
 		switch(req.query.sort){
 			case "repo":
@@ -28,7 +37,7 @@ router.get("/", function(req, res, next) {
 		
 		var where = " WHERE (pkggrp = \"" + grpname + "\" OR pkggrp LIKE \"% " + grpname + "\" OR pkggrp LIKE \"" + grpname + " %\") AND (arch = \"" + arch + "\" OR arch =\"any\")";
 		
-		db.all("SELECT arch, repo, pkgname, pkgver, pkgrel, pkgdesc, last_update, (SELECT COUNT(pkgname) FROM package" + where + ") AS count FROM package" + where + order, function(err, rows){
+		db.all("SELECT arch, repo, pkgname, pkgver, pkgrel, " + pkgdesc + ", last_update, (SELECT COUNT(pkgname) FROM package" + where + ") AS count FROM package" + translate + where + order, function(err, rows){
 			if (!err) {
 				if(rows.length == 0){
 					next(err);
