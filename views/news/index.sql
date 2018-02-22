@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"zita-resampler-160-1-2-update-requires-manual-intervention",
-		"zita-resampler 1.6.0-1 -> 2 update requires manual intervention",
+		"zita-resampler 1.6.0-1 から 1.6.0-2 への更新は手動での作業が必要です",
 		"2018-02-22",
 		"2018-02-22",
 		"Antonio Rojas"
