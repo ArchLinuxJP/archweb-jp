@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"zita-resampler-160-1-2-update-requires-manual-intervention",
+		"",
+		"2018-02-22",
+		"2018-02-22",
+		"Antonio Rojas"
+	),
+	(
 		"the-end-of-i686-support",
 		"i686 サポートの終了について",
 		"2017-11-08",
