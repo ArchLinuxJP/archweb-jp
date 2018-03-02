@@ -8,7 +8,11 @@ block content
 				h4 #{__('packageaction')}
 				ul.small
 					- var repo = (package["repo"] == "community" || package["repo"] == "community-testing") ? "community" : "packages";
+					- if(package["pkgbase"] != ""){
+					li <a href="https://projects.archlinux.org/svntogit/!{repo}.git/tree/trunk?h=packages/#{package["pkgbase"]}" title="#{package["pkgname"]} のソースファイル">#{__('sourcefile')}</a> / <a href="https://projects.archlinux.org/svntogit/!{repo}.git/log/trunk?h=packages/#{package["pkgbase"]}" title="#{package["pkgname"]} の変更履歴">#{__('viewchanges')}</a>
+					- }else{
 					li <a href="https://projects.archlinux.org/svntogit/!{repo}.git/tree/trunk?h=packages/#{package["pkgname"]}" title="#{package["pkgname"]} のソースファイル">#{__('sourcefile')}</a> / <a href="https://projects.archlinux.org/svntogit/!{repo}.git/log/trunk?h=packages/#{package["pkgname"]}" title="#{package["pkgname"]} の変更履歴">#{__('viewchanges')}</a>
+					- }
 					li
 						a(href=__('archwiki') + package["pkgname"], title=package["pkgname"] + " について wiki で検索") #{__('searchwiki')}
 					li
