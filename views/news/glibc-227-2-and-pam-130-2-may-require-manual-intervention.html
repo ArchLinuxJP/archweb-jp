@@ -1,0 +1,3 @@
+<p>glibc 2.27-2 では NIS と NIS+ のサポートが取り除かれました。<code>filesystem</code> パッケージに含まれる、デフォルトの <code>/etc/nsswitch.conf</code> は既に変更を反映しています。既に <code>/etc/nsswitch.conf.pacnew</code> が存在する場合には、glibc 2.27-2 へのアップグレード前にマージしてください。</p>
+<p>NIS は <code>libnss_nis</code> パッケージをインストールすることで引き続き利用可能です。NIS+ については公式リポジトリには代替策が存在しません。</p>
+<p><code>pam 1.3.0-2</code> では pam_unix2 モジュールと <code>pam_unix_*.so</code> 互換シンボリックリンクが取り除かれました。アップグレード前に <code>/etc/pam.d</code> にある PAM の更新を確認し、取り除かれたモジュールを <code>pam_unix.so</code> で置換してください。pam_unix2 の利用者はこの変更の適用後にパスワードをリセットすることが推奨されます。<code>pambase</code> パッケージでのデフォルト設定の利用者はこのアップグレードでの変更は必要ありません。</p>
