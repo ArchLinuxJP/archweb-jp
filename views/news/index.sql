@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"glibc-227-2-and-pam-130-2-may-require-manual-intervention",
+		"glibc 2.27-2 and pam 1.3.0-2 may require manual intervention",
+		"2018-04-20",
+		"2018-04-20",
+		"Bartłomiej Piotrowski"
+	),
+	(
 		"zita-resampler-160-1-2-update-requires-manual-intervention",
 		"zita-resampler 1.6.0-1 から 1.6.0-2 への更新は手動での作業が必要です",
 		"2018-02-22",
