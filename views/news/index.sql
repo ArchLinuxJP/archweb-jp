@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"glibc-227-2-and-pam-130-2-may-require-manual-intervention",
-		"glibc 2.27-2 and pam 1.3.0-2 may require manual intervention",
+		"glibc 2.27-2 と pam 1.3.0-2 への更新は手動での作業が必要な場合があります",
 		"2018-04-20",
 		"2018-04-20",
 		"Bartłomiej Piotrowski"
