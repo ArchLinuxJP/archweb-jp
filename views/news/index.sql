@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"js52-5273-2-upgrade-requires-intervention",
+		"js52 52.7.3-2 のアップグレードは手動での作業が必要です",
+		"2018-05-04",
+		"2018-05-04",
+		"Jan Steffens"
+	),
+	(
 		"glibc-227-2-and-pam-130-2-may-require-manual-intervention",
 		"glibc 2.27-2 と pam 1.3.0-2 への更新は手動での作業が必要な場合があります",
 		"2018-04-20",
