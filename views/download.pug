@@ -4,7 +4,7 @@ block content
 	div#arch-downloads.box
 		h2 Arch Linux をダウンロード
 		h3 リリース情報
-		p このイメージを ISO ファイルとしてマウントして CD に書き込んだり、`dd` などのユーティリティを使って USB スティックに直接書き込むことができます。このイメージは新しくインストールするためのものです。既存の Arch Linux 環境は `pacman -Syu` を使うことでいつでも更新できます。
+		p このイメージを ISO ファイルとしてマウントして CD に書き込んだり、<code>dd</code> などのユーティリティを使って USB スティックに直接書き込むことができます。このイメージは新しくインストールするためのものです。既存の Arch Linux 環境は <code>pacman -Syu</code> を使うことでいつでも更新できます。
 		ul
 			li <strong>最新リリース:</strong> !{isoinfo.date}
 			li <strong>含まれているカーネル:</strong> !{isoinfo.kernel}
@@ -48,6 +48,12 @@ block content
 					a(href="http://mirrors.cat.net/archlinux/iso/" + isoinfo.date + "/", title="http://mirrors.cat.net/archlinux/ からダウンロード") cat.net
 				li
 					a(href="https://mirrors.cat.net/archlinux/iso/" + isoinfo.date + "/", title="https://mirrors.cat.net/archlinux/ からダウンロード") cat.net
+			h5 ワールドワイドのサーバー
+			ul
+				li
+					a(href="http://mirrors.evowise.com/archlinux/iso/" + isoinfo.date + "/", title="http://mirrors.evowise.com/archlinux/ からダウンロード") evowise.com
+				li
+					a(href="http://mirror.rackspace.com/archlinux/iso/" + isoinfo.date + "/", title="http://mirror.rackspace.com/archlinux/ からダウンロード") rackspace.com
 		p Arch Linux の公式ミラーになりたい場合は<a href="https://wiki.archlinux.org/index.php/DeveloperWiki:NewMirrors">こちら</a>に記載されている指示に従って下さい。
 		h3 BitTorrent でダウンロード
 		p 可能なかぎり、ダウンロードが完了した後もクライアントは開き続けて下さい。他の人へシードバックすることができます。<em>ダウンロード速度を最大限出すためにウェブシードに対応しているクライアントが推奨されます。</em>
@@ -63,3 +69,8 @@ block content
 		ul
 			li
 				a(href="/netboot/", title="Arch Linux ネットワークブート") Arch Linux Netboot
+		h3 Vagrant イメージ
+		p libvirt と virtualbox で使える Vagrant イメージが <a href="https://app.vagrantup.com/archlinux/boxes/archlinux">Vagrant Cloud</a> に存在します。以下のコマンドでイメージをブートストラップすることが可能です:
+		code vagrant init archlinux/archlinux
+		br
+		code vagrant up
