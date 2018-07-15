@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"libutf8proc211-3-update-requires-manual-intervention",
+		"libutf8proc 2.1.1-3 以降への更新は手動での作業が必要です",
+		"2018-07-14",
+		"2018-07-14",
+		"Antonio Rojas"
+	),
+	(
 		"js52-5273-2-upgrade-requires-intervention",
 		"js52 52.7.3-2 のアップグレードは手動での作業が必要です",
 		"2018-05-04",
