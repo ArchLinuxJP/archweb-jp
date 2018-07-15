@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"libutf8proc211-3-update-requires-manual-intervention",
-		"libutf8proc>=2.1.1-3 update requires manual intervention",
+		"libutf8proc 2.1.1-3 以降への更新は手動での作業が必要です",
 		"2018-07-14",
 		"2018-07-14",
 		"Antonio Rojas"
