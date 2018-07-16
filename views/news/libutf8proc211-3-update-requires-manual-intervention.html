@@ -1,4 +1,4 @@
 <p>libutf8proc 2.1.1-3 以前の libutf8proc パッケージは SONAME が正しくない <code>libutf8proc.so.2</code> を含んでいます。これは libutf8proc 2.1.1-3 で修正されたため、更新時には ldconfig により生成された追跡できない <code>libutf8proc.so.2</code> を上書きする必要があります。もし次のようなエラーが生じた場合:</p>
 <p><code>libutf8proc: /usr/lib/libutf8proc.so.2 exists in filesystem</code></p>
 <p>更新時に次のコマンドを使用してください:</p>
-<p><code>pacman -Suy --overwrite /usr/lib/libutf8proc.so.2</code></p>
+<p><code>pacman -Suy --overwrite usr/lib/libutf8proc.so.2</code></p>
