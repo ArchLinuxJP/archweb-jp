@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"mariadb-104x-update-requires-manual-intervention",
-		"mariadb 10.4.x update requires manual intervention",
+		"mariadb 10.4.x 以降への更新は追加で作業が必要です",
 		"2019-06-27",
 		"2019-06-27",
 		"Christian Hesse"
