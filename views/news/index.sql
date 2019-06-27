@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"mariadb-104x-update-requires-manual-intervention",
+		"mariadb 10.4.x update requires manual intervention",
+		"2019-06-27",
+		"2019-06-27",
+		"Christian Hesse"
+	),
+	(
 		"libutf8proc211-3-update-requires-manual-intervention",
 		"libutf8proc 2.1.1-3 以降への更新は手動での作業が必要です",
 		"2018-07-14",

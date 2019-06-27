@@ -1,0 +1,11 @@
+<p>The update to <strong>mariadb 10.4.6-1</strong> and later changes configuration layout as recommended by upstream.</p>
+<p>The main configuration file moved from <code>/etc/mysql/my.cnf</code> (and its include directory <code>/etc/mysql/my.cnf.d/</code>) to <code>/etc/my.cnf</code> (and <code>/etc/my.cnf.d/</code>). Make sure to move your configuration.</p>
+<p>Instantiated services (like <code>mariadb@foo.service</code>) are no longer configured in separate files (like <code>/etc/mysql/myfoo.cnf</code>). Instead move your configuration to configuration blocks with group suffix in main configuration file, one for each service. A block should look something like this:</p>
+<pre><code>[mysqld.foo]
+datadir = /var/lib/mysql-foo
+socket = /run/mysqld/mysqld-foo.sock
+...
+</code></pre>
+<p>Like every mariadb feature update this requires the data directory to be updated. With the new configuration in place run:</p>
+<pre><code>systemctl restart mariadb.service &amp;&amp; mariadb-upgrade -u root -p
+</code></pre>
