@@ -1,0 +1,11 @@
+<p><strong>mariadb 10.4.6-1</strong> もしくはそれ以降への更新は設定ファイルの配置が上流の推奨に従うよう変更されます。</p>
+<p>メイン設定ファイルは <code>/etc/mysql/my.cnf</code> から <code>/etc/my.cnf</code> に変更されます (ディレクトリ <code>/etc/mysql/my.cnf.d/</code> も <code>/etc/my.cnf.d/</code> に変更されます)。 設定ファイルを移動させて対応してください。</p>
+<p>(<code>mariadb@foo.service</code> のような) インスタンス化されたサービスは (<code>/etc/mysql/myfoo.cnf</code> のような形で) 設定ファイルが分割できなくなります。代わりにサービス毎の設定をグループ接尾辞をつけてブロック化し、メイン設定ファイルに追加してください。ブロックは以下のように記載します:</p>
+<pre><code>[mysqld.foo]
+datadir = /var/lib/mysql-foo
+socket = /run/mysqld/mysqld-foo.sock
+...
+</code></pre>
+<p>mariadb のメジャーアップデートと同様、データディレクトリの更新も必要です。設定ファイルを配置したら、以下のコマンドを実行してください:</p>
+<pre><code>systemctl restart mariadb.service &amp;&amp; mariadb-upgrade -u root -p
+</code></pre>
