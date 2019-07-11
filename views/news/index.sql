@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"libbloom16-2-update-requires-manual-intervention",
-		"libbloom>=1.6-2 update requires manual intervention",
+		"libbloom 1.6-2 以上へのアップデートは手動で作業が必要です",
 		"2019-07-11",
 		"2019-07-11",
 		"Felix Yan"
