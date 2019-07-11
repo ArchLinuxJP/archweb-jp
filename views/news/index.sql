@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"libbloom16-2-update-requires-manual-intervention",
+		"libbloom>=1.6-2 update requires manual intervention",
+		"2019-07-11",
+		"2019-07-11",
+		"Felix Yan"
+	),
+	(
 		"mariadb-104x-update-requires-manual-intervention",
 		"mariadb 10.4.x 以降への更新は追加で作業が必要です",
 		"2019-06-27",

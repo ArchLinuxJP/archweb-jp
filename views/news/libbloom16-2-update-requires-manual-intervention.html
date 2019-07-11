@@ -1,0 +1,5 @@
+<p>The libbloom package prior to version 1.6-2 was missing a soname link. This has been fixed in 1.6-2, so the upgrade will need to overwrite the untracked soname link created by ldconfig. If you get an error</p>
+<p><code>libbloom: /usr/lib/libbloom.so.1 exists in filesystem</code></p>
+<p>when updating, use</p>
+<p><code>pacman -Suy --overwrite usr/lib/libbloom.so.1</code></p>
+<p>to perform the upgrade.</p>
