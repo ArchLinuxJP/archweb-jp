@@ -1,4 +1,4 @@
-<p>バージョン 1.6-2 以前の libbloom パッケージは soname link が欠けています。これはバージョン 1.6-2 で修正されたので、 ldconfig により作成された追跡されない soname link を上書きする必要があります。アップデート時に以下のようなエラーに遭遇した場合、</p>
+<p>バージョン 1.6-2 より前の libbloom パッケージは soname link が欠けています。これはバージョン 1.6-2 で修正されたので、 ldconfig により作成された追跡されない soname link を上書きする必要があります。アップデート時に以下のようなエラーに遭遇した場合、</p>
 <p><code>libbloom: /usr/lib/libbloom.so.1 exists in filesystem</code></p>
 <p>以下のコマンドを使用してください。</p>
 <p><code>pacman -Suy --overwrite usr/lib/libbloom.so.1</code></p>
