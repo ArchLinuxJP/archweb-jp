@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"tensorflow1140-5-update-requires-manual-intervention",
+		"tensorflow>=1.14.0-5 update requires manual intervention",
+		"2019-08-20",
+		"2019-08-20",
+		"Konstantin Gizdov"
+	),
+	(
 		"libbloom16-2-update-requires-manual-intervention",
 		"libbloom 1.6-2 以上へのアップデートは手動で作業が必要です",
 		"2019-07-11",
