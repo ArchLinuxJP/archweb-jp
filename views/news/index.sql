@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"tensorflow1140-5-update-requires-manual-intervention",
-		"tensorflow>=1.14.0-5 update requires manual intervention",
+		"tensorflow 1.14.0-5 以降への更新は手動で作業が必要です",
 		"2019-08-20",
 		"2019-08-20",
 		"Konstantin Gizdov"

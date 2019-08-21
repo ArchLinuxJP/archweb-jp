@@ -1,8 +1,8 @@
-<p>The tensorflow packages prior to version 1.14.0-5 were missing some soname links. This has been fixed in 1.14.0-5, so the upgrade will need to overwrite the untracked soname links created by ldconfig. If you get an errors like so</p>
+<p>tensorflow 1.14.0-5 より古いパッケージは何個か soname links が欠けています。 これはバージョン 1.14.0-5 で修正されたので、更新時には ldconfig が生成した追跡されないファイルを上書きする必要があります。更新時に以下のようなエラーに遭遇した場合</p>
 <pre><code>tensorflow: /usr/lib/libtensorflow.so.1 exists in filesystem
 tensorflow: /usr/lib/libtensorflow_cc.so.1 exists in filesystem
 tensorflow: /usr/lib/libtensorflow_framework.so.1 exists in filesystem
 </code></pre>
-<p>when updating, use</p>
+<p>以下のコマンド</p>
 <p><code>pacman -Suy --overwrite=usr/lib/libtensorflow.so.1,usr/lib/libtensorflow_cc.so.1,usr/lib/libtensorflow_framework.so.1</code></p>
-<p>to perform the upgrade.</p></div>
+<p>を利用して更新してください。</p></div>
