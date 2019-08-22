@@ -1,0 +1,8 @@
+<p>tensorflow 1.14.0-5 より古いパッケージは何個か soname links が欠けています。 これはバージョン 1.14.0-5 で修正されたので、更新時には ldconfig が生成した追跡されないファイルを上書きする必要があります。更新時に以下のようなエラーに遭遇した場合</p>
+<pre><code>tensorflow: /usr/lib/libtensorflow.so.1 exists in filesystem
+tensorflow: /usr/lib/libtensorflow_cc.so.1 exists in filesystem
+tensorflow: /usr/lib/libtensorflow_framework.so.1 exists in filesystem
+</code></pre>
+<p>以下のコマンド</p>
+<p><code>pacman -Suy --overwrite=usr/lib/libtensorflow.so.1,usr/lib/libtensorflow_cc.so.1,usr/lib/libtensorflow_framework.so.1</code></p>
+<p>を利用して更新してください。</p></div>
