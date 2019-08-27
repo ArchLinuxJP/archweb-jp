@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"astyle31-2-update-requires-manual-intervention",
-		"astyle>=3.1-2 update requires manual intervention",
+		"astyle 3.1-2 以降への更新は手動で作業が必要です",
 		"2019-08-26",
 		"2019-08-26",
 		"Antonio Rojas"

@@ -1,5 +1,5 @@
-<p>The astyle package prior to version 3.1-2 was missing a soname link. This has been fixed in 3.1-2, so the upgrade will need to overwrite the untracked soname link created by ldconfig. If you get an error</p>
+<p>astyle 3.1-2 より前のパッケージは soname link が欠けています。これはバージョン 3.1-2 で修正されたので、更新には ldconfig が自動生成した追跡されない soname link を上書きする必要があります。更新時に以下のようなエラーに遭遇した場合、</p>
 <p><code>astyle: /usr/lib/libastyle.so.3 exists in filesystem</code></p>
-<p>when updating, use</p>
+<p>以下のコマンド</p>
 <p><code>pacman -Suy --overwrite usr/lib/libastyle.so.3</code></p>
-<p>to perform the upgrade.</p>
+<p>を利用して更新してください。</p>
