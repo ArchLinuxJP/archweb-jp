@@ -27,7 +27,7 @@ app.set('view engine', 'pug');
 
 // i18n setup
 i18n.configure({
-	locales: ['ar', 'cs', 'en', 'es', 'fr-CA', 'ja', 'pt-BR', 'pt-PT', 'ru-RU', 'sk', 'zh-CN'],
+	locales: ['ar', 'cs', 'de', 'en', 'es', 'fr-CA', 'ja', 'pt-BR', 'pt-PT', 'ru-RU', 'sk', 'tr', 'zh-CN'],
 	fallbacks:{'pt': 'pt-PT', 'ru': 'ru-RU'},
 	defaultLocale: 'ja',
 	queryParameter: 'lang',
