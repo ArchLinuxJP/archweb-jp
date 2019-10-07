@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"base-group-replaced-by-mandatory-base-package-manual-intervention-required",
-		"`base` group replaced by mandatory `base` package - manual intervention required",
+		"`base` グループは必須の `base` パッケージに置き換えられました - 対応作業が必要です",
 		"2019-10-06",
 		"2019-10-06",
 		"Robin Broda"
