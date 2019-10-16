@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"required-update-to-recent-libarchive",
-		"Required update to recent libarchive",
+		"2018年9月以降にリリースされた libarchive へのアップデートが必要です",
 		"2019-10-16",
 		"2019-10-16",
 		"Christian Hesse"
