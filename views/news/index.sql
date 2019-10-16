@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"required-update-to-recent-libarchive",
+		"2018年9月以降にリリースされた libarchive へのアップデートが必要です",
+		"2019-10-16",
+		"2019-10-16",
+		"Christian Hesse"
+	),
+	(
 		"base-group-replaced-by-mandatory-base-package-manual-intervention-required",
 		"`base` グループは必須の `base` パッケージに置き換えられました - 対応作業が必要です",
 		"2019-10-06",
