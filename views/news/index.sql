@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"clarification-regarding-recent-email-activity-on-the-arch-announce-list",
+		"arch-announce メーリングリストにおける最近のメールについての説明",
+		"2019-10-25",
+		"2019-10-25",
+		"Giancarlo Razzolini"
+	),
+	(
 		"required-update-to-recent-libarchive",
 		"2018年9月以降にリリースされた libarchive へのアップデートが必要です",
 		"2019-10-16",
