@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"clarification-regarding-recent-email-activity-on-the-arch-announce-list",
-		"Clarification regarding recent email activity on the arch-announce list",
+		"arch-announce メーリングリストにおける最近のメールについての説明",
 		"2019-10-25",
 		"2019-10-25",
 		"Giancarlo Razzolini"
