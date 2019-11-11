@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"new-kernel-packages-and-mkinitcpio-hooks",
-		"New kernel packages and mkinitcpio hooks",
+		"新しいカーネルパッケージと mkinitcpio フック",
 		"2019-11-10",
 		"2019-11-10",
 		"Giancarlo Razzolini"
