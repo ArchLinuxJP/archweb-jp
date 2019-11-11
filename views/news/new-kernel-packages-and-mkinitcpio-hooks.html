@@ -1,0 +1,4 @@
+<p>All our official kernels: linux, linux-lts, linux-zen and linux-hardened, do not install the actual kernel to /boot anymore.</p>
+<p>The installation is done by mkinitcpio hooks and scripts, as well as removals. There is no need for any manual intervention.</p>
+<p>The intention is to make the kernel packages more self-contained, as well as making the boot process more flexible, while also keeping it backwards compatible.</p>
+<p>As of now, only mkinitcpio has hooks for handling kernels installations and removals. We do not ship any for dracut yet, but it will have similar hooks in the near future.</p>
