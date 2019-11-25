@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"primus_vk13-1-update-requires-manual-intervention",
+		"primus_vk 1.3-1 以降へのアップデートでは手動の作業が必要です",
+		"2019-11-25",
+		"2019-11-25",
+		"Giancarlo Razzolini"
+	),
+	(
 		"new-kernel-packages-and-mkinitcpio-hooks",
 		"新しいカーネルパッケージと mkinitcpio フック",
 		"2019-11-10",

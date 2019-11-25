@@ -1,0 +1,6 @@
+<p>バージョン 1.3-1 よりも前の primus_vk パッケージでは soname リンクが一部不足していました。1.3-1 で修正されたため、アップデート時に未追跡の soname リンクを上書きする必要があります。以下のようなエラーが表示された場合:</p>
+<pre><code>primus_vk: /usr/lib/libnv_vulkan_wrapper.so.1 exists in filesystem
+primus_vk: /usr/lib/libprimus_vk.so.1 exists in filesystem
+</code></pre>
+<p>以下のコマンドでアップデートしてください:</p>
+<p><code>pacman -Syu --overwrite=/usr/lib/libnv_vulkan_wrapper.so.1,/usr/lib/libprimus_vk.so.1</code></p>
