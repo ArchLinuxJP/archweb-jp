@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"xorg-cleanup-requires-manual-intervention",
+		"Xorg cleanup の影響で対応作業が必要です",
+		"2019-12-20",
+		"2019-12-20",
+		"Andreas Radke"
+	),
+	(
 		"primus_vk13-1-update-requires-manual-intervention",
 		"primus_vk 1.3-1 以降へのアップデートでは手動の作業が必要です",
 		"2019-11-25",
