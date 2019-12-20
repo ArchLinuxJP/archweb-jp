@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"xorg-cleanup-requires-manual-intervention",
-		"Xorg cleanup requires manual intervention",
+		"Xorg cleanup の影響で対応作業が必要です",
 		"2019-12-20",
 		"2019-12-20",
 		"Andreas Radke"

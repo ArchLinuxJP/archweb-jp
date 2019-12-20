@@ -1,6 +1,6 @@
-<p>In the process of <a href="https://bugs.archlinux.org/task/64892">Xorg cleanup</a> the update requires manual intervention when you hit this message:</p>
+<p><a href="https://bugs.archlinux.org/task/64892">Xorg cleanup</a> の過程で更新には対応作業が必要です。以下のようなメッセージが出力される場合:</p>
 <pre><code>:: installing xorgproto (2019.2-2) breaks dependency 'inputproto' required by lib32-libxi
 :: installing xorgproto (2019.2-2) breaks dependency 'dmxproto' required by libdmx
 :: installing xorgproto (2019.2-2) breaks dependency 'xf86dgaproto' required by libxxf86dga
 </code></pre>
-<p>when updating, use: <code>pacman -Rdd libdmx libxxf86dga &amp;&amp; pacman -Syu</code> to perform the upgrade. After the update it will be safe to also remove the "xorgproto" package.</p>
+<p>更新時にこちらのコマンドを使用してください: <code>pacman -Rdd libdmx libxxf86dga &amp;&amp; pacman -Syu</code> 更新後には安全に "xorgproto" パッケージを削除することができます。</p>
