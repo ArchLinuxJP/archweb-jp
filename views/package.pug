@@ -19,7 +19,7 @@ block content
 						a(href="https://security.archlinux.org/package/" + package["pkgname"], title=package["pkgname"] + " のセキュリティ情報を表示") #{__('securityissue')}
 					li <a href="https://www.archlinux.org/packages/#{package["repo"]}/#{package["arch"]}/#{package["pkgname"]}/flag/" title="#{package["pkgname"]} の out-of-date フラグを立てる">#{__('flagoutofdate')}</a> <a href="/static/flaghelp.html" title="パッケージのフラグ立てに関するヘルプ" onclick="return !window.open('/static/flaghelp.html','FlagHelp','height=350,width=450,location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=no');">(?)</a>
 					li
-						a(href="https://mirror.archlinuxjp.org/" + package["repo"] + "/os/" + package["arch"] + "/" + package["pkgname"] + "-" + package["pkgver"] + "-" + package["pkgrel"] + "-" + package["arch"] + ".pkg.tar.xz", rel="nofollow", title="ミラーから " + package["pkgname"] + " をダウンロード") #{__('downloadmirror')}
+						a(href="https://mirror.archlinux.jp/" + package["repo"] + "/os/" + package["arch"] + "/" + package["pkgname"] + "-" + package["pkgver"] + "-" + package["pkgrel"] + "-" + package["arch"] + ".pkg.tar.zst", rel="nofollow", title="ミラーから " + package["pkgname"] + " をダウンロード") #{__('downloadmirror')}
 		div
 			table#pkginfo
 				tr
@@ -146,7 +146,7 @@ block content
 				"dateCreated": "#{package["last_update"].split(" ")[0]}",
 				"datePublished": "#{package["last_update"].split(" ")[0]}",
 				"operatingSystem": "Arch Linux",
-				"downloadUrl": "https://mirror.archlinuxjp.org/#{package["repo"]}/os/#{package["arch"]}/#{package["pkgname"]}-#{package["pkgver"]}-#{package["pkgrel"]}-#{package["arch"]}.pkg.tar.xz",
+				"downloadUrl": "https://mirror.archlinux.jp/#{package["repo"]}/os/#{package["arch"]}/#{package["pkgname"]}-#{package["pkgver"]}-#{package["pkgrel"]}-#{package["arch"]}.pkg.tar.zst",
 				"offers": {
 					"@type": "Offer",
 					"price": "0.00",
