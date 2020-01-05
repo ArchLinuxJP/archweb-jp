@@ -2,5 +2,5 @@
 <p>xz から zstd に変更することにより圧縮率が悪化します。オプションを指定し全てのパッケージを再圧縮すると、合計でおよそ 0.8% サイズが増加しますが、パッケージの展開速度は約 1300% 高速化されます。</p>
 <p>リポジトリには545を超える zstd 圧縮されたパッケージが既にあり、パッケージが更新されると更に置き換わっていくでしょう。今の所、ユーザーが直面している問題は確認されていないので、うまく動作しているようです。</p>
 <p>パッケージ作成者の方は最新の devtools (&gt;= 20191227) を利用している場合、自動的に .pkg.tar.zst 形式のパッケージが作成されるようになります。<br>
-エンドユーザーの方は昨年末からの<a href="https://www.archlinux.org/news/required-update-to-recent-libarchive/">ニュース</a>を読んでいる場合には対応作業は不要です。</p>
-<p>libarchive を2018年から更新していない場合でも対応策はまだあります。 Trusted User keys で署名された pacman-static のバイナリが Eli Schwartz' の<a href="https://wiki.archlinux.org/index.php/Unofficial_user_repositories#eschwartz">個人リポジトリ</a>から入手でき、これを利用することでアップデートが実行できます。</p>
+エンドユーザーの方は昨年末からの<a href="https://www.archlinux.jp/news/required-update-to-recent-libarchive/">ニュース</a>を読んでいる場合には対応作業は不要です。</p>
+<p>libarchive を2018年から更新していない場合でも対応策はまだあります。 Trusted User keys で署名された pacman-static のバイナリが Eli Schwartz' の<a href="https://wiki.archlinux.jp/index.php/%E9%9D%9E%E5%85%AC%E5%BC%8F%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA#eschwartz">個人リポジトリ</a>から入手でき、これを利用することでアップデートが実行できます。</p>
