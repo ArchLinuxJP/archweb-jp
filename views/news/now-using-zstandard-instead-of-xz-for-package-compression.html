@@ -1,6 +1,6 @@
-<p>As announced on the <a href="https://lists.archlinux.org/pipermail/arch-dev-public/2019-December/029752.html">mailing list</a>, on Friday, Dec 27 2019, our package compression scheme has changed from xz (.pkg.tar.xz) to <a href="https://lists.archlinux.org/pipermail/arch-dev-public/2019-December/029778.html">zstd (.pkg.tar.zst)</a>.</p>
-<p>zstd and xz trade blows in their compression ratio. Recompressing all packages to zstd with our options yields a total ~0.8% increase in package size on all of our packages combined, but the decompression time for all packages saw a ~1300% speedup.</p>
-<p>We already have more than 545 zstd-compressed packages in our repositories, and as packages get updated more will keep rolling in. We have not found any user-facing issues as of yet, so things appear to be working.</p>
-<p>As a packager, you will automatically start building .pkg.tar.zst packages if you are using the latest version of devtools (&gt;= 20191227).<br>
-As an end-user no manual intervention is required, assuming that you have read and followed the news post <a href="https://www.archlinux.org/news/required-update-to-recent-libarchive/">from late last year</a>.</p>
-<p>If you nevertheless haven't updated libarchive since 2018, all hope is not lost! Binary builds of pacman-static are available from Eli Schwartz' <a href="https://wiki.archlinux.org/index.php/Unofficial_user_repositories#eschwartz">personal repository</a>, signed with their Trusted User keys, with which you can perform the update.</p>
+<p>2019年12月27日金曜日に<a href="https://lists.archlinux.org/pipermail/arch-dev-public/2019-December/029752.html">メーリングリスト</a>でアナウンスされたように、パッケージの圧縮方式が xz (.pkg.tar.xz) から <a href="https://lists.archlinux.org/pipermail/arch-dev-public/2019-December/029778.html">zstd (.pkg.tar.zst)</a> に変更されました。</p>
+<p>xz から zstd に変更することにより圧縮率が悪化します。オプションを指定し全てのパッケージを再圧縮すると、合計でおよそ 0.8% サイズが増加しますが、パッケージの展開速度は約 1300% 高速化されます。</p>
+<p>リポジトリには545を超える zstd 圧縮されたパッケージが既にあり、パッケージが更新されると更に置き換わっていくでしょう。今の所、ユーザーが直面している問題は確認されていないので、うまく動作しているようです。</p>
+<p>パッケージ作成者の方は最新の devtools (&gt;= 20191227) を利用している場合、自動的に .pkg.tar.zst 形式のパッケージが作成されるようになります。<br>
+エンドユーザーの方は昨年末からの<a href="https://www.archlinux.org/news/required-update-to-recent-libarchive/">ニュース</a>を読んでいる場合には対応作業は不要です。</p>
+<p>libarchive を2018年から更新していない場合でも対応策はまだあります。 Trusted User keys で署名された pacman-static のバイナリが Eli Schwartz' の<a href="https://wiki.archlinux.org/index.php/Unofficial_user_repositories#eschwartz">個人リポジトリ</a>から入手でき、これを利用することでアップデートが実行できます。</p>

@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"now-using-zstandard-instead-of-xz-for-package-compression",
-		"Now using Zstandard instead of xz for package compression",
+		"今後、パッケージの圧縮は xz に代わり Zstandard が利用されます",
 		"2020-01-04",
 		"2020-01-04",
 		"Robin Broda"
