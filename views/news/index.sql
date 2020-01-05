@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"now-using-zstandard-instead-of-xz-for-package-compression",
+		"Now using Zstandard instead of xz for package compression",
+		"2020-01-04",
+		"2020-01-04",
+		"Robin Broda"
+	),
+	(
 		"xorg-cleanup-requires-manual-intervention",
 		"Xorg cleanup の影響で対応作業が必要です",
 		"2019-12-20",
