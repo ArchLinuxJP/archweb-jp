@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"rsync-compatibility",
+		"rsync compatibility",
+		"2020-01-15",
+		"2020-01-15",
+		"Christian Hesse"
+	),
+	(
 		"now-using-zstandard-instead-of-xz-for-package-compression",
 		"今後、パッケージの圧縮は xz に代わり Zstandard が利用されます",
 		"2020-01-04",
