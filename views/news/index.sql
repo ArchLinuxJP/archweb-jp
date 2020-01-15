@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"rsync-compatibility",
-		"rsync compatibility",
+		"rsync の互換性について",
 		"2020-01-15",
 		"2020-01-15",
 		"Christian Hesse"

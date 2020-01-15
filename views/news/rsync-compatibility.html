@@ -1,2 +1,2 @@
-<p>Our <code>rsync</code> package was shipped with bundled <code>zlib</code> to provide compatibility with the old-style <code>--compress</code> option up to version 3.1.0. Version 3.1.1 was released on 2014-06-22 and is shipped by all major distributions now.</p>
-<p>So we decided to finally drop the bundled library and ship a package with system <code>zlib</code>. This also fixes security issues, actual ones and in future. Go and blame those running old versions if you encounter errors with <code>rsync 3.1.3-3</code>.</p>
+<p><code>rsync</code> パッケージはバージョン 3.1.0 までの古い <code>--compress</code> オプションとの互換性維持のため自前の <code>zlib</code> を同梱していました。バージョン 3.1.1 は 2014-06-22 にリリースされ、現在は全ての主要なディストリビューションでこれが配信されています。</p>
+<p>なので、同梱していた zlib をドロップし、システムの <code>zlib</code> パッケージを利用するようにし配信することにしました。この変更により現在のセキュリティ問題だけでなく将来のものも修正されます。 <code>rsync 3.1.3-3</code> でエラーが発生した場合は古いバージョンを動作させているユーザーに非があります。</p>
