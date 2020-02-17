@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"sshd-needs-restarting-after-upgrading-to-openssh-82p1",
+		"openssh-8.2p1 への更新時は sshd の再起動が必要です",
+		"2020-02-17",
+		"2020-02-17",
+		"Gaetan Bisson"
+	),
+	(
 		"rsync-compatibility",
 		"rsync の互換性について",
 		"2020-01-15",
