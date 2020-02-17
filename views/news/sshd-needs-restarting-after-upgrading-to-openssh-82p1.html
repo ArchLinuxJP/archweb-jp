@@ -1,1 +1,1 @@
-<p>openssh-8.2p1 への更新後、古い SSH デーモンは新しいコネクションを受け付けなくなります。 (参考 <a href="https://bugs.archlinux.org/task/65517">FS#65517</a>.) リモートのホストで更新を行う際には <code>pacman -Syu</code> を実行した直後に <code>systemctl restart sshd</code> を利用して SSH デーモンをリスタートしてください。 openssh-8.2p1-3 以上への更新時、このリスタートは自動で行われます。</p>
+<p>openssh-8.2p1 への更新後、既存の SSH デーモンは新しい接続を受け付けなくなります (参考: <a href="https://bugs.archlinux.org/task/65517">FS#65517</a>)。リモートのホストで更新を行う際には <code>pacman -Syu</code> を実行した直後に <code>systemctl restart sshd</code> を利用して SSH デーモンを再起動してください。openssh-8.2p1-3 以上に更新した場合、この再起動は自動で行われます。</p>
