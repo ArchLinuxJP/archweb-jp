@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"planet-arch-linux-migration",
-		"Planet Arch Linux migration",
+		"Planet Arch Linux の移行について",
 		"2020-02-22",
 		"2020-02-22",
 		"Jelle van der Waa"
