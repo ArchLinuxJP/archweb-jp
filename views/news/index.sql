@@ -15,6 +15,20 @@ INSERT INTO
 	news
 VALUES
 	(
+		"the-future-of-the-arch-linux-project-leader",
+		"Arch Linux プロジェクトリーダーの今後について",
+		"2020-02-24",
+		"2020-02-24",
+		"Aaron Griffin"
+	),
+	(
+		"planet-arch-linux-migration",
+		"Planet Arch Linux の移行について",
+		"2020-02-22",
+		"2020-02-22",
+		"Jelle van der Waa"
+	),
+	(
 		"sshd-needs-restarting-after-upgrading-to-openssh-82p1",
 		"openssh-8.2p1 への更新時は sshd の再起動が必要です",
 		"2020-02-17",
