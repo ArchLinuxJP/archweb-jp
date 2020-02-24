@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"the-future-of-the-arch-linux-project-leader",
-		"The Future of the Arch Linux Project Leader",
+		"Arch Linux プロジェクトリーダーの今後について",
 		"2020-02-24",
 		"2020-02-24",
 		"Aaron Griffin"
