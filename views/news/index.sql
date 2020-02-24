@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"the-future-of-the-arch-linux-project-leader",
+		"The Future of the Arch Linux Project Leader",
+		"2020-02-24",
+		"2020-02-24",
+		"Aaron Griffin"
+	),
+	(
 		"planet-arch-linux-migration",
 		"Planet Arch Linux の移行について",
 		"2020-02-22",
