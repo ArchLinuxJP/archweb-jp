@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"firewalld081-2-update-requires-manual-intervention",
-		"firewalld>=0.8.1-2 update requires manual intervention",
+		"firewalld>=0.8.1-2 への更新は対応作業が必要です",
 		"2020-03-01",
 		"2020-03-01",
 		"Jan Alexander Steffens"

@@ -1,8 +1,8 @@
-<p>The firewalld package prior to version 0.8.1-2 was missing the compiled python modules. This has been fixed in 0.8.1-2, so the upgrade will need to overwrite the untracked pyc files created. If you get errors like these</p>
+<p>バージョン 0.8.1-2 より古い firewalld パッケージはコンパイル済みの python モジュールが欠けていました。これはバージョン 0.8.1-2 で修正され、自動生成された追跡されない .pyc ファイルを更新時に上書きする必要があります。更新時に以下のようなエラーに遭遇した場合、</p>
 <pre><code>firewalld: /usr/lib/python3.8/site-packages/firewall/__pycache__/__init__.cpython-38.pyc exists in filesystem
 firewalld: /usr/lib/python3.8/site-packages/firewall/__pycache__/client.cpython-38.pyc exists in filesystem
 firewalld: /usr/lib/python3.8/site-packages/firewall/__pycache__/dbus_utils.cpython-38.pyc exists in filesystem
 ...many more...</code></pre>
-<p>when updating, use</p>
+<p>以下のコマンド</p>
 <pre><code>pacman -Suy --overwrite /usr/lib/python3.8/site-packages/firewall/\*</code></pre>
-<p>to perform the upgrade.</p>
+<p>を使用して更新を行ってください。</p>
