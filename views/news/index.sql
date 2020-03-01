@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"firewalld081-2-update-requires-manual-intervention",
+		"firewalld>=0.8.1-2 update requires manual intervention",
+		"2020-03-01",
+		"2020-03-01",
+		"Jan Alexander Steffens"
+	),
+	(
 		"the-future-of-the-arch-linux-project-leader",
 		"Arch Linux プロジェクトリーダーの今後について",
 		"2020-02-24",
