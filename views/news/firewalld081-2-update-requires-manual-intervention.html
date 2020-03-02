@@ -1,0 +1,8 @@
+<p>バージョン 0.8.1-2 より古い firewalld パッケージはコンパイル済みの python モジュールが欠けていました。これはバージョン 0.8.1-2 で修正され、自動生成された追跡されない .pyc ファイルを更新時に上書きする必要があります。更新時に以下のようなエラーに遭遇した場合、</p>
+<pre><code>firewalld: /usr/lib/python3.8/site-packages/firewall/__pycache__/__init__.cpython-38.pyc exists in filesystem
+firewalld: /usr/lib/python3.8/site-packages/firewall/__pycache__/client.cpython-38.pyc exists in filesystem
+firewalld: /usr/lib/python3.8/site-packages/firewall/__pycache__/dbus_utils.cpython-38.pyc exists in filesystem
+...many more...</code></pre>
+<p>以下のコマンド</p>
+<pre><code>pacman -Suy --overwrite /usr/lib/python3.8/site-packages/firewall/\*</code></pre>
+<p>を使用して更新を行ってください。</p>
