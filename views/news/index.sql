@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"hplip-3203-2-update-requires-manual-intervention",
+		"hplip>=3.20.3-2 update requires manual intervention",
+		"2020-03-18",
+		"2020-03-18",
+		"Andreas Radke"
+	),
+	(
 		"firewalld081-2-update-requires-manual-intervention",
 		"firewalld>=0.8.1-2 への更新は対応作業が必要です",
 		"2020-03-01",
