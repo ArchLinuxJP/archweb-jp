@@ -541,7 +541,7 @@ VALUES
 	),
 	(
 		"install-media-20120715-released",
-		"Install media 2012.07.15 released",
+		"インストールメディア 2012.07.15 がリリースされました",
 		"2012-07-22",
 		"2012-07-22",
 		"Pierre Schmitz"

@@ -1,11 +1,11 @@
-<p>New ISO images containing a current Arch Linux snapshot have been released and can be found on our <a href="/download/">Download</a> page.</p>
-<p>Most notable change is that AIF (the Arch Installation Framework) is no longer included but instead some simple <a href="https://wiki.archlinux.org/index.php/Arch_Install_Scripts">install scripts</a> are provided to aid in the installation process. This means a menu driven installer is no longer available and we rely more on documentation to guide new users. We would like to encourage our community to fill in the remaining gaps in <a href="https://wiki.archlinux.org/">our wiki</a>.</p>
-<p>From now on our install images are signed and it is highly recommend to verify their signature before use. On Arch Linux this can be done by using <code>pacman-key -v &lt;iso-file&gt;.sig</code>.</p>
+<p>現在の Arch Linux のスナップショットを含んだ新しい ISO イメージがリリースされ、<a href="/download/">ダウンロード</a>ページからダウンロードできます。</p>
+<p>最も大きな変更は、AIF (the Arch Installation Framework)が含まれなくなり、代わりにシンプルな<a href="https://wiki.archlinux.org/index.php/Arch_Install_Scripts">インストールスクリプト</a>が提供され、インストールのプロセスを支援します。これはメニューベースのインストーラはもう利用できなくなることを意味し、新しいユーザーを導くためによりドキュメントに頼っていきます。コミュニティにより <a href="https://wiki.archlinux.jp/">ArchWiki</a> の残りの不完全な部分を埋めていきましょう。</p>
+<p>今後インストールイメージは署名され、使用する前に署名の検証を行うことが強く推奨されます。Arch Linux では <code>pacman-key -v &lt;iso-file&gt;.sig</code> を使って検証できます。</p>
 <ul>
-  <li>The pacman keyring is automatically initialized on bootup. Therefore signature verification is available on the live media and will work out of the box on the installed system.</li>
-  <li>Instead of six different images we only provide a single one which can be booted into an i686 and x86_64 live system to install Arch Linux over the network. Media containing the [core] repository are no longer provided.</li>
-  <li>Regular ISO snapshots are planned on a monthly basis.</li>
-  <li>The install media can also be booted directly via <a href="https://releng.archlinux.org/pxeboot/">PXE</a>. Note that its PGP signature cannot be verified this way!</li>
-  <li>More archiso related options and new features can be found in its <a href="https://projects.archlinux.org/archiso.git/plain/README">README</a> file.</li>
+  <li>pacman キーリングは起動時に自動的に初期化されます。つまり署名の検証はライブ環境で利用可能で、インストールしたシステム上ですぐに利用できます。</li>
+  <li>6つの異なるイメージの代わりに1つのイメージを提供し、i686 と x86_64 からライブ環境を起動してネットワーク経由で Arch Linux をインストールすることができるようになります。[core] リポジトリを含むメディアは今後提供されません。</li>
+  <li>定期的な ISO スナップショットは毎月作成される予定です。</li>
+  <li>インストールメディアは <a href="https://releng.archlinux.org/pxeboot/">PXE</a> から直接起動することもできます。この方法では PGP 署名は検証できないことに気を付けてください。</li>
+  <li>より多くの archiso に関連するオプションと新しい機能は <a href="https://projects.archlinux.org/archiso.git/plain/README">README</a> ファイルを参照してください。</li>
 </ul>
-<p>AIF had to be dropped due to lack of maintenance and contributions. Of course we would appreciate it if people would start hacking on it to bring it up to par.</p>
+<p>AIF はメンテナンスと貢献の不足で廃止されました。もちろん AIF を十分よい状態までハックし始めるのは歓迎します。</p>
