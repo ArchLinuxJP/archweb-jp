@@ -1,0 +1,11 @@
+<p>New ISO images containing a current Arch Linux snapshot have been released and can be found on our <a href="/download/">Download</a> page.</p>
+<p>Most notable change is that AIF (the Arch Installation Framework) is no longer included but instead some simple <a href="https://wiki.archlinux.org/index.php/Arch_Install_Scripts">install scripts</a> are provided to aid in the installation process. This means a menu driven installer is no longer available and we rely more on documentation to guide new users. We would like to encourage our community to fill in the remaining gaps in <a href="https://wiki.archlinux.org/">our wiki</a>.</p>
+<p>From now on our install images are signed and it is highly recommend to verify their signature before use. On Arch Linux this can be done by using <code>pacman-key -v &lt;iso-file&gt;.sig</code>.</p>
+<ul>
+  <li>The pacman keyring is automatically initialized on bootup. Therefore signature verification is available on the live media and will work out of the box on the installed system.</li>
+  <li>Instead of six different images we only provide a single one which can be booted into an i686 and x86_64 live system to install Arch Linux over the network. Media containing the [core] repository are no longer provided.</li>
+  <li>Regular ISO snapshots are planned on a monthly basis.</li>
+  <li>The install media can also be booted directly via <a href="https://releng.archlinux.org/pxeboot/">PXE</a>. Note that its PGP signature cannot be verified this way!</li>
+  <li>More archiso related options and new features can be found in its <a href="https://projects.archlinux.org/archiso.git/plain/README">README</a> file.</li>
+</ul>
+<p>AIF had to be dropped due to lack of maintenance and contributions. Of course we would appreciate it if people would start hacking on it to bring it up to par.</p>

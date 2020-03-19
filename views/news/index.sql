@@ -540,6 +540,13 @@ VALUES
 		"Tom Gundersen"
 	),
 	(
+		"install-media-20120715-released",
+		"Install media 2012.07.15 released",
+		"2012-07-22",
+		"2012-07-22",
+		"Pierre Schmitz"
+	)
+	(
 		"grub-legacy-no-longer-supported",
 		"GRUB Legacy のサポートの打ち切り",
 		"2012-07-20",
