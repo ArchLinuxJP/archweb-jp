@@ -499,7 +499,7 @@ VALUES
 	),
 	(
 		"final-sysvinit-deprecation-warning",
-		"Final sysvinit deprecation warning",
+		"sysvinit の廃止の最終警告",
 		"2013-02-04",
 		"2013-02-04",
 		"Tom Gundersen"
