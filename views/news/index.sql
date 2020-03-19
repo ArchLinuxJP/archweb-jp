@@ -17,8 +17,8 @@ VALUES
 	(
 		"hplip-3203-2-update-requires-manual-intervention",
 		"hplip>=3.20.3-2 への更新は対応作業が必要です",
-		"2020-03-18",
-		"2020-03-18",
+		"2020-03-19",
+		"2020-03-19",
 		"Andreas Radke"
 	),
 	(
