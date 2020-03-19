@@ -498,6 +498,13 @@ VALUES
 		"Bartłomiej Piotrowski"
 	),
 	(
+		"final-sysvinit-deprecation-warning",
+		"Final sysvinit deprecation warning",
+		"2013-02-04",
+		"2013-02-04",
+		"Tom Gundersen"
+	)
+	(
 		"end-of-initscripts-support",
 		"initscripts のサポートの終了",
 		"2012-11-04",
