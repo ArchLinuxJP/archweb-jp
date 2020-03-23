@@ -1,0 +1,8 @@
+<p>バージョン 3.20.3-2 より古い hplip パッケージはコンパイル済みの python モジュールが欠けていました。これはバージョン 3.20.3-2 で修正され、自動生成された追跡されない .pyc ファイルを更新時に上書きする必要があります。更新時に以下のようなエラーに遭遇した場合、</p>
+<pre><code>hplip: /usr/share/hplip/base/__pycache__/__init__.cpython-38.pyc exists in filesystem
+hplip: /usr/share/hplip/base/__pycache__/avahi.cpython-38.pyc exists in filesystem
+hplip: /usr/share/hplip/base/__pycache__/codes.cpython-38.pyc exists in filesystem
+...many more...</code></pre>
+<p>以下のコマンド</p>
+<pre><code>pacman -Suy --overwrite /usr/share/hplip/\*</code></pre>
+<p>を使用して更新を行ってください。</p>
