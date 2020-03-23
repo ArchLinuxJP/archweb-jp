@@ -503,7 +503,7 @@ VALUES
 		"2013-02-04",
 		"2013-02-04",
 		"Tom Gundersen"
-	)
+	),
 	(
 		"end-of-initscripts-support",
 		"initscripts のサポートの終了",
@@ -552,7 +552,7 @@ VALUES
 		"2012-07-22",
 		"2012-07-22",
 		"Pierre Schmitz"
-	)
+	),
 	(
 		"grub-legacy-no-longer-supported",
 		"GRUB Legacy のサポートの打ち切り",
