@@ -1,0 +1,11 @@
+<p>現在の Arch Linux のスナップショットを含んだ新しい ISO イメージがリリースされ、<a href="/download/">ダウンロード</a>ページからダウンロードできます。</p>
+<p>最も大きな変更は、AIF (the Arch Installation Framework)が含まれなくなり、代わりにシンプルな<a href="https://wiki.archlinux.org/index.php/Arch_Install_Scripts">インストールスクリプト</a>が提供され、インストールのプロセスを支援します。これはメニューベースのインストーラはもう利用できなくなることを意味し、新しいユーザーを導くためによりドキュメントに頼っていきます。コミュニティにより <a href="https://wiki.archlinux.jp/">ArchWiki</a> の残りの不完全な部分を埋めていきましょう。</p>
+<p>今後インストールイメージは署名され、使用する前に署名の検証を行うことが強く推奨されます。Arch Linux では <code>pacman-key -v &lt;iso-file&gt;.sig</code> を使って検証できます。</p>
+<ul>
+  <li>pacman キーリングは起動時に自動的に初期化されます。つまり署名の検証はライブ環境で利用可能で、インストールしたシステム上ですぐに利用できます。</li>
+  <li>6つの異なるイメージの代わりに1つのイメージを提供し、i686 と x86_64 からライブ環境を起動してネットワーク経由で Arch Linux をインストールすることができるようになります。[core] リポジトリを含むメディアは今後提供されません。</li>
+  <li>定期的な ISO スナップショットは毎月作成される予定です。</li>
+  <li>インストールメディアは <a href="https://releng.archlinux.org/pxeboot/">PXE</a> から直接起動することもできます。この方法では PGP 署名は検証できないことに気を付けてください。</li>
+  <li>より多くの archiso に関連するオプションと新しい機能は <a href="https://projects.archlinux.org/archiso.git/plain/README">README</a> ファイルを参照してください。</li>
+</ul>
+<p>AIF はメンテナンスと貢献の不足で廃止されました。もちろん AIF を十分よい状態までハックし始めるのは歓迎します。</p>

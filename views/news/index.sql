@@ -505,6 +505,13 @@ VALUES
 		"Bartłomiej Piotrowski"
 	),
 	(
+		"final-sysvinit-deprecation-warning",
+		"sysvinit の廃止の最終警告",
+		"2013-02-04",
+		"2013-02-04",
+		"Tom Gundersen"
+	),
+	(
 		"end-of-initscripts-support",
 		"initscripts のサポートの終了",
 		"2012-11-04",
@@ -545,6 +552,13 @@ VALUES
 		"2012-07-30",
 		"2012-07-30",
 		"Tom Gundersen"
+	),
+	(
+		"install-media-20120715-released",
+		"インストールメディア 2012.07.15 がリリースされました",
+		"2012-07-22",
+		"2012-07-22",
+		"Pierre Schmitz"
 	),
 	(
 		"grub-legacy-no-longer-supported",
