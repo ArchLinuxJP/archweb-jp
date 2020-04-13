@@ -1,8 +1,8 @@
-<p>The nss and lib32-nss packages prior to version 3.51.1-1 were missing a soname link each. This has been fixed in 3.51.1-1, so the upgrade will need to overwrite the untracked files created by ldconfig. If you get any of these errors</p>
+<p>バージョン 3.51.1-1 より古い nss と lib32-nss パッケージは soname リンクが欠けていました。これはバージョン 3.51.1-1 で修正され、 ldconfig により自動生成された追跡されないファイルを更新時に上書きする必要があります。更新時に以下のいずれかのエラーが表示された場合、</p>
 <pre><code>nss: /usr/lib/p11-kit-trust.so exists in filesystem
 lib32-nss: /usr/lib32/p11-kit-trust.so exists in filesystem
 </code></pre>
-<p>when updating, use</p>
+<p>以下のコマンド</p>
 <pre><code>pacman -Syu --overwrite /usr/lib\*/p11-kit-trust.so
 </code></pre>
-<p>to perform the upgrade.</p>
+<p>を使用して更新を行ってください。</p>

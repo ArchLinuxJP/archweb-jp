@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"nss3511-1-and-lib32-nss3511-1-updates-require-manual-intervention",
-		"nss>=3.51.1-1 and lib32-nss>=3.51.1-1 updates require manual intervention",
+		"nss>=3.51.1-1 と lib32-nss>=3.51.1-1 への更新は対応作業が必要です",
 		"2020-04-13",
 		"2020-04-13",
 		"Jan Alexander Steffens"
