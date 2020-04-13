@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"nss3511-1-and-lib32-nss3511-1-updates-require-manual-intervention",
+		"nss>=3.51.1-1 and lib32-nss>=3.51.1-1 updates require manual intervention",
+		"2020-04-13",
+		"2020-04-13",
+		"Jan Alexander Steffens"
+	),
+	(
 		"hplip-3203-2-update-requires-manual-intervention",
 		"hplip>=3.20.3-2 への更新は対応作業が必要です",
 		"2020-03-19",
