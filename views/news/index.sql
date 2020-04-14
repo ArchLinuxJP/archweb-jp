@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"zn_poly-092-2-update-requires-manual-intervention",
-		"zn_poly 0.9.2-2 update requires manual intervention",
+		"zn_poly 0.9.2-2 への更新は対応作業が必要です",
 		"2020-04-14",
 		"2020-04-14",
 		"Antonio Rojas"
