@@ -1,6 +1,7 @@
 on:
-  pull_request:
-    types: opened
+  push:
+    branchs:
+      - test2
 
 jobs:
   comment:
@@ -15,6 +16,7 @@ jobs:
 
       run: |
         pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+        pull_number=1
         export GOPATH=$HOME/go
         export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
         go get -v github.com/syui/xq
