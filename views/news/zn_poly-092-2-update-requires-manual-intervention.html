@@ -1,0 +1,9 @@
+<p>バージョン 0.9.2-2 より古い zn_poly パッケージは soname リンクが欠けていました。
+これはバージョン 0.9.2-2 で修正され、 ldconfig により生成された追跡されないファイル
+を更新時に上書きする必要があります。更新時に以下のエラーが表示された場合、</p>
+<pre><code>zn_poly: /usr/lib/libzn_poly-0.9.so  exists in filesystem
+</code></pre>
+<p>以下のコマンド</p>
+<pre><code>pacman -Syu --overwrite usr/lib/libzn_poly-0.9.so
+</code></pre>
+<p>を使用して更新を行ってください。</p>
