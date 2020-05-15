@@ -1,0 +1,75 @@
+on:
+  pull_request:
+    types: opened
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create comments
+      run: |
+        export GOPATH=$HOME/go
+        export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+        go get -v github.com/syui/xq
+        url=${{ secrets.WEBHOOK_URL }}
+        url_arch="https://www.archlinux.org/feeds/news/"
+        url_archjp="https://www.archlinux.jp/feeds/news.xml"
+
+        xml=index.xml
+        xmljp=news.xml
+        curl -sL $url_arch -o $xml
+        curl -sLO $url_archjp
+        link=`xq l link $xml`
+        link=${link%*/}
+        link=${link##*/}
+        title=`xq l title $xml`
+        title_ja=`curl -L -d "{\"txt\":\"$title\"}" $url`
+        date_xml=`date --date="$(xq p $xml)" +"%Y-%m-%d" -u`
+        body=`xq l description $xml|tr -d '\n'|sed -e 's/<[^>]*>//g' -e 's/\*//g'`
+        body_ja=`curl -L -d "{\"txt\":\"$body\"}" $url|sed 's/&#39;//g'`
+        author=`xq $xml | jq -r ".[0].author.name"`
+        if ! xq l u $xml;then
+          up_xml=${date_xml}
+        else
+          up_xml=`date --date="$(xq l u $xml)" +"%Y-%m-%d" -u`
+        fi
+
+        echo `xq l l $xml`
+        echo "(" >> c
+        echo "\"${link}\"" >> c
+        echo "\"${title_ja\"" >> f
+        echo "\"${date_xml}\"" >> f
+        echo "\"${up_xml}\"" >> f
+        echo "\"${author}\"" >> f
+        echo ")" >> f
+
+        echo "${body}" >> cc
+        echo "${body_ja}" >> cc
+
+        n=`cat $GITHUB_EVENT_PATH | jq -r ".number"`
+        p=p.json
+        curl -H "Authorization: token ${GITHUB_TOKEN}" \
+          https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${n}/files > $p
+
+    - name: Post change-file comments
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        URL: ${{ github.event.pull_request.comments_url }}
+      run: |
+        index=`cat $p | jq -r ".[0].filename"`
+        if [ "views/news/index.sql" = "$index" ];then
+          gh_url=`cat $p | jq -r ".[0].blob_url"`
+          curl -X POST \
+             -H "Authorization: token ${GITHUB_TOKEN}" \
+             -d "{\"body\": \"$(cat c)\"}" \
+             ${gh_url}
+        fi
+        html_file=`cat $p | jq -r ".[1].filename"`
+        if [ "views/news/${link}.html" = "$html_file" ];then
+          gh_url=`cat $p | jq -r ".[1].blob_url"`
+          curl -X POST \
+             -H "Authorization: token ${GITHUB_TOKEN}" \
+             -d "{\"body\": \"$(cat cc)\"}" \
+             ${gh_url}
+        fi
+
