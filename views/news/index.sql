@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"zn_poly-092-2-update-requires-manual-intervention",
+		"zn_poly 0.9.2-2 への更新は対応作業が必要です",
+		"2020-04-14",
+		"2020-04-14",
+		"Antonio Rojas"
+	),
+	(
 		"nss3511-1-and-lib32-nss3511-1-updates-require-manual-intervention",
 		"nss>=3.51.1-1 と lib32-nss>=3.51.1-1 への更新は対応作業が必要です",
 		"2020-04-13",
