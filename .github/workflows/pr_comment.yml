@@ -1,0 +1,121 @@
+on:
+  pull_request:
+    types: opened
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
+    - name: gem i
+      run: gem i sqlint
+    - name: lint and support
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+        URL: ${{ github.event.pull_request.comments_url }}
+        GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
+      run: |
+        ## setup
+        pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+        npm i -D htmllint-cli -s
+        ./node_modules/htmllint-cli/bin/cli.js init
+        export GOPATH=$HOME/go
+        export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+        go get -v github.com/syui/xq
+        ## webhook=google translate
+        #url=${{ secrets.WEBHOOK_URL }}
+
+        ## feed
+        url_arch="https://www.archlinux.org/feeds/news/"
+        url_archjp="https://www.archlinux.jp/feeds/news.xml"
+        xml=index.xml
+        xmljp=news.xml
+        curl -sL $url_arch -o $xml
+        curl -sLO $url_archjp
+        link=`xq l l $xml`
+        link=${link%*/}
+        link=${link##*/}
+        linkjp=`xq l l $xmljp`
+        linkjp=${linkjp%*/}
+        linkjp=${linkjp##*/}
+        if [ "${link}" = "${linkjp}" ];then
+          echo ok `xq l l $xmljp`
+          exit
+        fi
+        title=`xq l title $xml`
+        date_xml=`date --date="$(xq p $xml)" +"%Y-%m-%d" -u`
+        body=`xq l description $xml|tr -d '\n'|sed -e 's/<[^>]*>//g' -e 's/\*//g'`
+        author=`xq $xml | jq -r ".[0].author.name"`
+        up_xml=${date_xml}
+
+        ## google translate 
+        #title_ja=`curl -L -d "{\"txt\":\"$title\"}" $url`
+        #body_ja=`curl -L -d "{\"txt\":\"$body\"}" $url|sed 's/&#39;//g'`
+
+        ## github api : pull-req
+        p=p.json
+        URL=https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${pull_number}/comments
+        curl -H "Authorization: token ${GITHUB_TOKEN}" \
+          https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${pull_number}/files > $p
+
+        ## support views/news/index.sql
+        cat $p | jq -r ".[]|select(.filename == \"views/news/index.sql\")"|jq -r ".blob_url"
+        check=`cat $p | jq -r ".[]|select(.filename == \"views/news/index.sql\")"`
+        if [ -n "$check" ];then
+          body_c="> ${link}\n${title}\n${date_xml}\n${up_xml}\n${author}"
+          gh_url=`echo $check | jq -r ".blob_url"`"#L17-L23"
+          raw_url=`echo $check | jq -r ".raw_url"`
+          curl -X POST \
+             -H "Authorization: token ${GITHUB_TOKEN}" \
+             -d "{\"body\": \"${gh_url}\n\n${body_c}\"}" \
+             ${URL}       
+        fi
+
+        ## review sqlint
+        t=sql.txt
+        if ! lint_body=`sqlint views/news/index.sql`;then
+          echo "$lint_body" > $t
+          echo "### :exclamation: sqlint ...no" >> $t
+        else
+          echo "### :white_check_mark: sqlint ...ok" >> $t
+        fi
+        cat $t
+        xq j $t
+        curl -X POST \
+           -H "Authorization: token ${GITHUB_TOKEN}" \
+           -d "`xq j $t`" \
+           ${URL}
+
+        ## support views/news/${link}.html
+        cat $p | jq -r ".[]|select(.filename == \"views/news/${link}.html\")"|jq -r ".blob_url"
+        check=`cat $p | jq -r ".[]|select(.filename == \"views/news/${link}.html\")"`
+        if [ -n "$check" ];then
+          line=`echo $check | jq -r ".additions"`
+          gh_url=`echo $check | jq -r ".blob_url"`"#L1-L${line}"
+          curl -X POST \
+             -H "Authorization: token ${GITHUB_TOKEN}" \
+             -d "{\"body\": \"${gh_url}\n\n> ${body}\n\n$(xq l l $xml)\"}" \
+             ${URL}
+        fi
+
+        ## review htmllint
+        #raw_url=`echo $check | jq -r ".raw_url"`
+        #curl -sLO $raw_url
+        t=html.txt
+        ./node_modules/htmllint-cli/bin/cli.js views/news/${link}.html | grep -v "found 0 errors" > $t
+        if [ -n "`cat $t`" ];then
+          echo "### :exclamation: htmllint ...no" >> $t
+        else
+          echo "### :white_check_mark: htmllint ...ok" >> $t
+        fi
+        cat $t
+        xq j $t
+        curl -X POST \
+           -H "Authorization: token ${GITHUB_TOKEN}" \
+           -d "`xq j $t`" \
+           ${URL}
