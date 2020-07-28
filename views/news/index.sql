@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"aur-migration-new-ssh-hostkeys",
-		"AUR Migration: New SSH HostKeys",
+		"AUR の移行: 新しい SSH ホストキー",
 		"2020-07-28",
 		"2020-07-28",
 		"Giancarlo Razzolini"
