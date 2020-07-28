@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"aur-migration-new-ssh-hostkeys",
+		"AUR Migration: New SSH HostKeys",
+		"2020-07-28",
+		"2020-07-28",
+		"Giancarlo Razzolini"
+	),
+	(
 		"zn_poly-092-2-update-requires-manual-intervention",
 		"zn_poly 0.9.2-2 への更新は対応作業が必要です",
 		"2020-04-14",
