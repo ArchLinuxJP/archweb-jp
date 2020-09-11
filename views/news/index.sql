@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"kill-arch-bugs-help-us-on-the-13th-of-september",
+		"Kill Arch Bugs: Help us on the 13th of September!",
+		"2020-09-09",
+		"2020-09-09",
+		"Frederik Schwan"
+	),
+	(
 		"aur-migration-new-ssh-hostkeys",
 		"AUR の移行: 新しい SSH ホストキー",
 		"2020-07-28",
