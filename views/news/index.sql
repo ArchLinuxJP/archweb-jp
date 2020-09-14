@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"kill-arch-bugs-help-us-on-the-13th-of-september",
-		"Kill Arch Bugs: Help us on the 13th of September!",
+		"Arch のバグ対処: 9月13日に手伝ってください！",
 		"2020-09-09",
 		"2020-09-09",
 		"Frederik Schwan"
