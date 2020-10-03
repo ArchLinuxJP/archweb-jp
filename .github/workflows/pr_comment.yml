@@ -15,7 +15,7 @@ jobs:
       run: gem i sqlint
     - name: lint and support
       env:
-        GITHUB_TOKEN: ${{ secrets.ORIGIN_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_REPOSITORY: ${{ github.repository }}
         URL: ${{ github.event.pull_request.comments_url }}
         GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
