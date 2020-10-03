@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"arch-conf-2020-schedule",
+		"Arch Conf 2020 schedule",
+		"2020-09-23",
+		"2020-09-23",
+		"Morten Linderud"
+	),
+	(
 		"kill-arch-bugs-help-us-on-the-13th-of-september",
 		"Arch のバグ対処: 9月13日に手伝ってください！",
 		"2020-09-09",
