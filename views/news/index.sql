@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"ghostpcl9532-2-and-ghostxps9532-2-updates-require-manual-intervention",
+		"ghostpcl>=9.53.2-2 and ghostxps>=9.53.2-2 updates require manual intervention",
+		"2020-10-01",
+		"2020-10-01",
+		"Jan Alexander Steffens"
+	),
+	(
 		"arch-conf-2020-schedule",
 		"Arch Conf 2020 のスケジュール",
 		"2020-09-23",

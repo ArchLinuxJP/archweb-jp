@@ -1,0 +1,11 @@
+<p>The ghostpcl and ghostxps packages prior to version 9.53.2-2 were missing
+a soname link each. This has been fixed in 9.53.2-2, so the upgrade will
+need to overwrite the untracked files created by ldconfig. If you get any
+of these errors</p>
+<pre><code>ghostpcl: /usr/lib/libgpcl6.so.9 exists in filesystem
+ghostxps: /usr/lib/libgxps.so.9 exists in filesystem
+</code></pre>
+<p>when updating, use</p>
+<pre><code>pacman -Syu --overwrite /usr/lib/libgpcl6.so.9,/usr/lib/libgxps.so.9
+</code></pre>
+<p>to perform the upgrade.</p>
