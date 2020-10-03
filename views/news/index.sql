@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"ghostpcl9532-2-and-ghostxps9532-2-updates-require-manual-intervention",
-		"ghostpcl>=9.53.2-2 and ghostxps>=9.53.2-2 updates require manual intervention",
+		"ghostpcl>=9.53.2-2 と ghostxps>=9.53.2-2 への更新は対応作業が必要です",
 		"2020-10-01",
 		"2020-10-01",
 		"Jan Alexander Steffens"
