@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"arch-conf-2020-schedule",
-		"Arch Conf 2020 schedule",
+		"Arch Conf 2020 のスケジュール",
 		"2020-09-23",
 		"2020-09-23",
 		"Morten Linderud"
