@@ -70,10 +70,13 @@ jobs:
           body_c="> ${link}\n${title}\n${date_xml}\n${up_xml}\n${author}"
           gh_url=`echo $check | jq -r ".blob_url"`"#L17-L23"
           raw_url=`echo $check | jq -r ".raw_url"`
-          curl -X POST \
-             -H "Authorization: token ${GITHUB_TOKEN}" \
-             -d "{\"body\": \"${gh_url}\n\n${body_c}\"}" \
-             ${URL}       
+          echo "{\"body\": \"${gh_url}\n\n${body_c}\"}"
+          #curl -X POST \
+          #   -H "Authorization: token ${GITHUB_TOKEN}" \
+          #   -d "{\"body\": \"${gh_url}\n\n${body_c}\"}" \
+          #   ${URL}       
+        else
+          exit
         fi
 
         ## review sqlint
@@ -88,7 +91,7 @@ jobs:
         xq j $t
         curl -X POST \
            -H "Authorization: token ${GITHUB_TOKEN}" \
-           -d "`xq j $t`" \
+           -d "views/news/index.sql\n\n`xq j $t`" \
            ${URL}
 
         ## support views/news/${link}.html
@@ -97,10 +100,11 @@ jobs:
         if [ -n "$check" ];then
           line=`echo $check | jq -r ".additions"`
           gh_url=`echo $check | jq -r ".blob_url"`"#L1-L${line}"
-          curl -X POST \
-             -H "Authorization: token ${GITHUB_TOKEN}" \
-             -d "{\"body\": \"${gh_url}\n\n> ${body}\n\n$(xq l l $xml)\"}" \
-             ${URL}
+          echo "{\"body\": \"${gh_url}\n\n> ${body}\n\n$(xq l l $xml)\"}"
+          #curl -X POST \
+          #   -H "Authorization: token ${GITHUB_TOKEN}" \
+          #   -d "{\"body\": \"${gh_url}\n\n> ${body}\n\n$(xq l l $xml)\"}" \
+          #   ${URL}
         fi
 
         ## review htmllint
@@ -117,5 +121,5 @@ jobs:
         xq j $t
         curl -X POST \
            -H "Authorization: token ${GITHUB_TOKEN}" \
-           -d "`xq j $t`" \
+           -d "views/news/${link}.html\n\n`xq j $t`" \
            ${URL}
