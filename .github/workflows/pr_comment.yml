@@ -81,17 +81,18 @@ jobs:
 
         ## review sqlint
         t=sql.txt
+        echo views/news/index.sql >> $t
         if ! lint_body=`sqlint views/news/index.sql`;then
-          echo "$lint_body" > $t
-          echo "### :exclamation: sqlint ...no" >> $t
+          echo "$lint_body" >> $t
+          echo ":exclamation: sqlint ... error" >> $t
         else
-          echo "### :white_check_mark: sqlint ...ok" >> $t
+          echo ":white_check_mark: sqlint ... ok" >> $t
         fi
         cat $t
         xq j $t
         curl -X POST \
            -H "Authorization: token ${GITHUB_TOKEN}" \
-           -d "views/news/index.sql\n\n`xq j $t`" \
+           -d "`xq j $t`" \
            ${URL}
 
         ## support views/news/${link}.html
@@ -111,15 +112,16 @@ jobs:
         #raw_url=`echo $check | jq -r ".raw_url"`
         #curl -sLO $raw_url
         t=html.txt
-        ./node_modules/htmllint-cli/bin/cli.js views/news/${link}.html | grep -v "found 0 errors" > $t
+        echo views/news/${link}.html >> $t
+        ./node_modules/htmllint-cli/bin/cli.js views/news/${link}.html | grep -v "found 0 errors" >> $t
         if [ -n "`cat $t`" ];then
-          echo "### :exclamation: htmllint ...no" >> $t
+          echo ":exclamation: htmllint ... error" >> $t
         else
-          echo "### :white_check_mark: htmllint ...ok" >> $t
+          echo ":white_check_mark: htmllint ... ok" >> $t
         fi
         cat $t
         xq j $t
         curl -X POST \
            -H "Authorization: token ${GITHUB_TOKEN}" \
-           -d "views/news/${link}.html\n\n`xq j $t`" \
+           -d "`xq j $t`" \
            ${URL}
