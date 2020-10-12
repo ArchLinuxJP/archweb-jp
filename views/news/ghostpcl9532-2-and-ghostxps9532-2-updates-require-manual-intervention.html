@@ -1,0 +1,10 @@
+<p>バージョン 9.53.2-2 より古い ghostpcl と ghostxps パッケージはそれぞれ soname リンクが
+欠けていました。これはバージョン 9.53.2-2 で修正され、ldconfig により生成された追跡されないファイル
+を更新時に上書きする必要があります。更新時に以下のエラーが表示された場合、</p>
+<pre><code>ghostpcl: /usr/lib/libgpcl6.so.9 exists in filesystem
+ghostxps: /usr/lib/libgxps.so.9 exists in filesystem
+</code></pre>
+<p>以下のコマンド</p>
+<pre><code>pacman -Syu --overwrite /usr/lib/libgpcl6.so.9,/usr/lib/libgxps.so.9
+</code></pre>
+<p>を使用して更新を行ってください。</p>
