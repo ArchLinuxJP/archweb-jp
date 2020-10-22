@@ -113,12 +113,7 @@ jobs:
         #curl -sLO $raw_url
         t=html.txt
         echo views/news/${link}.html >> $t
-        ./node_modules/htmllint-cli/bin/cli.js views/news/${link}.html | grep -v "found 0 errors" >> $t
-        if [ -n "`cat $t`" ];then
-          echo ":exclamation: htmllint ... error" >> $t
-        else
-          echo ":white_check_mark: htmllint ... ok" >> $t
-        fi
+        ./node_modules/htmllint-cli/bin/cli.js views/news/${link}.html >> $t
         cat $t
         xq j $t
         curl -X POST \
