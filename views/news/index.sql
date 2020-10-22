@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"nvidia-45528-is-incompatible-with-linux-59",
-		"nvidia 455.28 is incompatible with linux >= 5.9",
+		"nvidia 455.28 は linux >= 5.9 と互換性がありません",
 		"2020-10-21",
 		"2020-10-21",
 		"Sven-Hendrik Haase"
