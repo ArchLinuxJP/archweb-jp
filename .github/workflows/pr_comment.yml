@@ -106,6 +106,8 @@ jobs:
           #   -H "Authorization: token ${GITHUB_TOKEN}" \
           #   -d "{\"body\": \"${gh_url}\n\n> ${body}\n\n$(xq l l $xml)\"}" \
           #   ${URL}
+        else
+          exit
         fi
 
         ## review htmllint
