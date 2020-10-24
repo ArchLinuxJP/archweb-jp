@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"libtraceevent59-1-update-requires-manual-intervention",
+		"libtraceevent>=5.9-1 update requires manual intervention",
+		"2020-10-23",
+		"2020-10-23",
+		"Sébastien Luttringer"
+	),
+	(
 		"nvidia-45528-is-incompatible-with-linux-59",
 		"nvidia 455.28 は linux >= 5.9 と互換性がありません",
 		"2020-10-21",

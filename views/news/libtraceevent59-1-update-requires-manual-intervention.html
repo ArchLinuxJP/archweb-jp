@@ -1,0 +1,8 @@
+<p>The libtraceevent package prior to version 5.9-1 was missing a soname link. This has been fixed in 5.9-1, so the upgrade will need to overwrite the untracked files created by ldconfig. If you get any
+of these errors</p>
+<pre><code>libtraceevent: /usr/lib/libtraceevent.so.1 exists in filesystem
+</code></pre>
+<p>when updating, use</p>
+<pre><code>pacman -Syu --overwrite /usr/lib/libtraceevent.so.1
+</code></pre>
+<p>to perform the upgrade.</p>
