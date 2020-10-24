@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"libtraceevent59-1-update-requires-manual-intervention",
-		"libtraceevent>=5.9-1 update requires manual intervention",
+		"libtraceevent>=5.9-1 への更新は対応作業が必要です",
 		"2020-10-23",
 		"2020-10-23",
 		"Sébastien Luttringer"
