@@ -1,0 +1,8 @@
+<p>バージョン 5.9-1 より古い libtraceevent パッケージは soname リンクが欠けていました。これはバージョン 5.9-1 で修正され、ldconfig により生成された追跡されないファイルを更新時に上書きする必要があります。
+更新時に以下のエラーが表示された場合、</p>
+<pre><code>libtraceevent: /usr/lib/libtraceevent.so.1 exists in filesystem
+</code></pre>
+<p>以下のコマンド</p>
+<pre><code>pacman -Syu --overwrite /usr/lib/libtraceevent.so.1
+</code></pre>
+<p>を使用して更新を行ってください。</p>
