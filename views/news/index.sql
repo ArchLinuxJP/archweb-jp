@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"accessible-installation-medium",
-		"Accessible installation medium",
+		"アクセシビリティ機能付きインストールメディア",
 		"2020-11-01",
 		"2020-11-01",
 		"David Runge"
