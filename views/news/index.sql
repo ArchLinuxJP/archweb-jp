@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"accessible-installation-medium",
+		"アクセシビリティ機能付きインストールメディア",
+		"2020-11-01",
+		"2020-11-01",
+		"David Runge"
+	),
+	(
 		"libtraceevent59-1-update-requires-manual-intervention",
 		"libtraceevent>=5.9-1 への更新は対応作業が必要です",
 		"2020-10-23",
