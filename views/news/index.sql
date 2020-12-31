@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"arch-linux-mailing-list-id-changes",
+		"Arch Linux メーリングリストの ID の変更",
+		"2020-12-31",
+		"2020-12-31",
+		"Frederik Schwan"
+	),
+	(
 		"accessible-installation-medium",
 		"アクセシビリティ機能付きインストールメディア",
 		"2020-11-01",
