@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"manual-pages-indexing-service",
-		"Manual pages indexing service",
+		"マニュアルページ索引サービス",
 		"2021-01-14",
 		"2021-01-14",
 		"Sven-Hendrik Haase"
