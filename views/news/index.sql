@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"manual-pages-indexing-service",
+		"マニュアルページ索引サービス",
+		"2021-01-14",
+		"2021-01-14",
+		"Sven-Hendrik Haase"
+	),
+	(
 		"arch-linux-mailing-list-id-changes",
 		"Arch Linux メーリングリストの ID の変更",
 		"2020-12-31",
