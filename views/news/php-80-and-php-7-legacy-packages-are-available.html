@@ -1,10 +1,8 @@
-<p>The php package has been updated to <a href="https://www.php.net/releases/8.0/en.php">version 8.0</a>. Please refer to
-the upstream <a href="https://www.php.net/manual/en/migration80.php">migration guide</a>. As some applications are not
-compatible with PHP 8 yet we provide a <a href="https://archlinux.org/packages/extra/x86_64/php7/">php7</a> package which can be
-installed alongside version 8. Packages that depend on PHP reflect
-this update and will require php7 if needed. You might need to update
-your configuration accordingly. PHP 7 binaries and configuration have
-the "7" suffix:</p>
+<p>php パッケージが <a href="https://www.php.net/releases/8.0/ja.php">バージョン 8.0</a> にアップデートされました。アップストリームの
+<a href="https://www.php.net/manual/ja/migration80.php">移行ガイド</a> を参照してください。いくつかのアプリケーションは
+まだ PHP 8 に対応していないため、バージョン 8 と同時にインストールできる <a href="https://www.archlinux.jp/packages/extra/x86_64/php7/">php7</a>
+パッケージを提供しています。PHP に依存するパッケージはこの更新を反映し、必要であれば php7 を必要とします。それに従い、
+設定を変更する必要があるかもしれません。PHP 7 バイナリと設定は末尾に "7" がついています。</p>
 <ul>
 <li>/usr/bin/php -&gt; /usr/bin/php7</li>
 <li>/etc/php -&gt; /etc/php7</li>
@@ -12,18 +10,18 @@ the "7" suffix:</p>
 <li>/usr/lib/systemd/system/php-fpm.service -&gt; /usr/lib/systemd/system/php-fpm7.service</li>
 <li>/run/php-fpm -&gt; /run/php-fpm7</li>
 </ul>
-<p>We also provide third party modules compiled for PHP 7:</p>
+<p>PHP 7 のためにコンパイルされたサードパーティーのモジュールも提供しています。</p>
 <ul>
-<li><a href="https://archlinux.org/packages/extra/x86_64/php7-apcu/">php7-apcu</a></li>
-<li><a href="https://archlinux.org/packages/community/x86_64/php7-geoip/">php7-geoip</a></li>
-<li><a href="https://archlinux.org/packages/community/x86_64/php7-grpc/">php7-grpc</a></li>
-<li><a href="https://archlinux.org/packages/community/x86_64/php7-igbinary/">php7-igbinary</a></li>
-<li><a href="https://archlinux.org/packages/community/x86_64/php7-imagick/">php7-imagick</a></li>
-<li><a href="https://archlinux.org/packages/community/x86_64/php7-memcache/">php7-memcache</a></li>
-<li><a href="https://archlinux.org/packages/community/x86_64/php7-memcached/">php7-memcached</a></li>
-<li><a href="https://archlinux.org/packages/community/x86_64/php7-mongodb/">php7-mongodb</a></li>
-<li><a href="https://archlinux.org/packages/community/x86_64/php7-redis/">php7-redis</a></li>
+<li><a href="https://www.archlinux.jp/packages/extra/x86_64/php7-apcu/">php7-apcu</a></li>
+<li><a href="https://www.archlinux.jp/packages/community/x86_64/php7-geoip/">php7-geoip</a></li>
+<li><a href="https://www.archlinux.jp/packages/community/x86_64/php7-grpc/">php7-grpc</a></li>
+<li><a href="https://www.archlinux.jp/packages/community/x86_64/php7-igbinary/">php7-igbinary</a></li>
+<li><a href="https://www.archlinux.jp/packages/community/x86_64/php7-imagick/">php7-imagick</a></li>
+<li><a href="https://www.archlinux.jp/packages/community/x86_64/php7-memcache/">php7-memcache</a></li>
+<li><a href="https://www.archlinux.jp/packages/community/x86_64/php7-memcached/">php7-memcached</a></li>
+<li><a href="https://www.archlinux.jp/packages/community/x86_64/php7-mongodb/">php7-mongodb</a></li>
+<li><a href="https://www.archlinux.jp/packages/community/x86_64/php7-redis/">php7-redis</a></li>
 </ul>
-<p>Note that support for php7 will be <a href="https://www.php.net/supported-versions.php">limited</a> and likely be dropped in
-about a year depending on how soon the majority of applications
-will be compatible with version 8.</p>
+<p>php7 のサポートは <a href="https://www.php.net/supported-versions.php">限定されており</a>、ほとんどのアプリケーションが
+どのくらい早くバージョン 8 に対応するかによりますが、およそ 1 年程度で提供されなくなる可能性が高いことに
+注意してください。</p>

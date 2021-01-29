@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"php-80-and-php-7-legacy-packages-are-available",
-		"PHP 8.0 and PHP 7 legacy packages are available",
+		"PHP 8.0 と PHP 7 レガシーパッケージが利用可能です",
 		"2021-01-28",
 		"2021-01-28",
 		"Pierre Schmitz"
