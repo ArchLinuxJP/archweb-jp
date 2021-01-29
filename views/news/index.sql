@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"php-80-and-php-7-legacy-packages-are-available",
+		"PHP 8.0 and PHP 7 legacy packages are available",
+		"2021-01-28",
+		"2021-01-28",
+		"Pierre Schmitz"
+	),
+	(
 		"manual-pages-indexing-service",
 		"マニュアルページ索引サービス",
 		"2021-01-14",
