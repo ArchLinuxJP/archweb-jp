@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"chromium-losing-sync-support-in-early-march",
-		"Chromium losing Sync support in early March",
+		"Chromium は3月上旬に同期サポートを失います",
 		"2021-02-03",
 		"2021-02-03",
 		"Evangelos Foutras"
