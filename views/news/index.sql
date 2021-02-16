@@ -15,6 +15,20 @@ INSERT INTO
 	news
 VALUES
 	(
+		"chromium-losing-sync-support-in-early-march",
+		"Chromium は3月上旬に同期サポートを失います",
+		"2021-02-03",
+		"2021-02-03",
+		"Evangelos Foutras"
+	),
+	(
+		"php-80-and-php-7-legacy-packages-are-available",
+		"PHP 8.0 と PHP 7 レガシーパッケージが利用可能です",
+		"2021-01-28",
+		"2021-01-28",
+		"Pierre Schmitz"
+	),
+	(
 		"manual-pages-indexing-service",
 		"マニュアルページ索引サービス",
 		"2021-01-14",
