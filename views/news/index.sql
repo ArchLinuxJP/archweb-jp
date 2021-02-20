@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"moving-to-zstandard-images-by-default-on-mkinitcpio",
-		"Moving to Zstandard images by default on mkinitcpio",
+		"mkinitcpio のデフォルトを Zstandard イメージに変更",
 		"2021-02-19",
 		"2021-02-19",
 		"Giancarlo Razzolini"
