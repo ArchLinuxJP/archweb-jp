@@ -1,0 +1,6 @@
+<p>linux-lts が 5.10 バージョンになったため、全ての Arch Linux の公式カーネルは現在 zstd 圧縮済みの
+initramfs イメージをサポートしています。そのため mkinitcpio は、現在 [testing] に入っているバージョン 30 から
+デフォルトで zstd 圧縮を使用するように変更されます。</p>
+<p>もし、何らかの理由で、バージョン 5.9 以前のカーネルを使っている場合は、mkinitcpio.conf の COMPRESSION を
+gzip などのサポートされている圧縮方式を使うように確実に変更してください。さもなくば mkinitcpio により生成された
+ブートイメージを起動することは <strong>できません</strong>。</p>

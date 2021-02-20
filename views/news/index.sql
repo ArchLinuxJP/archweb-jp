@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"moving-to-zstandard-images-by-default-on-mkinitcpio",
+		"mkinitcpio のデフォルトを Zstandard イメージに変更",
+		"2021-02-19",
+		"2021-02-19",
+		"Giancarlo Razzolini"
+	),
+	(
 		"chromium-losing-sync-support-in-early-march",
 		"Chromium は3月上旬に同期サポートを失います",
 		"2021-02-03",
