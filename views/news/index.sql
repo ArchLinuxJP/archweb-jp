@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"installation-medium-with-installer",
+		"インストールメディアにインストーラが付属するようになりました",
+		"2021-04-01",
+		"2021-04-01",
+		"Giancarlo Razzolini"
+	),
+	(
 		"moving-to-zstandard-images-by-default-on-mkinitcpio",
 		"mkinitcpio のデフォルトを Zstandard イメージに変更",
 		"2021-02-19",
