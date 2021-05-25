@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"move-of-official-irc-channels-to-liberachat",
+		"公式 IRC チャンネルの libera.chat への移動",
+		"2021-05-24",
+		"2021-05-24",
+		"David Runge"
+	),
+	(
 		"installation-medium-with-installer",
 		"インストールメディアにインストーラが付属するようになりました",
 		"2021-04-01",
