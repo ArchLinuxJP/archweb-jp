@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"sorting-out-old-password-hashes",
+		"Sorting out old password hashes",
+		"2021-06-08",
+		"2021-06-08",
+		"Christian Hesse"
+	),
+	(
 		"move-of-official-irc-channels-to-liberachat",
 		"公式 IRC チャンネルの libera.chat への移動",
 		"2021-05-24",
