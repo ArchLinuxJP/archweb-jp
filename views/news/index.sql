@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"sorting-out-old-password-hashes",
-		"Sorting out old password hashes",
+		"古いパスワードハッシュの整理",
 		"2021-06-08",
 		"2021-06-08",
 		"Christian Hesse"
