@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"libxml22912-6-update-may-require-manual-intervention",
-		"libxml2>=2.9.12-6 update may require manual intervention",
+		"libxml2>=2.9.12-6 への更新は対応作業が必要です",
 		"2021-12-27",
 		"2021-12-27",
 		"Jan Alexander Steffens"

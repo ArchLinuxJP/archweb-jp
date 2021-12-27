@@ -1,10 +1,10 @@
-<p>The libxml2 package prior to version 2.9.12-6 was missing the compiled python modules. This has been fixed in 2.9.12-6, so the upgrade may need to overwrite any untracked pyc files created. If you get errors like these</p>
+<p>バージョン 2.9.12-6 以前の libxml2 パッケージは、コンパイルされた python モジュールが含まれていませんでした。この問題は 2.9.12-6 で修正され、自動作成された追跡されていない pyc ファイルを更新時に上書きする必要があります。更新時に以下のようなエラーが出た場合、</p>
 <pre><code>libxml2: /usr/lib/python3.10/site-packages/__pycache__/drv_libxml2.cpython-310.opt-1.pyc exists in filesystem
 libxml2: /usr/lib/python3.10/site-packages/__pycache__/drv_libxml2.cpython-310.pyc exists in filesystem
 libxml2: /usr/lib/python3.10/site-packages/__pycache__/libxml2.cpython-310.opt-1.pyc exists in filesystem
 libxml2: /usr/lib/python3.10/site-packages/__pycache__/libxml2.cpython-310.pyc exists in filesystem
 </code></pre>
-<p>when updating, use</p>
+<p>以下のコマンド</p>
 <pre><code>pacman -Syu --overwrite /usr/lib/python3.10/site-packages/__pycache__/\*
 </code></pre>
-<p>to perform the upgrade.</p>
+<p>を使用して更新を実行してください。</p>
