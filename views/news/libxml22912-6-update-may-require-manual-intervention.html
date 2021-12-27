@@ -1,0 +1,10 @@
+<p>The libxml2 package prior to version 2.9.12-6 was missing the compiled python modules. This has been fixed in 2.9.12-6, so the upgrade may need to overwrite any untracked pyc files created. If you get errors like these</p>
+<pre><code>libxml2: /usr/lib/python3.10/site-packages/__pycache__/drv_libxml2.cpython-310.opt-1.pyc exists in filesystem
+libxml2: /usr/lib/python3.10/site-packages/__pycache__/drv_libxml2.cpython-310.pyc exists in filesystem
+libxml2: /usr/lib/python3.10/site-packages/__pycache__/libxml2.cpython-310.opt-1.pyc exists in filesystem
+libxml2: /usr/lib/python3.10/site-packages/__pycache__/libxml2.cpython-310.pyc exists in filesystem
+</code></pre>
+<p>when updating, use</p>
+<pre><code>pacman -Syu --overwrite /usr/lib/python3.10/site-packages/__pycache__/\*
+</code></pre>
+<p>to perform the upgrade.</p>
