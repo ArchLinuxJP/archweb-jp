@@ -1,0 +1,14 @@
+<p>The linux-firmware package 20220119.0c6a7b3-2 implements kernel
+firmware compression. Linux kernel from 5.3 on support loading
+from xz compressed firmware.<br />
+CONFIG_FW_LOADER_COMPRESS kernel option must be enabled. All official Arch Linux kernel support this for a long time. [1]</p>
+<p>The linux-firmware package has been split into smaller packages to
+further reduce required disk space. Some big firmware files of
+rarely used hardware have been split into separate packages.<br />
+This affects firmware for Mellanox Spectrum switches, Marvell devices,
+Qualcomm SoCs, Cavium LiquidIO server adapters, QLogic devices,
+Broadcom NetXtreme II 10Gb ethernet adapters.<br />
+Make sure to install additional firmware packages if needed. [2]</p>
+<p>[1] <a href="https://bugs.archlinux.org/task/72899">FS#72899</a><br />
+[2] <a href="https://bugs.archlinux.org/task/72559">FS#72559</a> +
+<a href="https://github.com/archlinux/svntogit-packages/commit/a12e069d0cae39a87f003beab9a97f7211abcac2.patch">svn commit</a></p>
