@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"linux-firmware-202201190c6a7b3-2-requires-kernel-53-and-package-splitting",
+		"linux-firmware 20220119.0c6a7b3-2 は kernel >=5.3 が必要になりパッケージが分割されます",
+		"2022-01-21",
+		"2022-01-21",
+		"Andreas Radke"
+	),
+	(
 		"libxml22912-6-update-may-require-manual-intervention",
 		"libxml2>=2.9.12-6 への更新は対応作業が必要です",
 		"2021-12-27",

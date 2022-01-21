@@ -1,0 +1,14 @@
+<p>linux-firmware パッケージ 20220119.0c6a7b3-2 はカーネルファームウェア
+圧縮を実装しました。Linux kernel は 5.3 から xz で圧縮されたファームウェアの
+読み込みをサポートします。<br />
+CONFIG_FW_LOADER_COMPRESS カーネルオプションを有効にする必要があります。全ての公式 Arch Linux カーネルはこのオプションを既に有効化済みです。[1]</p>
+<p>linux-firmware パッケージは、必要とするディスクスペースをより減らすため、
+より小さいパッケージに分割されました。珍しいハードウェアのためのいくつかの
+大きなファームウェアファイルは別のパッケージに分割されました。<br />
+これは Mellanox Spectrum のスイッチ、Marvell のデバイス、
+Qualcomm の SoC、Cavium LiquidIO のサーバーアダプタ、QLogic のデバイス、
+Broadcom NetXtreme II 10Gb ethernet アダプタのファームウェアに影響を与えます。<br />
+必要であれば、追加のファームウェアパッケージをインストールするようにしてください。[2]</p>
+<p>[1] <a href="https://bugs.archlinux.org/task/72899">FS#72899</a><br />
+[2] <a href="https://bugs.archlinux.org/task/72559">FS#72559</a> +
+<a href="https://github.com/archlinux/svntogit-packages/commit/a12e069d0cae39a87f003beab9a97f7211abcac2.patch">svn commit</a></p>
