@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"debug-packages-and-debuginfod",
+		"Debug packages and debuginfod",
+		"2022-02-02",
+		"2022-02-02",
+		"Morten Linderud"
+	),
+	(
 		"linux-firmware-202201190c6a7b3-2-requires-kernel-53-and-package-splitting",
 		"linux-firmware 20220119.0c6a7b3-2 は kernel >=5.3 が必要になりパッケージが分割されます",
 		"2022-01-21",
