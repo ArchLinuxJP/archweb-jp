@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"debug-packages-and-debuginfod",
-		"Debug packages and debuginfod",
+		"デバッグパッケージと debuginfod",
 		"2022-02-02",
 		"2022-02-02",
 		"Morten Linderud"
