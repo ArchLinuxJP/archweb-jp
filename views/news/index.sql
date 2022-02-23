@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"arch-linux-leader-election-results",
-		"Arch Linux Leader Election Results",
+		"Arch Linux リーダー選出の結果",
 		"2022-02-23",
 		"2022-02-23",
 		"Giancarlo Razzolini"
