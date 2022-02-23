@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"arch-linux-leader-election-results",
+		"Arch Linux リーダー選出の結果",
+		"2022-02-23",
+		"2022-02-23",
+		"Giancarlo Razzolini"
+	),
+	(
 		"debug-packages-and-debuginfod",
 		"デバッグパッケージと debuginfod",
 		"2022-02-02",
