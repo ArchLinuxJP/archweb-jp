@@ -1,0 +1,9 @@
+<p>The <code>keycloak</code> package prior to version 17.0.1-2 was running with WildFly server. Since upstream officially moved to <a href="https://www.keycloak.org/2020/12/first-keycloak-x-release.adoc">Quarkus distribution</a>, Arch Linux follows this approach. This means some manual intervention is required for the upgrade.</p>
+<p>The configuration needs to be adjusted from the old <code>.xml</code> format to the new <code>/etc/keycloak/keycloak.conf</code>.</p>
+<p>Prior to the upgrade, stop the keycloak service, upgrade the package and migrate the configuration before starting:</p>
+<pre><code>systemctl stop keycloak.service
+pacman -Syu keycloak
+# migrate configuration /etc/keycloak/keycloak.conf
+systemctl start keycloak.service
+</code></pre>
+<p>See Keycloak <a href="https://www.keycloak.org/migration/migrating-to-quarkus">migration docs</a> and Keycloak Quarkus <a href="https://www.keycloak.org/server/configuration">server docs</a></p>
