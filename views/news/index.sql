@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"keycloak-1701-2-update-requires-manual-reconfiguration",
-		"Keycloak 17.0.1-2 update requires manual reconfiguration",
+		"Keycloak 17.0.1-2 への更新は設定変更が必要です",
 		"2022-03-25",
 		"2022-03-25",
 		"Leonidas Spyropoulos"
