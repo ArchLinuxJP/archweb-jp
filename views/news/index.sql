@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"qemu-700-changes-split-package-setup",
+		"QEMU >= 7.0.0 は分割パッケージのセットアップを変更します",
+		"2022-05-09",
+		"2022-05-09",
+		"David Runge"
+	),
+	(
 		"keycloak-1701-2-update-requires-manual-reconfiguration",
 		"Keycloak 17.0.1-2 への更新は設定変更が必要です",
 		"2022-03-25",
