@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"qemu-700-changes-split-package-setup",
-		"QEMU >= 7.0.0 changes split package setup",
+		"QEMU >= 7.0.0 は分割パッケージのセットアップを変更します",
 		"2022-05-09",
 		"2022-05-09",
 		"David Runge"

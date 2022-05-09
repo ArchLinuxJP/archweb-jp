@@ -1,14 +1,14 @@
-<p>With the update to qemu 7.0.0 the package has been turned into a more
-fine grained split package utilizing meta packages.</p>
+<p>qemu 7.0.0 へのアップデートで、パッケージはメタパッケージを利用した
+より細かい分割パッケージに変更されました。</p>
 <ul>
-<li>The <code>qemu</code> package is now virtually provided by the meta packages
-  <code>qemu-base</code>, <code>qemu-desktop</code> and <code>qemu-full</code>.</li>
-<li>The functionality of <code>qemu</code> prior to 7.0.0 is replaced by
-  <code>qemu-desktop</code></li>
-<li>The functionality of <code>qemu-headless</code> is replaced by
-  <code>qemu-base</code></li>
-<li>The functionality of <code>qemu-arch-extra</code> and <code>qemu-headless-arch-extra</code>
-  is replaced by <code>qemu-emulators-full</code></li>
-<li>The meta package <code>qemu-full</code> provides all QEMU related
-  packages (excluding <code>qemu-guest-agent</code>)</li>
+<li><code>qemu</code> パッケージは <code>qemu-base</code> と <code>qemu-desktop</code>、
+  <code>qemu-full</code> メタパッケージにより仮想的に提供されます。</li>
+<li><code>qemu</code> 7.0.0 までの機能は
+  <code>qemu-desktop</code> に置き換えられます</li>
+<li><code>qemu-headless</code> の機能は
+  <code>qemu-base</code> に置き換えられます</li>
+<li><code>qemu-arch-extra</code> と <code>qemu-headless-arch-extra</code>
+  の機能は <code>qemu-emulators-full</code> に置き換えられます</li>
+<li><code>qemu-full</code> メタパッケージは全ての QEMU 関連の
+  パッケージ (<code>qemu-guest-agent</code> 以外) を提供します</li>
 </ul>
