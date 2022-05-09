@@ -1,0 +1,14 @@
+<p>With the update to qemu 7.0.0 the package has been turned into a more
+fine grained split package utilizing meta packages.</p>
+<ul>
+<li>The <code>qemu</code> package is now virtually provided by the meta packages
+  <code>qemu-base</code>, <code>qemu-desktop</code> and <code>qemu-full</code>.</li>
+<li>The functionality of <code>qemu</code> prior to 7.0.0 is replaced by
+  <code>qemu-desktop</code></li>
+<li>The functionality of <code>qemu-headless</code> is replaced by
+  <code>qemu-base</code></li>
+<li>The functionality of <code>qemu-arch-extra</code> and <code>qemu-headless-arch-extra</code>
+  is replaced by <code>qemu-emulators-full</code></li>
+<li>The meta package <code>qemu-full</code> provides all QEMU related
+  packages (excluding <code>qemu-guest-agent</code>)</li>
+</ul>
