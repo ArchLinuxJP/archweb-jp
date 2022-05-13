@@ -1,0 +1,6 @@
+<p>PipeWire のセッションマネージャーである <code>pipewire-media-session</code> はアップストリームで廃止され今後リリースされなくなったため、2日前に <code>wireplumber</code> パッケージにより置き換えを実施しました。残念ながら、このステップは時期尚早でした。</p>
+<p>私達の pipewire オーディオパッケージ (<code>pipewire-alsa</code>、<code>pipewire-jack</code> と <code>pipewire-pulse</code>) は、media-session に PipeWire のオーディオ機能を有効化させる設定を含んでいます。これらのパッケージがインストールされておらず設定が欠けているとき、PipeWire は ALSA や PulseAudio に干渉することなくスクリーンレコーディングに使用できます。</p>
+<p>WirePlumber はこの仕組みを無視して、常に PipeWire を使用してオーディオデバイスを扱うように設定します。これは、PulseAudio や素の ALSA のユーザーにオーディオの問題が生じることを意味します。</p>
+<p>私達が WirePlumber へ移行するよりよい方法を見つけるまで、この置き換えは差し戻されます。もし今オーディオに PipeWire を使っておらず、システムに <code>wireplumber</code> がインストールされている場合、<code>pipewire-media-session</code> をインストールし直して再起動することで、オーディオ機能を復元することができます。</p>
+<pre><code>pacman -Syu pipewire-media-session
+</code></pre>
