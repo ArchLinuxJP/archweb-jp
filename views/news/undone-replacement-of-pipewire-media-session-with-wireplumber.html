@@ -1,0 +1,6 @@
+<p>Two days ago the <code>wireplumber</code> package was made to replace <code>pipewire-media-session</code> as the latter session manager for PipeWire is considered dead upstream and will see no more releases. Unfortunately, this step was premature.</p>
+<p>Our pipewire audio packages (<code>pipewire-alsa</code>, <code>pipewire-jack</code> and <code>pipewire-pulse</code>) ship configuration that prompt media-session to activate PipeWire's audio features. When these packages are not installed and the configuration is missing, PipeWire can be used for screen recording without interfering with ALSA or PulseAudio.</p>
+<p>WirePlumber disregards this mechanism and always configures PipeWire to grab audio devices, meaning users of PulseAudio or bare ALSA experience broken audio.</p>
+<p>The replacement has been reverted while we attempt to look for a better solution switching to WirePlumber. If you are currently not using PipeWire for audio and <code>wireplumber</code> got installed on your system, please reinstall <code>pipewire-media-session</code> and reboot to restore audio functionality.</p>
+<pre><code>pacman -Syu pipewire-media-session
+</code></pre>

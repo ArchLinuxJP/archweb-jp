@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"undone-replacement-of-pipewire-media-session-with-wireplumber",
+		"Undone replacement of pipewire-media-session with wireplumber",
+		"2022-05-12",
+		"2022-05-12",
+		"Jan Alexander Steffens"
+	),
+	(
 		"qemu-700-changes-split-package-setup",
 		"QEMU >= 7.0.0 は分割パッケージのセットアップを変更します",
 		"2022-05-09",
