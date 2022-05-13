@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"undone-replacement-of-pipewire-media-session-with-wireplumber",
-		"Undone replacement of pipewire-media-session with wireplumber",
+		"pipewire-media-session の wireplumber への置き換えはまだ完了していません",
 		"2022-05-12",
 		"2022-05-12",
 		"Jan Alexander Steffens"
