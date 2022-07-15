@@ -1,0 +1,5 @@
+<p>wxWidgets 3.2 は GTK のフロントエンドに加えて Qt のものも提供するため、パッケージ名が wxgtk-<em> から wxwidgets-</em> にリネームされます。
+GTK2 フロントエンドはもう提供されません。もし wxgtk2 をインストールしている場合は、更新が以下のエラーで失敗します。</p>
+<p>error: failed to prepare transaction (could not satisfy dependencies)
+:: removing wxgtk-common breaks dependency 'wxgtk-common' required by wxgtk2</p>
+<p>そのような場合、まず wxgtk2 をアンインストールしてから更新を続けてください。</p>
