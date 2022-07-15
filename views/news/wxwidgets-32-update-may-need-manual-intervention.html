@@ -1,0 +1,5 @@
+<p>wxWidgets 3.2 provides a Qt frontend in addition to the GTK3 one, so packages have been renamed from wxgtk-<em> to wxwidgets-</em>.
+The GTK2 frontend is no longer provided. If you have wxgtk2 installed, the upgrade will fail with</p>
+<p>error: failed to prepare transaction (could not satisfy dependencies)
+:: removing wxgtk-common breaks dependency 'wxgtk-common' required by wxgtk2</p>
+<p>In such case, uninstall wxgtk2 first and then proceed with the upgrade.</p>
