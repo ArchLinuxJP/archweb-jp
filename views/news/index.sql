@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"wxwidgets-32-update-may-need-manual-intervention",
-		"wxWidgets 3.2 update may need manual intervention",
+		"wxWidgets 3.2 への更新は対応作業が必要です",
 		"2022-07-14",
 		"2022-07-14",
 		"Antonio Rojas"
