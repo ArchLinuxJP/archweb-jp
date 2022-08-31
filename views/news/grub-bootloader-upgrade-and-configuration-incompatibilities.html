@@ -1,0 +1,10 @@
+<p>最近の <code>grub</code> への変更で、<code>fwsetup</code> への新しいコマンドオプションが追加され、
+生成されたブート設定からコマンドが呼び出される方法が変更されました。システムのハードウェアとセットアップによっては、
+インストールされたブートローダーとその設定の不整合によってシステムが起動しなくなる可能性があります。
+<code>grub</code> パッケージのアップデートの後、以下のようにブートローダーのインストールと設定の再生成の
+両方を実行することが推奨されます。</p>
+<pre><code>grub-install ...
+grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p><code>grub-install</code> についてのより詳しい情報は、wiki を参照してください。
+<a href="https://wiki.archlinux.jp/index.php/GRUB#インストール">GRUB - ArchWiki</a></p>
