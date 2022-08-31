@@ -1,11 +1,10 @@
-<p>Recent changes in <code>grub</code> added a new command option to <code>fwsetup</code> and changed the
-way the command is invoked in the generated boot configuration. Depending on
-your system hardware and setup this could cause an unbootable system due to
-incompatibilities between the installed bootloader and configuration. After a
-<code>grub</code> package update it is advised to run both, installation and regeneration
-of configuration:</p>
+<p>最近の <code>grub</code> への変更で、<code>fwsetup</code> への新しいコマンドオプションが追加され、
+生成されたブート設定からコマンドが呼び出される方法が変更されました。システムのハードウェアとセットアップによっては、
+インストールされたブートローダーとその設定の不整合によってシステムが起動しなくなる可能性があります。
+<code>grub</code> パッケージのアップデートの後、以下のようにブートローダーのインストールと設定の再生成の
+両方を実行することが推奨されます。</p>
 <pre><code>grub-install ...
 grub-mkconfig -o /boot/grub/grub.cfg
 </code></pre>
-<p>For more specific information on <code>grub-install</code>, please refer to the wiki:
-<a href="https://wiki.archlinux.org/title/GRUB#Installation">GRUB - ArchWiki</a></p>
+<p><code>grub-install</code> についてのより詳しい情報は、wiki を参照してください。
+<a href="https://wiki.archlinux.jp/index.php/GRUB#インストール">GRUB - ArchWiki</a></p>

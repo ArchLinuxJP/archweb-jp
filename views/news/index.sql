@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"grub-bootloader-upgrade-and-configuration-incompatibilities",
-		"Grub bootloader upgrade and configuration incompatibilities",
+		"Grub ブートローダーの更新と設定の不整合",
 		"2022-08-30",
 		"2022-08-30",
 		"Christian Hesse"
