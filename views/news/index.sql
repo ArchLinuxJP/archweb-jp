@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"grub-bootloader-upgrade-and-configuration-incompatibilities",
+		"Grub bootloader upgrade and configuration incompatibilities",
+		"2022-08-30",
+		"2022-08-30",
+		"Christian Hesse"
+	),
+	(
 		"wxwidgets-32-update-may-need-manual-intervention",
 		"wxWidgets 3.2 への更新は対応作業が必要です",
 		"2022-07-14",

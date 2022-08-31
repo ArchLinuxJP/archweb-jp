@@ -1,0 +1,11 @@
+<p>Recent changes in <code>grub</code> added a new command option to <code>fwsetup</code> and changed the
+way the command is invoked in the generated boot configuration. Depending on
+your system hardware and setup this could cause an unbootable system due to
+incompatibilities between the installed bootloader and configuration. After a
+<code>grub</code> package update it is advised to run both, installation and regeneration
+of configuration:</p>
+<pre><code>grub-install ...
+grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p>For more specific information on <code>grub-install</code>, please refer to the wiki:
+<a href="https://wiki.archlinux.org/title/GRUB#Installation">GRUB - ArchWiki</a></p>
