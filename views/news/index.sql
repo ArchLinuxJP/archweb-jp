@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"arch-linux-mailing-list-changes",
-		"Arch Linux mailing list changes",
+		"Arch Linux メーリングリストの変更",
 		"2022-09-16",
 		"2022-09-16",
 		"Kristian Klausen"
