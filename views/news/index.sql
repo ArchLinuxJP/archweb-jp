@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"arch-linux-mailing-list-changes",
+		"Arch Linux mailing list changes",
+		"2022-09-16",
+		"2022-09-16",
+		"Kristian Klausen"
+	),
+	(
 		"grub-bootloader-upgrade-and-configuration-incompatibilities",
 		"Grub ブートローダーの更新と設定の不整合",
 		"2022-08-30",
