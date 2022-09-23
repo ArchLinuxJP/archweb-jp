@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"removing-python2-from-the-repositories",
-		"Removing python2 from the repositories",
+		"リポジトリからの python2 の削除",
 		"2022-09-23",
 		"2022-09-23",
 		"Jelle van der Waa"
