@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"removing-python2-from-the-repositories",
+		"リポジトリからの python2 の削除",
+		"2022-09-23",
+		"2022-09-23",
+		"Jelle van der Waa"
+	),
+	(
 		"arch-linux-mailing-list-changes",
 		"Arch Linux メーリングリストの変更",
 		"2022-09-16",
