@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"php-82-update-and-introduction-of-legacy-branch",
+		"PHP 8.2 のアップデートと legacy ブランチの導入",
+		"2023-01-13",
+		"2023-01-13",
+		"Pierre Schmitz"
+	),
+	(
 		"in-memory-of-jonathon-fernyhough",
 		"訃報: Jonathon Fernyhough",
 		"2023-01-12",
