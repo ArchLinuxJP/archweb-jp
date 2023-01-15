@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"in-memory-of-jonathon-fernyhough",
+		"訃報: Jonathon Fernyhough",
+		"2023-01-12",
+		"2023-01-12",
+		"Morten Linderud"
+	),
+	(
 		"removing-python2-from-the-repositories",
 		"リポジトリからの python2 の削除",
 		"2022-09-23",
