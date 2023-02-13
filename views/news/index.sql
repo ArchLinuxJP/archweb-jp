@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
 	(
 		"switch-to-the-base-devel-meta-package-requires-manual-intervention",
-		"Switch to the base-devel meta package requires manual intervention",
+		"base-devel メタパッケージへの移行は対応作業が必要です",
 		"2023-02-12",
 		"2023-02-12",
 		"Robin Candau"
