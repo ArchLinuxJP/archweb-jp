@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"switch-to-the-base-devel-meta-package-requires-manual-intervention",
+		"Switch to the base-devel meta package requires manual intervention",
+		"2023-02-12",
+		"2023-02-12",
+		"Robin Candau"
+	),
+	(
 		"php-82-update-and-introduction-of-legacy-branch",
 		"PHP 8.2 のアップデートと legacy ブランチの導入",
 		"2023-01-13",
