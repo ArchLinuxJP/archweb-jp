@@ -15,6 +15,13 @@ INSERT INTO
 	news
 VALUES
 	(
+		"git-migration-announcement",
+		"Git 移行についての予告",
+		"2023-05-15",
+		"2023-05-15",
+		"Jelle van der Waa"
+	),
+	(
 		"switch-to-the-base-devel-meta-package-requires-manual-intervention",
 		"base-devel メタパッケージへの移行は対応作業が必要です",
 		"2023-02-12",

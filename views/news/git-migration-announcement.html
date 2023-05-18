@@ -1,0 +1,16 @@
+<p>今週金曜日の朝 (2023-05-19) から日曜日 (2023-05-21) まで Git パッケージ移行が行われます。Arch Linux のパッケージングチームはこの期間の間、パッケージのアップデートが行えなくなります。</p>
+<p>移行の開始および終了は、<code>[arch-dev-public]</code> メーリングリスト上で通知されます。</p>
+<h2>Arch Linux ユーザーへの影響はありますか？</h2>
+<p><code>[testing]</code> リポジトリは <code>[core-testing]</code> と <code>[extra-testing]</code> リポジトリに分割され、<code>[staging]</code> リポジトリは <code>[core-staging]</code> と <code>[extra-staging]</code> リポジトリに分割されます。<code>[community]</code> リポジトリは <code>[extra]</code> リポジトリに合併して、移行後は空のリポジトリとなります。</p>
+<p>移行後、しばらくの間は準備期間として影響のあるリポジトリは空のリポジトリとして提供され続けます。通常の使用では、今後も問題なくすべてが動作します。</p>
+<p><strong>注記:</strong> 移行後、testing リポジトリを有効にしているユーザーは新しいリポジトリ (<code>[testing]</code> に置き換わる <code>[core-testing]</code> と <code>[extra-testing]</code>) をシステムのアップデートを行う前に <code>pacman.conf</code> に記述する必要があります。</p>
+<p>その他の変更:</p>
+<ul>
+<li><a href="https://archlinux.org/svn/">SVN へのアクセス</a>は無効になり SVN リポジトリは消滅します。</li>
+<li>svn2git ミラーが今後更新されることはありません。</li>
+<li><code>asp</code> は svn2git ミラーを使用しているため、今後は動作しなくなります。代わりに <a href="https://man.archlinux.org/man/pkgctl-repo-clone.1.en"><code>pkgctl repo clone</code></a> を使ってください。</li>
+</ul>
+<h2>Arch Linux のティア1ミラーへの影響はありますか？</h2>
+<p>移行期間中 rsync と HTTP のアクセスはシャットダウンします。すべての移行が完了したら arch-mirrors にメールの通知を送信する予定です。</p>
+<h2>Arch Linux のパッケージ作成者への影響はありますか？</h2>
+<p>パッケージ作成者はパッケージにパッチをあてたり更新することができなくなります。移行期間中ティア0ミラーは無効になります。</p>
